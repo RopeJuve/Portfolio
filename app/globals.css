@@ -1,107 +1,66 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+ @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Roboto+Condensed:ital,wght@0,400;0,700;1,300&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Noto+Sans&family=Roboto+Condensed:ital,wght@0,400;0,700;1,300&display=swap');
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+ :root {
+   --primary-color: #264653;
+   --secondary-color: #2a9d8f;
+   --accent-color: #e9c46a;
+   --bg-color: #f4f1de;
+   --text-color: #333333;
+   --frame-color: #D8D4C0;
 
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
+   --font-header: 'Roboto Condensed';
+   --font-text: 'Noto Sans';
+   --fs1: clamp(2.25rem, 6vw, 3.5rem);
+   --fs2: clamp(1rem, 4vw, 2.25rem);
+   --fs3: 1rem;
+   --font-text: 'Noto Sans';
+ }
 
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
 
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
-}
+ * {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+ }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+ html,
+ body {
+   overflow-x: hidden;
+ }
 
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
+ body {
+   max-width: 77.5rem;
+   margin: 1.5rem auto;
+   padding-inline: 1.5rem;
+   background-color: var(--bg-color);
+ }
 
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
+ h1 {
+   font-family: var(--font-header);
+   font-weight: 700;
+   font-size: var(--fs1);
+   color: var(--primary-color);
+   line-height: 120%;
+   letter-spacing: 0.1em;
+ }
 
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
+ h2 {
+   font-family: var(--font-header);
+   font-weight: 400;
+   font-size: var(--fs2);
+   color: var(--text-color);
+   line-height: 120%;
+   letter-spacing: 0.1em;
+ }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+ p {
+   font-family: var(--font-text);
+   font-size: var(--fs3);
+   color: var(--text-color);
+ }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
+ a {
+   color: var(--primary-color);
+   text-decoration: none;
+ }
