@@ -15,6 +15,8 @@
    --fs2: clamp(1rem, 4vw, 2.25rem);
    --fs3: 1rem;
    --font-text: 'Noto Sans';
+
+   --section-margin: clamp(3rem, 10vw, 9.375rem)
  }
 
 
