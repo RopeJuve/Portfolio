@@ -1,0 +1,12 @@
+.container {
+    margin-top: var(--section-margin);
+}
+
+
+
+.text {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

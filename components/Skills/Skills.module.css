@@ -1,0 +1,32 @@
+.container {
+    margin-top: var(--section-margin);
+}
+
+.skillsList {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 0.5rem
+}
+
+.skillsIcons {
+    transition: all 0.3s ease-in-out;
+    color: var(--primary-color);
+    width: 5rem;
+}
+
+.skillsIcons:hover {
+    transform: scale(1.1);
+    color: var(--accent-color);
+}
+
+.nextIcon {
+    width: 5rem;
+    color: var(--primary-color);
+}
+
+.nextIcon:hover {
+    transform: scale(1.1);
+    color: var(--accent-color);
+}

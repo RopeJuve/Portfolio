@@ -14,6 +14,7 @@
    --fs1: clamp(2.25rem, 6vw, 3.5rem);
    --fs2: clamp(1rem, 4vw, 2.25rem);
    --fs3: 1rem;
+   --fs4: clamp(1.5rem, 4vw, 2.5rem);
    --font-text: 'Noto Sans';
 
    --section-margin: clamp(3rem, 10vw, 9.375rem)
@@ -56,10 +57,23 @@
    letter-spacing: 0.1em;
  }
 
+ h3 {
+   color: var(--primary-color);
+   font-family: var(--font-header);
+   font-size: var(--fs4);
+   font-weight: 700;
+   line-height: 150%;
+   text-align: center;
+   letter-spacing: 0.1em;
+   text-transform: uppercase;
+ }
+
  p {
+   opacity: 0.7;
    font-family: var(--font-text);
    font-size: var(--fs3);
    color: var(--text-color);
+   text-align: center;
  }
 
  a {
