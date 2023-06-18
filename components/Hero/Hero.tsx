@@ -14,26 +14,29 @@ const Hero = () => {
       <div className={styles.heading}>
         <h1>Hallo, I'm Robert Shterjov Frontend Web Developer</h1>
         <h2>Transforming Ideas into Beautifully Responsive Websites</h2>
-      </div>
-      <div>
-        <Button text="contact me" variant="primary" />
-        <Button text="download cv" variant="secondary" />
-        <div className={styles.social}>
-          <FontAwesomeIcon icon={faGithub} className={styles.socialIcons} />
-          <FontAwesomeIcon icon={faLinkedin} className={styles.socialIcons} />
-          <FontAwesomeIcon
-            icon={faWhatsappSquare}
-            className={styles.socialIcons}
-          />
-          <FontAwesomeIcon
-            icon={faTelegramPlane}
-            className={styles.socialIcons}
-          />
+        <div className={styles.cta}>
+          <Button text="contact me" variant="primary" />
+          <Button text="download cv" variant="secondary" />
+          <div className={styles.social}>
+            <FontAwesomeIcon icon={faGithub} className={styles.socialIcons} />
+            <FontAwesomeIcon icon={faLinkedin} className={styles.socialIcons} />
+            <FontAwesomeIcon
+              icon={faWhatsappSquare}
+              className={styles.socialIcons}
+            />
+            <FontAwesomeIcon
+              icon={faTelegramPlane}
+              className={styles.socialIcons}
+            />
+          </div>
         </div>
       </div>
-      <div className={styles.imgContainer}>
-        <img src="/images/profile.png" alt="profile" />
-      </div>
+
+      <img
+        className={styles.imgContainer}
+        src="/images/profile.png"
+        alt="profile"
+      />
     </div>
   );
 };

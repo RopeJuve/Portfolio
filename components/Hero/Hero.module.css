@@ -11,12 +11,13 @@
     margin-bottom: 1.5rem;
 }
 
+
 .social{
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 68%;
+    max-width: 15rem;
 }
 
 .socialIcons{
@@ -36,6 +37,17 @@
     mix-blend-mode: luminosity;
 }
 
-.imgContainer img{
+.imgContainer{
     width: 100%;
 }
+
+@media screen and (min-width: 48em) {
+    .container{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .heading{
+        justify-content: flex-end;
+        margin-bottom: 0;
+    }
+  }

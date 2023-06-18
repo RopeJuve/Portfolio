@@ -1,5 +1,4 @@
 import styles from "./Skills.module.css";
-import nextJs from "../../public/images/icons/nextjs.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHtml5,
@@ -8,21 +7,30 @@ import {
   faReact,
   faGitAlt,
 } from "@fortawesome/free-brands-svg-icons";
-import Image from "next/image";
+import { NextJs } from "../NextIcon";
+import Skill from "../Skill/Skill";
 
 const Skills = () => {
   return (
     <div className={styles.container}>
       <h3>Skills</h3>
       <div className={styles.skillsList}>
-        <FontAwesomeIcon className={styles.skillsIcons} icon={faHtml5} />
-        <FontAwesomeIcon className={styles.skillsIcons} icon={faJsSquare} />
-        <FontAwesomeIcon className={styles.skillsIcons} icon={faSass} />
-        <FontAwesomeIcon className={styles.skillsIcons} icon={faReact} />
-        <FontAwesomeIcon className={styles.skillsIcons} icon={faGitAlt} />
-        <a className={styles.nextIcon}>
-          <Image src={nextJs} alt="next" />
-        </a>
+        <Skill title="html">
+          <FontAwesomeIcon className={styles.skillsIcons} icon={faHtml5} />
+        </Skill>
+        <Skill title="java script">
+          <FontAwesomeIcon className={styles.skillsIcons} icon={faJsSquare} />
+        </Skill>
+        <Skill title="sass">
+          <FontAwesomeIcon className={styles.skillsIcons} icon={faSass} />
+        </Skill>
+        <Skill title="react">
+          <FontAwesomeIcon className={styles.skillsIcons} icon={faReact} />
+        </Skill>
+        <Skill title="git">
+          <FontAwesomeIcon className={styles.skillsIcons} icon={faGitAlt} />
+        </Skill>
+        <NextJs className={styles.nextIcon} />
       </div>
     </div>
   );

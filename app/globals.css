@@ -11,8 +11,8 @@
 
    --font-header: 'Roboto Condensed';
    --font-text: 'Noto Sans';
-   --fs1: clamp(2.25rem, 6vw, 3.5rem);
-   --fs2: clamp(1rem, 4vw, 2.25rem);
+   --fs1: clamp(2.25rem, 5vw, 3.5rem);
+   --fs2: clamp(1rem, 3vw, 2.25rem);
    --fs3: 1rem;
    --fs4: clamp(1.5rem, 4vw, 2.5rem);
    --font-text: 'Noto Sans';
@@ -79,4 +79,10 @@
  a {
    color: var(--primary-color);
    text-decoration: none;
+ }
+
+ @media screen and (min-width: 48em){
+  body{
+    padding-inline: 2.5rem ;
+  }
  }

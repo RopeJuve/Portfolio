@@ -22,11 +22,20 @@
 }
 
 .nextIcon {
-    width: 5rem;
+    justify-self: center;
+    transition: all 0.3s ease-in-out;
+    width: 6rem;
+    height: 100%;
     color: var(--primary-color);
 }
 
 .nextIcon:hover {
     transform: scale(1.1);
     color: var(--accent-color);
+}
+
+@media screen and (min-width: 48em){
+    .skillsList{
+        grid-template-columns: repeat(6,1fr);
+    }
 }

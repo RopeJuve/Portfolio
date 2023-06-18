@@ -1,0 +1,1 @@
+export { default as NextJs } from './Nextjs.svg'
