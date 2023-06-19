@@ -1,0 +1,25 @@
+.container{
+    display: grid;
+    column-gap: 1.5rem;
+}
+
+.container img{
+    width: 100%;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem
+}
+
+.tech{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cta{
+    display: flex;
+    gap: 1.5rem;
+}
