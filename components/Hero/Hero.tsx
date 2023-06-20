@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <div className={styles.container}>
       <div className={styles.heading}>
-        <h1>Hallo, I'm Robert Shterjov Frontend Web Developer</h1>
+        <h1>Hello, I'm Robert Shterjov Frontend Web Developer</h1>
         <h2>Transforming Ideas into Beautifully Responsive Websites</h2>
         <div className={styles.cta}>
           <Button text="contact me" variant="primary" />

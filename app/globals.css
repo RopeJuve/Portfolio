@@ -92,6 +92,14 @@
    text-decoration: none;
  }
 
+ input{
+  padding: 1rem;
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  outline: none;
+ }
+
  @media screen and (min-width: 48em) {
    body {
      padding-inline: 2.5rem;
