@@ -1,6 +1,11 @@
-.container{
+.container {
     margin-top: var(--section-margin);
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+}
+
+@media screen and (min-width: 48em) {
+    .container {
+        gap: 2rem;
+    }
 }

@@ -15,19 +15,19 @@ const Skills = () => {
     <div className={styles.container}>
       <h3>Skills</h3>
       <div className={styles.skillsList}>
-        <Skill title="html">
+        <Skill variant='skills' title="html">
           <FontAwesomeIcon className={styles.skillsIcons} icon={faHtml5} />
         </Skill>
-        <Skill title="java script">
+        <Skill variant='skills' title="java script">
           <FontAwesomeIcon className={styles.skillsIcons} icon={faJsSquare} />
         </Skill>
-        <Skill title="sass">
+        <Skill variant='skills' title="sass">
           <FontAwesomeIcon className={styles.skillsIcons} icon={faSass} />
         </Skill>
-        <Skill title="react">
+        <Skill variant='skills' title="react">
           <FontAwesomeIcon className={styles.skillsIcons} icon={faReact} />
         </Skill>
-        <Skill title="git">
+        <Skill variant='skills' title="git">
           <FontAwesomeIcon className={styles.skillsIcons} icon={faGitAlt} />
         </Skill>
         <NextJs className={styles.nextIcon} />

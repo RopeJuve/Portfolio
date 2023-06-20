@@ -5,12 +5,23 @@
     justify-content: center;
 }
 
-.title {
+.titleSkills {
     font-family: 'Noto Sans';
-    font-weight: 400;
+    font-weight: 700;
     font-size: 1rem;
     line-height: 150%;
-    color: var(--text-color);
+    color: var(--primary-color);
+    text-align: center;
+    letter-spacing: 0.0625em;
+    text-transform: uppercase;
+}
+
+.titleMadeWith{
+    font-family: 'Noto Sans';
+    font-weight: 700;
+    font-size: 0.775rem;
+    line-height: 150%;
+    color: var(--primary-color);
     text-align: center;
     letter-spacing: 0.0625em;
     text-transform: uppercase;

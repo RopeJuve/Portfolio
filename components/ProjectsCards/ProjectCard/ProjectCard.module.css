@@ -1,25 +1,79 @@
-.container{
+.container {
     display: grid;
-    column-gap: 1.5rem;
+    /*   grid-template-rows: 0.5fr,  1fr; */
+    column-gap: 1rem;
 }
 
-.container img{
+.container img {
     width: 100%;
+    height: auto;
 }
 
-.content{
+.content {
     display: flex;
     flex-direction: column;
     gap: 1.5rem
 }
 
-.tech{
+.tech {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
 
-.cta{
+.madeWithIcon {
+    transition: all 0.3s ease-in-out;
+    color: var(--primary-color);
+    width: 3.5rem;
+}
+
+.madeWithIcon:hover {
+    transform: scale(1.1);
+    color: var(--accent-color);
+}
+
+.redux {
+    transition: all 0.3s ease-in-out;
+    color: var(--primary-color);
+    width: 3.5rem;
+    height: 100%;
+}
+
+.redux:hover {
+    transform: scale(1.1);
+    color: var(--accent-color);
+}
+
+.cta {
     display: flex;
-    gap: 1.5rem;
+}
+
+@media screen and (min-width: 48em) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+    }
+
+    .content {
+        align-self: center;
+        gap: 0.5rem;
+    }
+
+    .content.reverse {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .container.reverse img {
+        grid-column: 2;
+    }
+
+    .content>p {
+        text-align: left !important;
+    }
+
+    .tech {
+        justify-content: flex-start;
+    }
 }
