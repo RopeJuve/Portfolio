@@ -6,7 +6,7 @@
     border-radius: 4px;
     text-transform: uppercase;
     font-family: var(--font-header);
-    font-size: 0.8rem;
+    font-size: var(--fs3);
     margin-right: 1rem;
     font-weight: 700;
     line-height: 120%;

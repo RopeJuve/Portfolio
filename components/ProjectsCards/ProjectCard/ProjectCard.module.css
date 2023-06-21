@@ -7,12 +7,22 @@
 .container img {
     width: 100%;
     height: auto;
+    transform: translateY(2.5rem)
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem
+    gap: 0.5rem;
+}
+
+.content > h5{
+    text-align: center;
+}
+
+.content>p {
+    margin: 0 auto;
+    max-width: 100%;
 }
 
 .tech {
@@ -47,6 +57,7 @@
 
 .cta {
     display: flex;
+    justify-content: center;
 }
 
 @media screen and (min-width: 48em) {
@@ -57,23 +68,52 @@
 
     .content {
         align-self: center;
-        gap: 0.5rem;
     }
 
     .content.reverse {
         grid-column: 1;
         grid-row: 1;
+        text-align: right;
     }
 
-    .container.reverse img {
+    .container.reverse > img {
         grid-column: 2;
     }
 
-    .content>p {
+    .content.notReverse>p {
         text-align: left !important;
+        margin-left: 0;
+        max-width: 70%;
+    }
+
+    .content.reverse>p {
+        text-align: right !important;
+        margin-right: 0;
+        max-width: 70%;
+    }
+    .content.reverse>h5 {
+        text-align: right;
+    }
+
+    .content.notReverse>h5 {
+        text-align: left;
     }
 
     .tech {
         justify-content: flex-start;
+    }
+
+    .tech.reverse {
+        justify-content: flex-end;
+    }
+
+    .cta.reverse {
+        justify-content: flex-end;
+        margin-right: -1rem;
+    }
+
+    .cta.notReverse {
+        justify-content: flex-start;
+        margin-right: -1rem;
     }
 }

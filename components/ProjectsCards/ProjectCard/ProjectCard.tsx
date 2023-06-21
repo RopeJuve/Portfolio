@@ -15,10 +15,20 @@ import classNames from "classnames";
 const ProjectCard = ({ variant }: { variant: string }) => {
   const contentClass = classNames([styles.content], {
     [styles.reverse]: variant === "reverse",
+    [styles.notReverse]: variant === "",
   });
 
   const containerClass = classNames([styles.container], {
     [styles.reverse]: variant === "reverse",
+  });
+
+  const techClass = classNames([styles.tech], {
+    [styles.reverse]: variant === "reverse",
+  });
+
+  const ctaClass = classNames([styles.cta], {
+    [styles.reverse]: variant === "reverse",
+    [styles.notReverse]: variant === "",
   });
   return (
     <div className={containerClass}>
@@ -30,7 +40,7 @@ const ProjectCard = ({ variant }: { variant: string }) => {
           Responsive across devices.
         </p>
         <h5>Made with</h5>
-        <div className={styles.tech}>
+        <div className={techClass}>
           <Skill variant="madeWith" title="react">
             <FontAwesomeIcon className={styles.madeWithIcon} icon={faReact} />
           </Skill>
@@ -47,7 +57,7 @@ const ProjectCard = ({ variant }: { variant: string }) => {
             <ReduxIcon className={styles.redux} />
           </Skill>
         </div>
-        <div className={styles.cta}>
+        <div className={ctaClass}>
           <Button text="live site" variant="primary" />
           <Button text="git hub" variant="secondary" />
         </div>

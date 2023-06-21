@@ -13,7 +13,7 @@
    --font-text: 'Noto Sans';
    --fs1: clamp(2.25rem, 5vw, 3.5rem);
    --fs2: clamp(1rem, 3vw, 2.25rem);
-   --fs3: 1rem;
+   --fs3: clamp(1rem, 3vw, 1.25rem);
    --fs4: clamp(1.5rem, 4vw, 2.5rem);
    --fs5: clamp(1.25rem, 3vw, 2.25rem);
    --font-text: 'Noto Sans';
