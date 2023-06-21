@@ -12,7 +12,11 @@ const Hero = () => {
   return (
     <div className={styles.container}>
       <div className={styles.heading}>
-        <h1>Hallo 👋,<br/> I'm Robert Shterjov Frontend Web Developer</h1>
+        <h1>
+          Hallo,
+          <br /> I'm <span className={styles.name}>Robert</span>{" "}
+          <span className={styles.sName}>Shterjov</span> Frontend Web Developer
+        </h1>
         <h2>Transforming Ideas into Beautifully Responsive Websites</h2>
         <div className={styles.cta}>
           <Button text="contact me" variant="primary" />
@@ -34,7 +38,7 @@ const Hero = () => {
 
       <img
         className={styles.imgContainer}
-        src="/images/profile.png"
+        src="/images/profile1.png"
         alt="profile"
       />
     </div>

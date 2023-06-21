@@ -1,7 +1,8 @@
 .container {
     margin-top: var(--section-margin);
     display: grid;
-    gap: 1rem;
+    gap: 1.5rem;
+
 }
 
 .formGroup {
@@ -18,7 +19,8 @@
 
 .inputField {
     position: relative;
-    border: 1px solid var(--text-color);
+    background-color:var(--frame-color);
+    /*  border: 2px solid var(--text-color); */
     border-radius: 4px;
 }
 
@@ -29,13 +31,12 @@
     font-family: var(--font-text);
     font-size: .875rem;
     letter-spacing: 0.1em;
-    color: var(--text-color);
+    color: var(--primary-color);
     text-transform: uppercase;
 }
 
 .inputField>textarea {
     width: 100%;
-    opacity: 0.7;
     resize: none;
     border-style: none;
     background-color: inherit;
@@ -43,8 +44,8 @@
     padding: 1rem;
 }
 
-.formGroup > button{
-    max-width: 40%;
+.formGroup>button {
+    max-width: 50%;
 }
 
 @media screen and (min-width: 48em) {
@@ -54,7 +55,6 @@
     }
 
     .container>h3 {
-
         grid-column: 1/3;
     }
 }

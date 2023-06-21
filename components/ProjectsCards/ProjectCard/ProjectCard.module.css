@@ -16,7 +16,7 @@
     gap: 0.5rem;
 }
 
-.content > h5{
+.content>h5 {
     text-align: center;
 }
 
@@ -76,7 +76,7 @@
         text-align: right;
     }
 
-    .container.reverse > img {
+    .container.reverse>img {
         grid-column: 2;
     }
 
@@ -91,6 +91,7 @@
         margin-right: 0;
         max-width: 70%;
     }
+
     .content.reverse>h5 {
         text-align: right;
     }
