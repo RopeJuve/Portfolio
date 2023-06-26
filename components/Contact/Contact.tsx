@@ -35,7 +35,7 @@ const Contact = () => {
         </div>
         <div className={styles.inputField}>
           <label>Message</label>
-          <textarea rows={4} name="soft"></textarea>
+          <textarea rows={6} name="soft"></textarea>
         </div>
 
         <Button variant="primary" text="Send Message" />

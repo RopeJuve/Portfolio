@@ -7,3 +7,9 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.logo{
+    width: 6.25rem;
+    height: 6.25rem;
+    color: var(--primary-color);
+}
