@@ -1,4 +1,5 @@
 .container{
+    background-color: var(--frame-color);
     width: 100%;
 }
 

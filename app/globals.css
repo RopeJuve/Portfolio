@@ -88,16 +88,23 @@
  }
 
  a {
+   font-family: var(--font-header);
+   font-size: var(--fs3);
    color: var(--primary-color);
+   font-weight: 700;
+   line-height: 120%;
+   letter-spacing: 0.1em;
+   cursor: pointer;
    text-decoration: none;
+   text-transform: uppercase;
  }
 
- input{
-  padding: 1rem;
-  background-color: transparent;
-  width: 100%;
-  border: none;
-  outline: none;
+ input {
+   padding: 1rem;
+   background-color: transparent;
+   width: 100%;
+   border: none;
+   outline: none;
  }
 
  @media screen and (min-width: 48em) {

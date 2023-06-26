@@ -1,5 +1,6 @@
 .container {
     margin-top: var(--section-margin);
+    background-color: var(--frame-color);
 }
 
 .skillsList {

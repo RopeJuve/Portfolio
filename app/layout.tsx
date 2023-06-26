@@ -1,5 +1,6 @@
 import NavBar from "@/components/NavBar/NavBar";
 import "./globals.css";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata = {
   title: "Robert Shterjov",
@@ -16,6 +17,7 @@ export default function RootLayout({
       <body>
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );

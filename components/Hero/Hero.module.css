@@ -26,26 +26,17 @@
     -webkit-background-clip: text;
     color: transparent;
 }
+.cta{
+    max-width: 18rem;
+}
 
-.social {
-    margin-top: 1rem;
+.btnWrapper{
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
+    /* justify-content: space-between; */
     align-items: center;
-    max-width: 15rem;
 }
 
-.socialIcons {
-    width: 2.2rem;
-    color: var(--accent-color);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.socialIcons:hover {
-    transform: scale(1.1);
-    color: var(--primary-color);
-}
 
 /* .imgContainer{
    /*  background-color: var(--bg-color);
@@ -64,5 +55,14 @@
     .heading {
         justify-content: flex-end;
         margin-bottom: 0;
+    }
+
+    .cta{
+        max-width: 21rem;
+    }
+    
+    .btnWrapper{
+        justify-content: space-between;
+        gap: 0;
     }
 }

@@ -1,4 +1,5 @@
 .container {
+    background-color: var(--frame-color);
     margin-top: var(--section-margin);
     display: flex;
     flex-direction: column;

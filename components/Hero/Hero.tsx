@@ -1,12 +1,6 @@
 import Button from "../Button/Button";
 import styles from "./Hero.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithub,
-  faTelegramPlane,
-  faWhatsappSquare,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import Social from "../Social/Social";
 
 const Hero = () => {
   return (
@@ -19,23 +13,13 @@ const Hero = () => {
         </h1>
         <h2>Transforming Ideas into Beautifully Responsive Websites</h2>
         <div className={styles.cta}>
-          <Button text="contact me" variant="primary" />
-          <Button text="download cv" variant="secondary" />
-          <div className={styles.social}>
-            <FontAwesomeIcon icon={faGithub} className={styles.socialIcons} />
-            <FontAwesomeIcon icon={faLinkedin} className={styles.socialIcons} />
-            <FontAwesomeIcon
-              icon={faWhatsappSquare}
-              className={styles.socialIcons}
-            />
-            <FontAwesomeIcon
-              icon={faTelegramPlane}
-              className={styles.socialIcons}
-            />
+          <div className={styles.btnWrapper}>
+            <Button text="contact me" variant="primary" />
+            <Button text="download cv" variant="secondary" />
           </div>
+          <Social />
         </div>
       </div>
-
       <img
         className={styles.imgContainer}
         src="/images/profile1.png"
