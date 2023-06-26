@@ -11,8 +11,9 @@ const NavBar = () => {
         <Logo className={styles.logo} />
         <NavMenuLinks />
         <FontAwesomeIcon
-          icon={faBars}
-          style={{ width: "25px", height: "25px", color: "#264653" }}
+        className={styles.hamburger}
+        icon={faBars}
+        style={{ width: "25px", height: "25px", color: "#264653" }}
         />
       </div>
     </div>

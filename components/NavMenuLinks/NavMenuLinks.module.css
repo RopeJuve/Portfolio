@@ -1,5 +1,13 @@
 .linksWrapper {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
+    display: none;
+}
+
+@media screen and (min-width: 48em) {
+    .linksWrapper {
+        max-width: 31.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2.5rem;
+    }
 }

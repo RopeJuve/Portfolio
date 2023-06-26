@@ -34,9 +34,6 @@
  }
 
  body {
-   max-width: 77.5rem;
-   margin: 1.5rem auto;
-   padding-inline: 1.5rem;
    background-color: var(--bg-color);
  }
 
@@ -107,8 +104,3 @@
    outline: none;
  }
 
- @media screen and (min-width: 48em) {
-   body {
-     padding-inline: 2.5rem;
-   }
- }

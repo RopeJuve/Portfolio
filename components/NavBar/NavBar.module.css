@@ -1,16 +1,32 @@
-.container{
+.container {
+    padding-inline: 1.5rem;
     background-color: var(--frame-color);
     width: 100%;
 }
 
-.wrapper{
+.wrapper {
+    max-width: 77.5rem;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo{
+.logo {
     width: 6.25rem;
     height: 6.25rem;
     color: var(--primary-color);
+}
+
+.hamburger {
+  display: inline-block;
+}
+
+@media screen and (min-width: 48em) {
+    .container{
+        padding-inline: 2.5rem;
+    }
+    .hamburger{
+        display: none;
+    }
 }
