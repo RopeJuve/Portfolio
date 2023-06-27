@@ -18,7 +18,7 @@
    --fs5: clamp(1.25rem, 3vw, 2.25rem);
    --font-text: 'Noto Sans';
 
-   --section-margin: clamp(3rem, 10vw, 9.375rem)
+   --section-margin: clamp(3rem, 6vw, 4rem)
  }
 
 

@@ -9,11 +9,11 @@ const NavBar = () => {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <Logo className={styles.logo} />
-        <NavMenuLinks />
+        <NavMenuLinks className="nav-links" />
         <FontAwesomeIcon
-        className={styles.hamburger}
-        icon={faBars}
-        style={{ width: "25px", height: "25px", color: "#264653" }}
+          className={styles.hamburger}
+          icon={faBars}
+          style={{ width: "25px", height: "25px", color: "#264653" }}
         />
       </div>
     </div>

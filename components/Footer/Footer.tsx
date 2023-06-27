@@ -9,7 +9,7 @@ const Footer = () => {
       <div className={styles.wrapper}>
         <Logo className={styles.logo} />
         <div className={styles.socialLinks}>
-          <NavMenuLinks />
+          <NavMenuLinks className="nav-footer" />
           <Social />
         </div>
         <div className={styles.footerTitle}>

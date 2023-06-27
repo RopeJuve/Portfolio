@@ -2,6 +2,14 @@
     display: none;
 }
 
+.navFooter {
+    max-width: 31.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
 @media screen and (min-width: 48em) {
     .linksWrapper {
         max-width: 31.25rem;

@@ -1,5 +1,6 @@
 .container {
     margin-top: var(--section-margin);
+    padding: 1rem 0;
     background-color: var(--frame-color);
 }
 
@@ -42,5 +43,12 @@
     .skillsList{
         padding-inline: 2.5rem;
         grid-template-columns: repeat(6,1fr);
+    }
+}
+
+
+@media screen and (min-width: 77.5em){
+    .skillsList{
+        padding-inline: 0;
     }
 }

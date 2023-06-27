@@ -67,3 +67,10 @@
         text-align: left !important;
     }
 }
+
+
+@media screen and (min-width: 77.5em){
+    .container{
+        padding-inline: 0;
+    }
+}

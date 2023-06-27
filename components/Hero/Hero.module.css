@@ -70,3 +70,10 @@
         gap: 0;
     }
 }
+
+@media screen and (min-width: 77.5em){
+    .container{
+        padding-inline: 0;
+        gap: 4rem;
+    }
+}
