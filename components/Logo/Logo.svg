@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 500 500">
-<g stroke-width="2.00" fill="none" stroke-linecap="butt">
+<g stroke-width="2.00" fill="currentColor" stroke-linecap="butt">
 <path stroke="#132329" vector-effect="non-scaling-stroke" d="
   M 235.75 458.96
   L 235.75 458.29"
 />
-<path stroke="#285566" vector-effect="non-scaling-stroke" d="
+<path stroke="currentColor" vector-effect="non-scaling-stroke" d="
   M 441.87 251.80
   Q 443.62 246.81 443.42 240.25
   Q 443.23 233.75 441.93 229.19"
 />
 </g>
-<path fill="#254652" d="
+<path fill="currentColor" d="
   M 235.75 458.96
   L 235.75 458.29
   C 246.74 458.60 257.93 459.06 268.93 457.68
@@ -84,7 +84,7 @@
   C 361.61 428.00 362.40 427.75 362.72 427.55
   Z"
 />
-<path fill="#174974" d="
+<path fill="currentColor" d="
   M 303.6661 250.3590
   A 12.94 12.94 0.0 0 1 290.6810 263.2538
   L 208.1015 262.9655
@@ -118,7 +118,7 @@
   Q 198.06 255.81 202.45 259.07
   Z"
 />
-<path fill="#174974" d="
+<path fill="currentColor" d="
   M 249.54 167.20
   A 4.78 4.78 0.0 0 1 244.76 171.98
   L 209.02 171.98
@@ -140,7 +140,7 @@
   L 247.52 166.33
   Z"
 />
-<path fill="#174974" d="
+<path fill="currentColor" d="
   M 267.05 166.55
   A 5.13 5.13 0.0 0 1 261.92 171.68
   A 5.13 5.13 0.0 0 1 256.79 166.55
@@ -154,7 +154,7 @@
   A 3.02 3.02 0.0 0 0 264.97 166.67
   Z"
 />
-<path fill="#174974" d="
+<path fill="currentColor" d="
   M 280.63 166.58
   A 5.19 5.19 0.0 0 1 275.44 171.77
   A 5.19 5.19 0.0 0 1 270.25 166.58
@@ -168,7 +168,7 @@
   A 2.96 2.96 0.0 0 0 278.40 166.69
   Z"
 />
-<path fill="#174974" d="
+<path fill="currentColor" d="
   M 294.09 166.58
   A 5.16 5.16 0.0 0 1 288.93 171.74
   A 5.16 5.16 0.0 0 1 283.77 166.58
@@ -182,7 +182,7 @@
   A 2.87 2.87 0.0 0 0 291.83 166.62
   Z"
 />
-<path fill="#254652" d="
+<path fill="currentColor" d="
   M 233.66 235.78
   C 235.36 236.23 241.99 236.02 241.03 238.93
   A 1.01 1.00 -84.6 0 1 240.23 239.60
@@ -210,7 +210,7 @@
   A 1.00 0.99 6.9 0 0 233.66 235.78
   Z"
 />
-<path fill="#1c4b5d" d="
+<path fill="currentColor" d="
   M 272.28 216.62
   L 269.96 213.55
   A 0.97 0.94 -65.1 0 1 269.75 212.95
@@ -240,14 +240,14 @@
   A 1.00 0.99 -41.3 0 0 272.28 216.62
   Z"
 />
-<path fill="#2a6479" d="
+<path fill="currentColor" d="
   M 441.93 229.19
   Q 443.23 233.75 443.42 240.25
   Q 443.62 246.81 441.87 251.80
   Q 439.97 240.46 441.93 229.19
   Z"
 />
-<path fill="#254652" d="
+<path fill="currentColor" d="
   M 332.11 331.14
   L 330.70 339.68
   A 1.02 1.02 0.0 0 1 329.40 340.50
@@ -275,7 +275,7 @@
   L 333.95 321.76
   Z"
 />
-<path fill="#254652" d="
+<path fill="currentColor" d="
   M 123.77 319.76
   L 123.74 337.55
   A 1.00 1.00 0.0 0 1 122.67 338.55
@@ -303,7 +303,7 @@
   A 1.00 1.00 0.0 0 0 124.16 307.58
   Z"
 />
-<path fill="#254652" d="
+<path fill="currentColor" d="
   M 158.30 314.95
   C 157.18 314.30 149.95 310.19 149.70 309.51
   C 145.66 298.58 154.87 287.19 166.15 292.95
@@ -319,7 +319,7 @@
   C 163.66 334.94 167.60 320.37 158.30 314.95
   Z"
 />
-<path fill="#254652" d="
+<path fill="currentColor" d="
   M 299.87 340.14
   A 0.99 0.99 0.0 0 1 298.90 339.13
   L 299.55 294.46
@@ -335,7 +335,7 @@
   L 299.87 340.14
   Z"
 />
-<path fill="#254652" d="
+<path fill="currentColor" d="
   M 249.25 302.72
   L 249.25 315.18
   A 0.72 0.72 0.0 0 0 250.01 315.90
@@ -363,7 +363,7 @@
   A 0.72 0.72 0.0 0 0 249.25 302.72
   Z"
 />
-<path fill="#254652" d="
+<path fill="currentColor" d="
   M 269.38 341.79
   A 1.00 0.99 -83.6 0 1 268.65 340.87
   L 266.94 297.34
@@ -388,7 +388,7 @@
   Q 282.54 323.19 277.79 319.60
   Z"
 />
-<path fill="#254652" d="
+<path fill="currentColor" d="
   M 360.55 341.77
   A 1.00 1.00 0.0 0 1 359.83 340.85
   L 358.00 297.26
@@ -412,7 +412,7 @@
   A 1.00 1.00 0.0 0 0 369.17 334.06
   Z"
 />
-<path fill="#254652" d="
+<path fill="currentColor" d="
   M 225.24 323.51
   L 227.42 298.75
   A 1.00 0.99 -2.6 0 1 228.25 297.85
@@ -442,7 +442,7 @@
   A 0.53 0.51 -14.1 0 0 225.24 323.51
   Z"
 />
-<path fill="#000000" d="
+<path fill="currentColor" d="
   M 202.78 455.10
   C 151.66 443.96 106.09 410.64 77.03 367.50
   Q 68.45 354.76 61.18 341.21
@@ -453,8 +453,8 @@
   Q 203.88 455.34 202.78 455.10
   Z"
 />
-<ellipse fill="#2a6479" cx="0.00" cy="0.00" transform="translate(377.11,394.37) rotate(-43.5)" rx="4.45" ry="0.62"/>
-<path fill="#000000" d="
+<ellipse fill="currentColor" cx="0.00" cy="0.00" transform="translate(377.11,394.37) rotate(-43.5)" rx="4.45" ry="0.62"/>
+<path fill="currentColor" d="
   M 125.54 410.01
   Q 123.82 408.70 125.43 408.67
   A 1.00 1.00 0.0 0 1 126.06 408.87
@@ -464,8 +464,8 @@
   C 149.31 425.67 136.98 418.72 125.54 410.01
   Z"
 />
-<ellipse fill="#4d2649" cx="0.00" cy="0.00" transform="translate(318.38,430.66) rotate(8.6)" rx="1.11" ry="0.61"/>
-<path fill="#000000" d="
+<ellipse fill="currentColor" cx="0.00" cy="0.00" transform="translate(318.38,430.66) rotate(8.6)" rx="1.11" ry="0.61"/>
+<path fill="currentColor" d="
   M 168.38 436.38
   Q 168.58 436.30 168.77 436.20
   C 172.78 434.24 170.17 439.83 167.78 437.51
@@ -476,9 +476,9 @@
   A 1.00 0.99 67.1 0 0 168.38 436.38
   Z"
 />
-<rect fill="#000000" x="-5.56" y="-0.54" transform="translate(177.33,439.33) rotate(19.1)" width="11.12" height="1.08" rx="0.48"/>
-<ellipse fill="#000000" cx="0.00" cy="0.00" transform="translate(195.72,445.51) rotate(17.1)" rx="9.52" ry="0.73"/>
-<path fill="#4d2649" d="
+<rect fill="currentColor" x="-5.56" y="-0.54" transform="translate(177.33,439.33) rotate(19.1)" width="11.12" height="1.08" rx="0.48"/>
+<ellipse fill="currentColor" cx="0.00" cy="0.00" transform="translate(195.72,445.51) rotate(17.1)" rx="9.52" ry="0.73"/>
+<path fill="currentColor" d="
   M 284.45 453.53
   C 283.56 453.65 283.54 452.93 284.28 452.75
   C 296.63 449.74 307.25 447.67 320.44 442.35
@@ -486,9 +486,9 @@
   Q 303.35 450.92 284.45 453.53
   Z"
 />
-<ellipse fill="#000000" cx="0.00" cy="0.00" transform="translate(208.67,448.78) rotate(11.0)" rx="2.42" ry="0.36"/>
-<ellipse fill="#000000" cx="0.00" cy="0.00" transform="translate(216.31,450.01) rotate(9.4)" rx="3.15" ry="0.86"/>
-<path fill="#000000" d="
+<ellipse fill="currentColor" cx="0.00" cy="0.00" transform="translate(208.67,448.78) rotate(11.0)" rx="2.42" ry="0.36"/>
+<ellipse fill="currentColor" cx="0.00" cy="0.00" transform="translate(216.31,450.01) rotate(9.4)" rx="3.15" ry="0.86"/>
+<path fill="currentColor" d="
   M 276.26 453.82
   C 276.85 453.74 280.96 453.55 280.56 454.50
   A 0.64 0.63 -79.2 0 1 279.99 454.89
@@ -499,7 +499,7 @@
   Q 258.55 456.06 276.26 453.82
   Z"
 />
-<path fill="#000000" d="
+<path fill="currentColor" d="
   M 235.75 458.29
   L 235.75 458.96
   Q 227.04 458.54 218.44 457.04

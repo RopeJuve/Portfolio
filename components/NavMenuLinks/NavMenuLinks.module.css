@@ -1,5 +1,6 @@
 .linksWrapper {
     display: none;
+    transition: all 0.3 ease-in-out;
 }
 
 .navFooter {
@@ -10,6 +11,42 @@
     gap: 1.5rem;
 }
 
+
+.linksWrapper>a::after,
+.navFooter>a::after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    right: 50%;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+
+}
+
+.linksWrapper>a::before,
+.navFooter>a::before {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.linksWrapper>a:hover::after,
+.navFooter>a:hover::after {
+    width: 50%;
+}
+
+.linksWrapper>a:hover::before,
+.navFooter>a:hover::before {
+    width: 50%;
+}
+
 @media screen and (min-width: 48em) {
     .linksWrapper {
         max-width: 31.25rem;
@@ -18,4 +55,5 @@
         align-items: center;
         gap: 2.5rem;
     }
+
 }

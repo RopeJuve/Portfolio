@@ -16,6 +16,11 @@
     width: 6.25rem;
     height: 6.25rem;
     color: var(--primary-color);
+    cursor: pointer;
+}
+
+.logo:hover{
+    transform: scale(1.1);
 }
 
 .hamburger {
