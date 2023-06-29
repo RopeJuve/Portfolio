@@ -14,26 +14,11 @@
     margin-bottom: 1.5rem;
 }
 
-.name {
-    background: linear-gradient(90deg, #E9C46A 39.12%, #2A9D8F 61.62%);
-    font-weight: 900;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.sName {
-    background: linear-gradient(90deg, #E9C46A 46.82%, #2A9D8F 96.69%);
-    font-weight: 900;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-}
-.cta{
+.cta {
     max-width: 18rem;
 }
 
-.btnWrapper{
+.btnWrapper {
     display: flex;
     gap: 1rem;
     /* justify-content: space-between; */
@@ -61,18 +46,18 @@
         margin-bottom: 0;
     }
 
-    .cta{
+    .cta {
         max-width: 21rem;
     }
-    
-    .btnWrapper{
+
+    .btnWrapper {
         justify-content: space-between;
         gap: 0;
     }
 }
 
-@media screen and (min-width: 77.5em){
-    .container{
+@media screen and (min-width: 77.5em) {
+    .container {
         padding-inline: 0;
         gap: 4rem;
     }

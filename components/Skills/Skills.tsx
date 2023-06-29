@@ -1,36 +1,30 @@
 import styles from "./Skills.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHtml5,
-  faJsSquare,
-  faSass,
-  faReact,
-  faGitAlt,
-} from "@fortawesome/free-brands-svg-icons";
 import { NextJs } from "../NextIcon";
 import Skill from "../Skill/Skill";
+import { SkillProps } from "@/types";
 
-const Skills = () => {
+const Skills = ({ title, skills }: SkillProps) => {
   return (
     <div className={styles.container}>
-      <h3>Skills</h3>
+      <h3>{title}</h3>
       <div className={styles.skillsList}>
-        <Skill variant='skills' title="html">
-          <FontAwesomeIcon className={styles.skillsIcons} icon={faHtml5} />
-        </Skill>
-        <Skill variant='skills' title="java script">
-          <FontAwesomeIcon className={styles.skillsIcons} icon={faJsSquare} />
-        </Skill>
-        <Skill variant='skills' title="sass">
-          <FontAwesomeIcon className={styles.skillsIcons} icon={faSass} />
-        </Skill>
-        <Skill variant='skills' title="react">
-          <FontAwesomeIcon className={styles.skillsIcons} icon={faReact} />
-        </Skill>
-        <Skill variant='skills' title="git">
-          <FontAwesomeIcon className={styles.skillsIcons} icon={faGitAlt} />
-        </Skill>
-        <NextJs className={styles.nextIcon} />
+        {skills.map((skill, index) =>
+          skill.skillName !== "next" ? (
+            <Skill
+              key={`${index}-${skill.skillName}`}
+              variant="skills"
+              title={skill.skillName}
+            >
+              <FontAwesomeIcon
+                className={styles.skillsIcons}
+                icon={skill.skillIcon}
+              />
+            </Skill>
+          ) : (
+            <NextJs className={styles.nextIcon} />
+          )
+        )}
       </div>
     </div>
   );

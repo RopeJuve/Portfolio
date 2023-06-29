@@ -1,14 +1,16 @@
-const data = {
-  header: "Hallo,I'm Robert Shterjov Frontend Web Developer",
+import { faGitAlt, faHtml5, faJsSquare, faReact, faSass } from "@fortawesome/free-brands-svg-icons";
+
+export const data = {
+  header: "Hallo, I'm Robert Shterjov Frontend Web Developer",
   subtitle: "Transforming Ideas into Beautifully Responsive Websites",
   profileImg: "./images/profile1.png",
   skills: [
-    { skillIcon: "", skillName: "html" },
-    { skillIcon: "", skillName: "java script" },
-    { skillIcon: "", skillName: "sass" },
-    { skillIcon: "", skillName: "react" },
-    { skillIcon: "", skillName: "git" },
-    { skillIcon: "", skillName: "next" },
+    { skillIcon: faHtml5, skillName: "html" },
+    { skillIcon: faJsSquare , skillName: "java script" },
+    { skillIcon: faSass , skillName: "sass" },
+    { skillIcon: faReact , skillName: "react" },
+    { skillIcon: faGitAlt , skillName: "git" },
+    { skillIcon: faHtml5, skillName: "next" },
   ],
 
   aboutMe: [

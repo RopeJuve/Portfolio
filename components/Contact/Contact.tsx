@@ -1,22 +1,13 @@
+import { ContactProps } from "@/types";
 import Button from "../Button/Button";
 import styles from "./Contact.module.css";
 
-const Contact = () => {
+const Contact = ({ title, contactMe }: ContactProps) => {
   return (
     <div className={styles.container}>
-      <h3>contact me</h3>
+      <h3>{title}</h3>
       <div className={styles.contactText}>
-        <p>
-          Get in touch with me to discuss your project, ask any questions, or
-          simply say hello. I'm here and eager to connect! Whether you have a
-          web development project in mind, need assistance with frontend design,
-          or have inquiries about my services, feel free to reach out using the
-          contact information provided below. I value open communication and
-          prompt responses, so rest assured that I'll get back to you as soon as
-          possible. Let's collaborate and bring your ideas to life. I look
-          forward to hearing from you and being a part of your web development
-          journey!
-        </p>
+        <p>{contactMe}</p>
       </div>
       <form className={styles.formGroup}>
         <div className={styles.nameField}>
