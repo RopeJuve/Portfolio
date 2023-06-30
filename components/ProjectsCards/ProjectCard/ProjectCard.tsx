@@ -1,18 +1,18 @@
-import Image from "next/image";
 import styles from "./ProjectCard.module.css";
-import laptop from "@/public/images/Laptop.png";
 import Button from "@/components/Button/Button";
 import Skill from "@/components/Skill/Skill";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faJsSquare,
-  faReact,
-  faSass,
-} from "@fortawesome/free-brands-svg-icons";
 import { ReduxIcon } from "@/components/ReduxIcon";
 import classNames from "classnames";
+import { Project } from "@/types";
 
-const ProjectCard = ({ variant }: { variant: string }) => {
+const ProjectCard = ({
+  variant,
+  project,
+}: {
+  variant: string;
+  project: Project;
+}) => {
   const contentClass = classNames([styles.content], {
     [styles.reverse]: variant === "reverse",
     [styles.notReverse]: variant === "",
@@ -32,30 +32,34 @@ const ProjectCard = ({ variant }: { variant: string }) => {
   });
   return (
     <div className={containerClass}>
-      <Image src={laptop} alt="laptop" />
+      <img src={project.projectImg} alt="laptop" />
       <div className={contentClass}>
-        <h5>Audiophile e-commerce website</h5>
-        <p>
-          Multi-page Figma conversion made using a Frontend Mentor design files.
-          Responsive across devices.
-        </p>
-        <h5>Made with</h5>
+        <h5>{project.projectName}</h5>
+        <p>{project.description}</p>
+        <h5>{project.techTitle}</h5>
         <div className={techClass}>
-          <Skill variant="madeWith" title="react">
-            <FontAwesomeIcon className={styles.madeWithIcon} icon={faReact} />
-          </Skill>
-          <Skill variant="madeWith" title="java script">
-            <FontAwesomeIcon
-              className={styles.madeWithIcon}
-              icon={faJsSquare}
-            />
-          </Skill>
-          <Skill variant="madeWith" title="sass">
-            <FontAwesomeIcon className={styles.madeWithIcon} icon={faSass} />
-          </Skill>
-          <Skill variant="madeWith" title="redux">
-            <ReduxIcon className={styles.redux} />
-          </Skill>
+          {project.techNames.map((tech, index) =>
+            tech.skillName !== "Redux" ? (
+              <Skill
+                key={`${index}-${tech.skillName}`}
+                variant="madeWith"
+                title={tech.skillName}
+              >
+                <FontAwesomeIcon
+                  className={styles.madeWithIcon}
+                  icon={tech.skillIcon}
+                />
+              </Skill>
+            ) : (
+              <Skill
+                key={`${index}-${tech.skillName}`}
+                variant="madeWith"
+                title="Redux"
+              >
+                <ReduxIcon className={styles.redux} />
+              </Skill>
+            )
+          )}
         </div>
         <div className={ctaClass}>
           <Button text="live site" variant="primary" />

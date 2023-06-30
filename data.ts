@@ -20,15 +20,28 @@ export const data = {
   ],
   projects: [
     {
-      title: "AUDIOPHILE E-COMMERCE WEBSITE",
+      projectName: "AUDIOPHILE E-COMMERCE WEBSITE",
       description:
         "Multi-page Figma conversion made using a Frontend Mentor design files. Responsive across devices.",
       techTitle: "MADE WITH",
-      tech: [
-        { techIcon: "", techName: "React" },
-        { techIcon: "", techName: "Java Script" },
-        { techIcon: "", techName: "Sass" },
-        { techIcon: "", techName: "Redux" },
+      techNames: [
+        { skillIcon: faReact, skillName: "React" },
+        { skillIcon: faJsSquare, skillName: "Java Script" },
+        { skillIcon: faSass, skillName: "Sass" },
+        { skillIcon: faHtml5, skillName: "Redux" },
+      ],
+      projectImg: "./images/Laptop.png"
+    },
+    {
+      projectName: "AUDIOPHILE E-COMMERCE WEBSITE",
+      description:
+        "Multi-page Figma conversion made using a Frontend Mentor design files. Responsive across devices.",
+      techTitle: "MADE WITH",
+      techNames: [
+        { skillIcon: faReact, skillName: "React" },
+        { skillIcon: faJsSquare, skillName: "Java Script" },
+        { skillIcon: faSass, skillName: "Sass" },
+        { skillIcon: faHtml5, skillName: "Redux" },
       ],
       projectImg: "./images/Laptop.png"
     },

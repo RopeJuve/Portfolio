@@ -4,7 +4,7 @@ import styles from "./Contact.module.css";
 
 const Contact = ({ title, contactMe }: ContactProps) => {
   return (
-    <div className={styles.container}>
+    <div id="contact" className={styles.container}>
       <h3>{title}</h3>
       <div className={styles.contactText}>
         <p>{contactMe}</p>

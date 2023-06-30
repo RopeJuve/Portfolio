@@ -13,16 +13,15 @@ export default function Home() {
     skills,
     aboutMe,
     projects,
-    footerName,
     contactMe,
   } = data;
   return (
     <div>
       <Hero title={header} subTitle={subtitle} profileImage={profileImg} />
-      <Skills title='skills' skills={skills} />
-      <About  title='about me' aboutMe={aboutMe}/>
-      <ProjectsCards />
-      <Contact title='contact me' contactMe={contactMe} />
+      <Skills title="skills" skills={skills} />
+      <About title="about me" aboutMe={aboutMe} />
+      <ProjectsCards title='projects' projects={projects}/>
+      <Contact title="contact me" contactMe={contactMe} />
     </div>
   );
 }

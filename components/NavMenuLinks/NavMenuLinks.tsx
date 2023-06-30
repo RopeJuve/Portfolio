@@ -10,7 +10,7 @@ const NavMenuLinks = ({ className }: { className: string }) => {
   return (
     <div className={linksClass}>
       {["home", "about me", "projects", "contact"].map((menuItem, i) => (
-        <Link key={i} href={`#${menuItem}`}>
+        <Link key={`${i}-${menuItem}`} href={`#${menuItem}`}>
           {menuItem}
         </Link>
       ))}
