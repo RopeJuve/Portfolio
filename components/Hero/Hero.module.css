@@ -20,16 +20,9 @@
 
 .btnWrapper {
     display: flex;
-    gap: 1rem;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
 }
-
-
-/* .imgContainer{
-   /*  background-color: var(--bg-color);
-    mix-blend-mode: luminosity;
-}*/
 .imgContainer {
     align-self: center;
     width: 100%;
