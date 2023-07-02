@@ -1,4 +1,4 @@
-import { faGitAlt, faHtml5, faJsSquare, faReact, faSass } from "@fortawesome/free-brands-svg-icons";
+import { faGitAlt, faHtml5, faJsSquare, faReact, faSass, faCss3Alt } from "@fortawesome/free-brands-svg-icons";
 
 export const data = {
   header: "Hallo, I'm Robert Shterjov Frontend Web Developer",
@@ -6,10 +6,10 @@ export const data = {
   profileImg: "./images/profile1.png",
   skills: [
     { skillIcon: faHtml5, skillName: "html" },
-    { skillIcon: faJsSquare , skillName: "java script" },
-    { skillIcon: faSass , skillName: "sass" },
-    { skillIcon: faReact , skillName: "react" },
-    { skillIcon: faGitAlt , skillName: "git" },
+    { skillIcon: faJsSquare, skillName: "java script" },
+    { skillIcon: faSass, skillName: "sass" },
+    { skillIcon: faReact, skillName: "react" },
+    { skillIcon: faGitAlt, skillName: "git" },
     { skillIcon: faHtml5, skillName: "next" },
   ],
 
@@ -30,20 +30,51 @@ export const data = {
         { skillIcon: faSass, skillName: "Sass" },
         { skillIcon: faHtml5, skillName: "Redux" },
       ],
-      projectImg: "./images/Laptop.png"
+      projectImg: "./images/Laptop.png",
+      gitHubLink: 'https://github.com/RopeJuve/audiophile-e-commerce-website.git',
+      siteLink:''
     },
     {
-      projectName: "AUDIOPHILE E-COMMERCE WEBSITE",
+      projectName: "Yoga E-COMMERCE WEBSITE",
       description:
-        "Multi-page Figma conversion made using a Frontend Mentor design files. Responsive across devices.",
+        "Landing page for Yoga Course. Figma conversion made using UIHUT design files. Responsive across devices.",
       techTitle: "MADE WITH",
       techNames: [
         { skillIcon: faReact, skillName: "React" },
         { skillIcon: faJsSquare, skillName: "Java Script" },
-        { skillIcon: faSass, skillName: "Sass" },
-        { skillIcon: faHtml5, skillName: "Redux" },
+        { skillIcon: faCss3Alt, skillName: "css" },
       ],
-      projectImg: "./images/Laptop.png"
+      projectImg: "./images/yoga.png",
+      gitHubLink: 'https://github.com/RopeJuve/YogaCourse.git',
+      siteLink:'https://yoga-course.netlify.app/'
+    },
+    {
+      projectName: "Space Tourism WEBSITE",
+      description:
+        "Figma conversion made using a Frontend Mentor design files. Responsive across devices.",
+      techTitle: "MADE WITH",
+      techNames: [
+        { skillIcon: faReact, skillName: "React" },
+        { skillIcon: faJsSquare, skillName: "Java Script" },
+        { skillIcon: faCss3Alt, skillName: "css" },
+      ],
+      projectImg: "./images/space.png",
+      gitHubLink: 'https://github.com/RopeJuve/space-tourism.git',
+      siteLink:'https://space-tourism-vite-react.netlify.app/'
+    },
+    {
+      projectName: "Single product Page",
+      description:
+        "Product-page Figma conversion made using a Frontend Mentor design files. Responsive across devices.",
+      techTitle: "MADE WITH",
+      techNames: [
+        { skillIcon: faReact, skillName: "React" },
+        { skillIcon: faJsSquare, skillName: "Java Script" },
+        { skillIcon: faCss3Alt, skillName: "css" },
+      ],
+      projectImg: "./images/productPage.png",
+      gitHubLink: 'https://github.com/RopeJuve/product-page.git',
+      siteLink:'https://e-commerce-product-page-challenge.netlify.app/'
     },
   ],
 

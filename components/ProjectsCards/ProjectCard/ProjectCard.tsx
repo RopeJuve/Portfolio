@@ -62,8 +62,8 @@ const ProjectCard = ({
           )}
         </div>
         <div className={ctaClass}>
-          <Button text="live site" variant="primary" />
-          <Button text="git hub" variant="secondary" />
+          <Button text="live site" variant="primaryLink" href={project.siteLink} />
+          <Button text="git hub" variant="secondaryLink" href={project.gitHubLink} />
         </div>
       </div>
     </div>

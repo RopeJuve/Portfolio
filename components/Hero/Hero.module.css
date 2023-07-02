@@ -15,13 +15,13 @@
 }
 
 .cta {
-    max-width: 18rem;
+    max-width: 19rem;
 }
 
 .btnWrapper {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 }
 .imgContainer {
     align-self: center;
@@ -40,13 +40,13 @@
     }
 
     .cta {
-        max-width: 21rem;
+        max-width: 22rem;
     }
 
-    .btnWrapper {
+    /* .btnWrapper {
         justify-content: space-between;
         gap: 0;
-    }
+    } */
 }
 
 @media screen and (min-width: 77.5em) {

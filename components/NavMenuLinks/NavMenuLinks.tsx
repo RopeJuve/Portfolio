@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import styles from "./NavMenuLinks.module.css";
 import classNames from "classnames";
 
@@ -10,9 +10,9 @@ const NavMenuLinks = ({ className }: { className: string }) => {
   return (
     <div className={linksClass}>
       {["home", "about me", "projects", "contact"].map((menuItem, i) => (
-        <Link key={`${i}-${menuItem}`} href={`#${menuItem}`}>
+        <a key={`${i}-${menuItem}`} href={`#${menuItem}`}>
           {menuItem}
-        </Link>
+        </a>
       ))}
     </div>
   );

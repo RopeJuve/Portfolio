@@ -1,26 +1,18 @@
 .btn {
-    position: relative;
     cursor: pointer;
-    padding: 0.5rem 1rem;
-    color: var(--bg-color);
+    padding: 0.5rem 0.8rem;
     border: none;
     border-radius: 2.5rem;
-    text-transform: uppercase;
-    font-family: var(--font-header);
-    font-size: var(--fs3);
-    font-weight: 700;
-    line-height: 120%;
-    letter-spacing: 0.0625em;
     border: 1px solid var(--primary-color);
     box-shadow: 3px 3px var(--primary-color);
     transition: box-shadow 0.3s ease-in-out,
         transform 0.3s ease-in-out;
-    overflow-x: hidden;
 }
-
+.btn > a{
+    color: var(--bg-color);
+}
 .primary {
     background-color: var(--accent-color);
-    z-index: 1;
 }
 
 
@@ -32,7 +24,6 @@
 
 .secondary {
     background-color: var(--secondary-color);
-    z-index: 1;
 }
 
 

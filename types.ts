@@ -12,6 +12,8 @@ export interface Project {
     techTitle: string;
     techNames: Skill[];
     projectImg: string;
+    gitHubLink: string;
+    siteLink: string;
 }
 
 export interface HeaderProps {
