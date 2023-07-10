@@ -1,6 +1,5 @@
 .linksWrapper {
     display: none;
-    transition: all 0.3 ease-in-out;
 }
 
 .navFooter {
@@ -8,8 +7,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex: 1;
 }
 
+.navMenu{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 0 auto;
+}
 
 .linksWrapper>a::after,
 .navFooter>a::after {

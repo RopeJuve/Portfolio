@@ -2,7 +2,7 @@ import { ComponentPropsWithoutRef } from "react";
 import styles from "./Button.module.css";
 import classNames from "classnames";
 
-interface ButtonCustomProps extends ComponentPropsWithoutRef<"button"> {
+interface ButtonCustomProps extends ComponentPropsWithoutRef<"a"> {
   text: string;
   variant: string;
   href?: string;
@@ -15,22 +15,22 @@ const Button = ({ text, variant, href, ...props }: ButtonCustomProps) => {
   });
 
   return (
-    <button className={btnClasses} {...props}>
-      <a
-        href={
-          variant === "primary" || variant === "secondary"
-            ? `#${href}`
-            : `${href}`
-        }
-        target={
-          variant === "primaryLink" || variant === "secondaryLink"
-            ? "_blank"
-            : "_self"
-        }
-      >
-        {text}
-      </a>
-    </button>
+    <a
+      className={btnClasses}
+      {...props}
+      href={
+        variant === "primary" || variant === "secondary"
+          ? `#${href}`
+          : `${href}`
+      }
+      target={
+        variant === "primaryLink" || variant === "secondaryLink"
+          ? "_blank"
+          : "_self"
+      }
+    >
+      {text}
+    </a>
   );
 };
 

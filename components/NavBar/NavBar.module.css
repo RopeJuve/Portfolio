@@ -1,7 +1,9 @@
 .container {
+    position: relative;
     padding-inline: 1.5rem;
     background-color: var(--frame-color);
     width: 100%;
+    z-index: 1000;
 }
 
 .wrapper {
