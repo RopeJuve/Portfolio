@@ -9,6 +9,7 @@
 
 .socialIcons {
     width: 2.2rem;
+    height: 2.2rem;
     color: var(--accent-color);
     cursor: pointer;
     transition: all 0.3s ease-in-out;

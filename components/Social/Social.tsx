@@ -1,22 +1,24 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import styles from './Social.module.css'
-import { faLinkedin , faGithub, faWhatsappSquare, faTelegramPlane } from '@fortawesome/free-brands-svg-icons'
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "./Social.module.css";
+import { data } from "@/data";
 const Social = () => {
+  const { socialLinks } = data;
   return (
     <div className={styles.social}>
-            <FontAwesomeIcon icon={faGithub} className={styles.socialIcons} />
-            <FontAwesomeIcon icon={faLinkedin} className={styles.socialIcons} />
-            <FontAwesomeIcon
-              icon={faWhatsappSquare}
-              className={styles.socialIcons}
-            />
-            <FontAwesomeIcon
-              icon={faTelegramPlane}
-              className={styles.socialIcons}
-            />
-          </div>
-  )
-}
+      {socialLinks.map((link, index) => (
+        <a
+          key={`${link.socialIcon}-${index}`}
+          href={link.socialLink}
+          target="_blank"
+        >
+          <FontAwesomeIcon
+            icon={link.socialIcon}
+            className={styles.socialIcons}
+          />
+        </a>
+      ))}
+    </div>
+  );
+};
 
-export default Social
+export default Social;

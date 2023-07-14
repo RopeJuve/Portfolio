@@ -1,4 +1,16 @@
-import { faGitAlt, faHtml5, faJsSquare, faReact, faSass, faCss3Alt } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGitAlt,
+  faHtml5,
+  faJsSquare,
+  faReact,
+  faSass,
+  faCss3Alt,
+  faLinkedin,
+  faGithub,
+  faWhatsappSquare,
+  faTelegramPlane,
+} from "@fortawesome/free-brands-svg-icons";
+
 
 export const data = {
   header: "Hallo, I'm Robert Shterjov Frontend Web Developer",
@@ -12,7 +24,12 @@ export const data = {
     { skillIcon: faGitAlt, skillName: "git" },
     { skillIcon: faHtml5, skillName: "next" },
   ],
-
+  socialLinks: [
+    {socialIcon: faGithub, socialLink: 'https://github.com/RopeJuve' },
+    {socialIcon: faLinkedin, socialLink: 'https://www.linkedin.com/in/robert-shterjov/' },
+    {socialIcon: faWhatsappSquare, socialLink: 'https://wa.me/4917621955050' },
+    {socialIcon: faTelegramPlane, socialLink: 'https://t.me/RopeShterjov' }
+  ],
   aboutMe: [
     "Hello, I'm Robert Shterjov, a frontend developer based in Germany. I specialize in creating captivating user experiences through beautifully responsive websites using React. With expertise in React, CSS, and JavaScript, I stay up-to-date with the latest trends and technologies.",
     "Collaboration is key to my process. I work closely with clients and creative teams to bring their vision to life. Communication, attention to detail, and delivering high-quality results are my priorities.",
@@ -31,8 +48,9 @@ export const data = {
         { skillIcon: faHtml5, skillName: "Redux" },
       ],
       projectImg: "./images/Laptop.png",
-      gitHubLink: 'https://github.com/RopeJuve/audiophile-e-commerce-website.git',
-      siteLink:''
+      gitHubLink:
+        "https://github.com/RopeJuve/audiophile-e-commerce-website.git",
+      siteLink: "",
     },
     {
       projectName: "Yoga E-COMMERCE WEBSITE",
@@ -45,8 +63,8 @@ export const data = {
         { skillIcon: faCss3Alt, skillName: "css" },
       ],
       projectImg: "./images/yoga.png",
-      gitHubLink: 'https://github.com/RopeJuve/YogaCourse.git',
-      siteLink:'https://yoga-course.netlify.app/'
+      gitHubLink: "https://github.com/RopeJuve/YogaCourse.git",
+      siteLink: "https://yoga-course.netlify.app/",
     },
     {
       projectName: "Space Tourism WEBSITE",
@@ -59,8 +77,8 @@ export const data = {
         { skillIcon: faCss3Alt, skillName: "css" },
       ],
       projectImg: "./images/space.png",
-      gitHubLink: 'https://github.com/RopeJuve/space-tourism.git',
-      siteLink:'https://space-tourism-vite-react.netlify.app/'
+      gitHubLink: "https://github.com/RopeJuve/space-tourism.git",
+      siteLink: "https://space-tourism-vite-react.netlify.app/",
     },
     {
       projectName: "Single product Page",
@@ -73,8 +91,8 @@ export const data = {
         { skillIcon: faCss3Alt, skillName: "css" },
       ],
       projectImg: "./images/productPage.png",
-      gitHubLink: 'https://github.com/RopeJuve/product-page.git',
-      siteLink:'https://e-commerce-product-page-challenge.netlify.app/'
+      gitHubLink: "https://github.com/RopeJuve/product-page.git",
+      siteLink: "https://e-commerce-product-page-challenge.netlify.app/",
     },
   ],
 
