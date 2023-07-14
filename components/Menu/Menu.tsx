@@ -1,8 +1,9 @@
+import { MouseEventHandler } from "react";
 import NavMenuLinks from "../NavMenuLinks/NavMenuLinks";
 import styles from "./Menu.module.css";
 import classNames from "classnames";
 
-const Menu = ({ isOpen , handelOpen }: { isOpen: boolean, handelOpen: Function }) => {
+const Menu = ({ isOpen , handelOpen }: { isOpen: boolean, handelOpen: MouseEventHandler<HTMLDivElement> }) => {
   const menuClass = classNames([styles.container], {
     [styles.open]: isOpen,
   });
