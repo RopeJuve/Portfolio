@@ -6,21 +6,14 @@ import Skills from "@/components/Skills/Skills";
 import { data } from "@/data";
 
 export default function Home() {
-  const {
-    header,
-    subtitle,
-    profileImg,
-    skills,
-    aboutMe,
-    projects,
-    contactMe,
-  } = data;
+  const { header, subtitle, profileImg, skills, aboutMe, projects, contactMe } =
+    data;
   return (
     <div>
       <Hero title={header} subTitle={subtitle} profileImage={profileImg} />
       <Skills title="skills" skills={skills} />
+      <ProjectsCards title="projects" projects={projects} />
       <About title="about me" aboutMe={aboutMe} />
-      <ProjectsCards title='projects' projects={projects}/>
       <Contact title="contact me" contactMe={contactMe} />
     </div>
   );

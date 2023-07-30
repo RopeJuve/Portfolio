@@ -88,7 +88,7 @@
    text-align: center;
  }
 
- a {
+ a, button {
    position: relative;
    font-family: var(--font-header);
    font-size: var(--fs3);
@@ -107,4 +107,8 @@
    width: 100%;
    border: none;
    outline: none;
+   font-family: var(--font-text);
+   color: var(--primary-color);
+   font-size: 0.785rem;
+   font-weight: 700;
  }

@@ -1,5 +1,7 @@
 .container {
     margin-top: var(--section-margin);
+    background-color: var(--frame-color);
+    background-image: url(../../public/images/backgroundIMG.png);
     padding: 1rem 0;
 }
 
