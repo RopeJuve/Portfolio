@@ -1,5 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Roboto+Condensed:ital,wght@0,400;0,700;1,300&display=swap');
- @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Noto+Sans&family=Roboto+Condensed:ital,wght@0,400;0,700;1,300&display=swap');
+ 
 
  :root {
    --primary-color: #264653;
@@ -8,9 +7,6 @@
    --bg-color: #f4f1de;
    --text-color: #333333;
    --frame-color: #D8D4C0;
-
-   --font-header: 'Roboto Condensed';
-   --font-text: 'Noto Sans';
    --fs1: clamp(2.25rem, 5vw, 3.5rem);
    --fs2: clamp(1rem, 3vw, 2.25rem);
    --fs3: clamp(1rem, 3vw, 1.25rem);
@@ -111,4 +107,6 @@
    color: var(--primary-color);
    font-size: 0.785rem;
    font-weight: 700;
+   line-height: 120%;
+   letter-spacing: 0.1em;
  }

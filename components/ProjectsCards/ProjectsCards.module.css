@@ -1,7 +1,5 @@
 .container {
-   
     margin-top: var(--section-margin);
- 
     background-position: 0 0,0 0;
     background-size: auto,auto;
     padding: 1.5rem 1rem;

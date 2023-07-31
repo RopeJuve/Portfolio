@@ -37,6 +37,8 @@ const Contact = ({ title, contactMe }: ContactProps) => {
     }
   };
 
+
+
   const inputClassName = classNames(styles.inputField, {
     [styles.focus]: isFocusedName,
   });
@@ -87,7 +89,8 @@ const Contact = ({ title, contactMe }: ContactProps) => {
               type="text"
               name="user_name"
               onFocus={handelOnFocus}
-              onBlur={() => setIsFocusedName(false)}
+              onBlur={(e) => setIsFocusedName(e.target.value != "")}
+              required
             />
           </div>
           <div className={inputClassLastName}>
@@ -96,7 +99,8 @@ const Contact = ({ title, contactMe }: ContactProps) => {
               type="text"
               name="user_last_name"
               onFocus={handelOnFocus}
-              onBlur={() => setIsFocusedLastName(false)}
+              onBlur={(e) => setIsFocusedLastName(e.target.value != "")}
+              required
             />
           </div>
         </div>
@@ -106,7 +110,8 @@ const Contact = ({ title, contactMe }: ContactProps) => {
             type="email"
             name="user_email"
             onFocus={handelOnFocus}
-            onBlur={() => setIsFocusedEmail(false)}
+            onBlur={(e) => setIsFocusedEmail(e.target.value != "")}
+            required
           />
         </div>
         <div className={inputClassMessage}>
@@ -115,10 +120,10 @@ const Contact = ({ title, contactMe }: ContactProps) => {
             rows={6}
             name="message"
             onFocus={handelOnFocus}
-            onBlur={() => setIsFocusedMessage(false)}
+            onBlur={(e) => setIsFocusedMessage(e.target.value != "")}
+            required
           ></textarea>
         </div>
-
         <Button usedAs="button" variant="primary" text="Send Message" />
       </form>
     </div>
