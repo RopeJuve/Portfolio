@@ -14,7 +14,9 @@ const NavBar = () => {
     <>
       <div className={styles.container}>
         <div className={styles.wrapper}>
-          <Logo className={styles.logo} />
+          <a href={"/"}>
+            <Logo className={styles.logo} />
+          </a>
           <NavMenuLinks className="nav-links" />
           <FontAwesomeIcon
             className={styles.hamburger}
