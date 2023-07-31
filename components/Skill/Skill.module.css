@@ -6,7 +6,7 @@
 }
 
 .titleSkills {
-    font-family: 'Noto Sans';
+    font-family: var(--font-text);
     font-weight: 700;
     font-size: 1rem;
     line-height: 150%;
@@ -17,7 +17,7 @@
 }
 
 .titleMadeWith{
-    font-family: 'Noto Sans';
+    font-family: var(--font-text);
     font-weight: 700;
     font-size: 0.775rem;
     line-height: 150%;

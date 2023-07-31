@@ -37,8 +37,6 @@ const Contact = ({ title, contactMe }: ContactProps) => {
     }
   };
 
-
-
   const inputClassName = classNames(styles.inputField, {
     [styles.focus]: isFocusedName,
   });

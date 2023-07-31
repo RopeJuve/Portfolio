@@ -50,7 +50,7 @@ export const data = {
       projectImg: "./images/Laptop.png",
       gitHubLink:
         "https://github.com/RopeJuve/audiophile-e-commerce-website.git",
-      siteLink: "",
+      siteLink: "https://audiophile-rope.netlify.app/",
     },
     {
       projectName: "Yoga E-COMMERCE WEBSITE",

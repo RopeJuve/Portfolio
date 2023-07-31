@@ -1,7 +1,7 @@
 import NavBar from "@/components/NavBar/NavBar";
 import "./globals.css";
 import Footer from "@/components/Footer/Footer";
-import { Roboto_Condensed, Noto_Sans } from '@next/font/google'
+import { Roboto_Condensed, Noto_Sans } from "@next/font/google";
 
 export const metadata = {
   title: "Robert Shterjov",
@@ -9,16 +9,16 @@ export const metadata = {
 };
 
 const robotoCondensed = Roboto_Condensed({
-  weight: ['400','700'],
-  subsets: [ 'latin' ],
-  variable: '--font-header',
- })
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-header",
+});
 
- const notoSans = Noto_Sans({
-  weight: '400',
-  subsets: [ 'latin' ],
-  variable: '--font-text',
- })
+const notoSans = Noto_Sans({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-text",
+});
 
 export default function RootLayout({
   children,
