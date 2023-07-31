@@ -55,16 +55,20 @@ const Contact = ({ title, contactMe }: ContactProps) => {
     if (form.current)
       emailjs
         .sendForm(
-          "service_bxhbdpn",
-          "template_6038mwf",
+          process.env.NEXT_PUBLIC_SERVICE_ID as string,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
           form.current,
-          "nppCeuuCqsg-hyN76"
+          process.env.NEXT_PUBLIC_USER_ID as string
         )
         .then(
           (result) => {
             console.log(result.text);
             console.log("message send");
             form.current?.reset();
+            setIsFocusedName(false);
+            setIsFocusedLastName(false);
+            setIsFocusedEmail(false);
+            setIsFocusedMessage(false);
           },
           (error) => {
             console.log(error.text);

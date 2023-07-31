@@ -1,4 +1,3 @@
-
 import styles from "./NavMenuLinks.module.css";
 import classNames from "classnames";
 
@@ -6,7 +5,7 @@ const NavMenuLinks = ({ className }: { className: string }) => {
   const linksClass = classNames({
     [styles.linksWrapper]: className === "nav-links",
     [styles.navFooter]: className === "nav-footer",
-    [styles.navMenu]: className === "nav-menu"
+    [styles.navMenu]: className === "nav-menu",
   });
   return (
     <div className={linksClass}>

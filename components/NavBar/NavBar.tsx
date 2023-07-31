@@ -24,7 +24,7 @@ const NavBar = () => {
           />
         </div>
       </div>
-      {openMenu && <Menu isOpen={openMenu} handelOpen={handelOpen}/>}
+      <Menu isOpen={openMenu} handelOpen={handelOpen} />
     </>
   );
 };
