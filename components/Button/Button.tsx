@@ -47,6 +47,7 @@ const Button = ({
               ? "_blank"
               : "_self"
           }
+          download={variant === "secondaryLink"}
         >
           {text}
         </a>

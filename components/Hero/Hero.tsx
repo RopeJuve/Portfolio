@@ -11,8 +11,18 @@ const Hero = ({ title, subTitle, profileImage }: HeaderProps) => {
         <h2>{subTitle}</h2>
         <div className={styles.cta}>
           <div className={styles.btnWrapper}>
-            <Button usedAs="link" text="contact me" variant="primary" href="contact"/>
-            <Button usedAs="link" text="download cv" variant="secondary" />
+            <Button
+              usedAs="link"
+              text="contact me"
+              variant="primary"
+              href="contact"
+            />
+            <Button
+              usedAs="link"
+              text="download cv"
+              variant="secondaryLink"
+              href="./assets/Lebenslauf-RoberShterjov.pdf"
+            />
           </div>
           <Social />
         </div>
