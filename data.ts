@@ -38,7 +38,7 @@ export const data = {
   projects: [
     {
       projectName: "hacker news",
-      description: "Created During the WBS Coding School Bootcamp, the Hacker News Project was created. It's a React-based web app that displays the latest Tech News, styled with Tailwind CSS and fetching data from the Hacker News API. Users can browse top stories in a clean, responsive interface.",
+      description: "The Hacker News Project is a React-based web app that displays the latest Tech News, styled with Tailwind CSS and fetching data from the Hacker News API. Users can browse top stories in a clean, responsive interface.",
       techTitle: "MADE WITH",
       techNames: [
         { skillIcon: faReact, skillName: "React" },
@@ -54,7 +54,7 @@ export const data = {
     {
       projectName: "IP-TRACKER",
       description:
-        "Built at WBS Coding School Bootcamp, IP Tracker is a web app that provides detailed info about any IP address. Using React, Tailwind CSS, and React-Leaflet, it fetches IP and country data through APIs and displays the location on an interactive map.",
+        "IP Tracker is a web application that offers comprehensive information about any IP address. Utilizing React, Tailwind CSS, and React-Leaflet, it retrieves IP and country data from APIs and presents the location on an interactive map",
       techTitle: "MADE WITH",
       techNames: [
         { skillIcon: faReact, skillName: "React" },
