@@ -15,7 +15,7 @@ const Menu = ({
   });
 
   return (
-    <div className={menuClass} onClick={handelOpen}>
+    <div className={menuClass} onClick={handelOpen}>                         
       <div className={styles.menuLinksWrapper}>
         <NavMenuLinks className="nav-menu" />
       </div>

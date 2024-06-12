@@ -1,10 +1,11 @@
 import NavBar from "@/components/NavBar/NavBar";
+import Head from "next/head";
 import "./globals.css";
 import Footer from "@/components/Footer/Footer";
-import { Roboto_Condensed, Noto_Sans } from "@next/font/google";
+import { Roboto_Condensed, Noto_Sans } from "next/font/google";
 
 export const metadata = {
-  title: "Robert Shterjov",
+  title: "Robert Shterjov Frontend Developer",
   description: "Portfolio Web Site for my web dev journey",
 };
 
@@ -27,6 +28,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body className={`${robotoCondensed.variable} ${notoSans.variable}`}>
         <NavBar />
         {children}

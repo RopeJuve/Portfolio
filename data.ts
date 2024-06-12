@@ -25,10 +25,10 @@ export const data = {
     { skillIcon: faHtml5, skillName: "next" },
   ],
   socialLinks: [
-    {socialIcon: faGithub, socialLink: 'https://github.com/RopeJuve' },
-    {socialIcon: faLinkedin, socialLink: 'https://www.linkedin.com/in/robert-shterjov/' },
-    {socialIcon: faWhatsappSquare, socialLink: 'https://wa.me/4917621955050' },
-    {socialIcon: faTelegramPlane, socialLink: 'https://t.me/RopeShterjov' }
+    { socialIcon: faGithub, socialLink: 'https://github.com/RopeJuve' },
+    { socialIcon: faLinkedin, socialLink: 'https://www.linkedin.com/in/robert-shterjov/' },
+    { socialIcon: faWhatsappSquare, socialLink: 'https://wa.me/4917621955050' },
+    { socialIcon: faTelegramPlane, socialLink: 'https://t.me/RopeShterjov' }
   ],
   aboutMe: [
     "Hello, I'm Robert Shterjov, a frontend developer based in Germany. I specialize in creating captivating user experiences through beautifully responsive websites using React. With expertise in React, CSS, and JavaScript, I stay up-to-date with the latest trends and technologies.",
@@ -36,6 +36,37 @@ export const data = {
     "Let's work together to create a web experience that engages and inspires. Whether you need a stunning website or an interactive web application built with React, I'm here to turn your ideas into reality. Get in touch, and let's make something exceptional!",
   ],
   projects: [
+    {
+      projectName: "hacker news",
+      description: "Created During the WBS Coding School Bootcamp, the Hacker News Project was created. It's a React-based web app that displays the latest Tech News, styled with Tailwind CSS and fetching data from the Hacker News API. Users can browse top stories in a clean, responsive interface.",
+      techTitle: "MADE WITH",
+      techNames: [
+        { skillIcon: faReact, skillName: "React" },
+        { skillIcon: faJsSquare, skillName: "Java Script" },
+        { skillIcon: faCss3Alt, skillName: "Tailwind" },
+        { skillIcon: faCss3Alt, skillName: "API" }
+      ],
+      projectImg: "./images/hacker-news.png",
+      gitHubLink:
+        "https://github.com/RopeJuve/hacker-news.git",
+      siteLink: "https://hacker-news-wbs.netlify.app/",
+    },
+    {
+      projectName: "IP-TRACKER",
+      description:
+        "Built at WBS Coding School Bootcamp, IP Tracker is a web app that provides detailed info about any IP address. Using React, Tailwind CSS, and React-Leaflet, it fetches IP and country data through APIs and displays the location on an interactive map.",
+      techTitle: "MADE WITH",
+      techNames: [
+        { skillIcon: faReact, skillName: "React" },
+        { skillIcon: faJsSquare, skillName: "Java Script" },
+        { skillIcon: faCss3Alt, skillName: "Tailwind" },
+        { skillIcon: faCss3Alt, skillName: "API" }
+      ],
+      projectImg: "./images/ip-tracker.png",
+      gitHubLink:
+        "https://github.com/RopeJuve/ip-location.git",
+      siteLink: "https://ip-tracker-wbs.netlify.app/",
+    },
     {
       projectName: "AUDIOPHILE E-COMMERCE WEBSITE",
       description:

@@ -3,8 +3,10 @@ import Button from "@/components/Button/Button";
 import Skill from "@/components/Skill/Skill";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ReduxIcon } from "@/components/ReduxIcon";
+import { TailwindCSS } from "@/components/TailwindCSS";
 import classNames from "classnames";
 import { Project } from "@/types";
+import { ApiIcon } from "@/components/ApiIcon";
 
 const ProjectCard = ({
   variant,
@@ -32,14 +34,14 @@ const ProjectCard = ({
   });
   return (
     <div className={containerClass}>
-      <img src={project.projectImg} alt="laptop" />
+      <img src={project.projectImg} alt="project image" />
       <div className={contentClass}>
         <h5>{project.projectName}</h5>
         <p>{project.description}</p>
         <h5>{project.techTitle}</h5>
         <div className={techClass}>
           {project.techNames.map((tech, index) =>
-            tech.skillName !== "Redux" ? (
+            tech.skillName !== "Redux" && tech.skillName !== 'Tailwind' && tech.skillName !== 'API' ? (
               <Skill
                 key={`${index}-${tech.skillName}`}
                 variant="madeWith"
@@ -49,6 +51,21 @@ const ProjectCard = ({
                   className={styles.madeWithIcon}
                   icon={tech.skillIcon}
                 />
+              </Skill>
+            ) : tech.skillName === 'Tailwind' ? (
+              <Skill
+              key={`${index}-${tech.skillName}`}
+              variant="madeWith"
+              title="Tailwind CSS"
+            >
+              <TailwindCSS className={styles.redux} />
+            </Skill>
+            ) : tech.skillName === 'API' ? (
+              <Skill
+              key={`${index}-${tech.skillName}`}
+              variant="madeWith"
+              title="API">
+                <ApiIcon className={styles.redux} />
               </Skill>
             ) : (
               <Skill

@@ -1,0 +1,1 @@
+export { default as ApiIcon } from './ApiIcon.svg'
