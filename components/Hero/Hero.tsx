@@ -21,7 +21,7 @@ const Hero = ({ title, subTitle, profileImage }: HeaderProps) => {
               usedAs="link"
               text="download cv"
               variant="secondaryLink"
-              href="./assets/RobertShterjovCV.pdf"
+              href="./assets/RobertShterjovCV06.24.pdf"
             />
           </div>
           <Social />
