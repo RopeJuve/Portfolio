@@ -1,11 +1,13 @@
 import { ComponentPropsWithoutRef } from "react";
-import styles from "./Button.module.css";
-import classNames from "classnames";
+import { Button as ShadcnButton } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+type ButtonVariant = "primary" | "primaryLink" | "secondary" | "secondaryLink";
 
 interface ButtonCommonProps {
   usedAs: "link" | "button";
   text: string;
-  variant: string;
+  variant: ButtonVariant;
   href?: string;
 }
 
@@ -19,6 +21,13 @@ interface ButtonButtonProps
 
 type ButtonCustomProps = ButtonLinkProps | ButtonButtonProps;
 
+const variantMap: Record<ButtonVariant, "primary" | "secondaryCustom"> = {
+  primary: "primary",
+  primaryLink: "primary",
+  secondary: "secondaryCustom",
+  secondaryLink: "secondaryCustom",
+};
+
 const Button = ({
   usedAs,
   text,
@@ -26,17 +35,17 @@ const Button = ({
   href,
   ...props
 }: ButtonCustomProps) => {
-  const btnClasses = classNames(styles.btn, {
-    [styles.primary]: variant === "primary" || variant === "primaryLink",
-    [styles.secondary]: variant === "secondary" || variant === "secondaryLink",
-  });
+  const mappedVariant = variantMap[variant];
 
-  return (
-    <>
-      {usedAs === "link" ? (
+  if (usedAs === "link") {
+    return (
+      <ShadcnButton
+        variant={mappedVariant}
+        asChild
+        className={cn("px-4 py-2")}
+      >
         <a
-          className={btnClasses}
-          {...(props as ButtonLinkProps)}
+          {...(props as ComponentPropsWithoutRef<"a">)}
           href={
             variant === "primary" || variant === "secondary"
               ? `#${href}`
@@ -47,16 +56,25 @@ const Button = ({
               ? "_blank"
               : "_self"
           }
-          download={variant === "secondaryLink"}
+          download={variant === "secondaryLink" ? true : undefined}
+          aria-label={text}
+          tabIndex={0}
         >
           {text}
         </a>
-      ) : (
-        <button className={btnClasses} {...(props as ButtonButtonProps)}>
-          {text}
-        </button>
-      )}
-    </>
+      </ShadcnButton>
+    );
+  }
+
+  return (
+    <ShadcnButton
+      variant={mappedVariant}
+      className={cn("px-4 py-2")}
+      {...(props as ComponentPropsWithoutRef<"button">)}
+      aria-label={text}
+    >
+      {text}
+    </ShadcnButton>
   );
 };
 

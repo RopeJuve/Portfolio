@@ -1,19 +1,20 @@
-import styles from "./Footer.module.css";
 import { Logo } from "../Logo";
 import Social from "../Social/Social";
 import NavMenuLinks from "../NavMenuLinks/NavMenuLinks";
 
 const Footer = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.wrapper}>
-        <Logo className={styles.logo} />
-        <div className={styles.socialLinks}>
-          <NavMenuLinks className="nav-footer" />
+    <div className="bg-frame mt-section pt-6">
+      <div className="max-w-container mx-auto px-6 md:px-10 xl:px-0">
+        <Logo className="-ml-2 mb-6 w-[6.25rem] h-[6.25rem] text-primary" />
+        <div className="flex flex-col xl:flex-row xl:justify-between xl:items-center">
+          <NavMenuLinks variant="nav-footer" />
           <Social />
         </div>
-        <div className={styles.footerTitle}>
-          <h5>© 2023 Robert shterjov</h5>
+        <div>
+          <h5 className="text-center mt-6 text-fs3">
+            &copy; 2023 Robert shterjov
+          </h5>
         </div>
       </div>
     </div>

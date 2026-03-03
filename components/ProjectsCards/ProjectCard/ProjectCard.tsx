@@ -1,12 +1,14 @@
-import styles from "./ProjectCard.module.css";
 import Button from "@/components/Button/Button";
 import Skill from "@/components/Skill/Skill";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ReduxIcon } from "@/components/ReduxIcon";
 import { TailwindCSS } from "@/components/TailwindCSS";
-import classNames from "classnames";
+import { cn } from "@/lib/utils";
 import { Project } from "@/types";
 import { ApiIcon } from "@/components/ApiIcon";
+
+const iconClass =
+  "transition-all text-primary w-14 h-14 hover:scale-110 hover:text-accent";
 
 const ProjectCard = ({
   variant,
@@ -15,72 +17,113 @@ const ProjectCard = ({
   variant: string;
   project: Project;
 }) => {
-  const contentClass = classNames([styles.content], {
-    [styles.reverse]: variant === "reverse",
-    [styles.notReverse]: variant === "",
-  });
+  const isReverse = variant === "reverse";
 
-  const containerClass = classNames([styles.container], {
-    [styles.reverse]: variant === "reverse",
-  });
-
-  const techClass = classNames([styles.tech], {
-    [styles.reverse]: variant === "reverse",
-  });
-
-  const ctaClass = classNames([styles.cta], {
-    [styles.reverse]: variant === "reverse",
-    [styles.notReverse]: variant === "",
-  });
   return (
-    <div className={containerClass}>
-      <img src={project.projectImg} alt="project image" />
-      <div className={contentClass}>
-        <h5>{project.projectName}</h5>
-        <p>{project.description}</p>
-        <h5>{project.techTitle}</h5>
-        <div className={techClass}>
-          {project.techNames.map((tech, index) =>
-            tech.skillName !== "Redux" && tech.skillName !== 'Tailwind' && tech.skillName !== 'API' ? (
+    <div
+      className={cn(
+        "max-w-container mx-auto bg-frame bg-texture border border-primary shadow-[3px_3px_0px_hsl(197_37%_24%)] rounded-[2.5rem] p-6 md:px-10 xl:px-0 grid gap-4 md:grid-cols-2"
+      )}
+    >
+      <img
+        src={project.projectImg}
+        alt={`${project.projectName} screenshot`}
+        className={cn("w-full h-auto", isReverse && "md:col-start-2")}
+      />
+      <div
+        className={cn(
+          "flex flex-col gap-2 self-center",
+          isReverse && "md:col-start-1 md:row-start-1 md:text-right"
+        )}
+      >
+        <h5 className={cn("text-center", isReverse ? "md:text-right" : "md:text-left")}>
+          {project.projectName}
+        </h5>
+        <p
+          className={cn(
+            "mx-auto max-w-full",
+            isReverse
+              ? "md:text-right md:mr-0 md:max-w-[70%] md:ml-auto"
+              : "md:text-left md:ml-0 md:max-w-[70%]"
+          )}
+        >
+          {project.description}
+        </p>
+        <h5 className={cn("text-center", isReverse ? "md:text-right" : "md:text-left")}>
+          {project.techTitle}
+        </h5>
+        <div
+          className={cn(
+            "flex justify-center items-center gap-4",
+            isReverse ? "md:justify-end" : "md:justify-start"
+          )}
+        >
+          {project.techNames.map((tech, index) => {
+            if (tech.skillName === "Tailwind") {
+              return (
+                <Skill
+                  key={`${index}-${tech.skillName}`}
+                  variant="madeWith"
+                  title="Tailwind CSS"
+                >
+                  <TailwindCSS className={iconClass} />
+                </Skill>
+              );
+            }
+
+            if (tech.skillName === "API") {
+              return (
+                <Skill
+                  key={`${index}-${tech.skillName}`}
+                  variant="madeWith"
+                  title="API"
+                >
+                  <ApiIcon className={iconClass} />
+                </Skill>
+              );
+            }
+
+            if (tech.skillName === "Redux") {
+              return (
+                <Skill
+                  key={`${index}-${tech.skillName}`}
+                  variant="madeWith"
+                  title="Redux"
+                >
+                  <ReduxIcon className={iconClass} />
+                </Skill>
+              );
+            }
+
+            return (
               <Skill
                 key={`${index}-${tech.skillName}`}
                 variant="madeWith"
                 title={tech.skillName}
               >
-                <FontAwesomeIcon
-                  className={styles.madeWithIcon}
-                  icon={tech.skillIcon}
-                />
+                <FontAwesomeIcon className={iconClass} icon={tech.skillIcon} />
               </Skill>
-            ) : tech.skillName === 'Tailwind' ? (
-              <Skill
-              key={`${index}-${tech.skillName}`}
-              variant="madeWith"
-              title="Tailwind CSS"
-            >
-              <TailwindCSS className={styles.redux} />
-            </Skill>
-            ) : tech.skillName === 'API' ? (
-              <Skill
-              key={`${index}-${tech.skillName}`}
-              variant="madeWith"
-              title="API">
-                <ApiIcon className={styles.redux} />
-              </Skill>
-            ) : (
-              <Skill
-                key={`${index}-${tech.skillName}`}
-                variant="madeWith"
-                title="Redux"
-              >
-                <ReduxIcon className={styles.redux} />
-              </Skill>
-            )
-          )}
+            );
+          })}
         </div>
-        <div className={ctaClass}>
-          <Button usedAs="link" text="live site" variant="primaryLink" href={project.siteLink} />
-          <Button usedAs="link" text="git hub" variant="secondaryLink" href={project.gitHubLink} />
+        <div
+          className={cn(
+            "flex gap-4 justify-center",
+            isReverse ? "md:justify-end" : "md:justify-start"
+          )}
+        >
+          <Button
+            usedAs="link"
+            text="live site"
+            variant="primaryLink"
+            href={project.siteLink}
+          />
+          <Button
+            usedAs="link"
+            text="git hub"
+            variant="secondaryLink"
+            href={project.gitHubLink}
+          />
         </div>
       </div>
     </div>

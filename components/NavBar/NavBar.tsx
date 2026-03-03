@@ -1,33 +1,36 @@
 "use client";
-import styles from "./NavBar.module.css";
 import { Logo } from "../Logo/index";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Menu } from "lucide-react";
 import NavMenuLinks from "../NavMenuLinks/NavMenuLinks";
-import { useState } from "react";
-import Menu from "../Menu/Menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
 
 const NavBar = () => {
-  const [openMenu, setOpenMenu] = useState(false);
-  const handelOpen = () => setOpenMenu(!openMenu);
   return (
-    <>
-      <div className={styles.container}>
-        <div className={styles.wrapper}>
-          <a href={"/"}>
-            <Logo className={styles.logo} />
-          </a>
-          <NavMenuLinks className="nav-links" />
-          <FontAwesomeIcon
-            className={styles.hamburger}
-            icon={faBars}
-            style={{ width: "25px", height: "25px", color: "#264653" }}
-            onClick={handelOpen}
-          />
-        </div>
+    <div className="relative px-6 md:px-10 bg-frame w-full z-[1000]">
+      <div className="max-w-container mx-auto flex justify-between items-center">
+        <a href="/" aria-label="Home">
+          <Logo className="w-[6.25rem] h-[6.25rem] text-primary cursor-pointer hover:scale-110 transition-transform" />
+        </a>
+        <NavMenuLinks variant="nav-links" />
+        <Sheet>
+          <SheetTrigger
+            className="md:hidden"
+            aria-label="Open navigation menu"
+          >
+            <Menu className="w-[25px] h-[25px] text-primary" />
+          </SheetTrigger>
+          <SheetContent side="right" className="bg-frame border-primary">
+            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+            <NavMenuLinks variant="nav-menu" />
+          </SheetContent>
+        </Sheet>
       </div>
-      <Menu isOpen={openMenu} handelOpen={handelOpen} />
-    </>
+    </div>
   );
 };
 

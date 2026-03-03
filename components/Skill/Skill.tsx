@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
-import styles from "./Skill.module.css";
-import classNames from "classnames";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
+
+type SkillVariant = "skills" | "madeWith";
 
 const Skill = ({
   children,
@@ -9,17 +11,32 @@ const Skill = ({
 }: {
   children: ReactNode;
   title: string;
-  variant: string;
+  variant: SkillVariant;
 }) => {
-  const skillClasses = classNames({
-    [styles.titleSkills]: variant === "skills",
-    [styles.titleMadeWith]: variant === "madeWith",
-  });
+  if (variant === "madeWith") {
+    return (
+      <Badge
+        variant="outline"
+        className="flex flex-col items-center justify-center gap-1 border-none bg-transparent p-2"
+      >
+        {children}
+        <span className="font-body font-bold text-[0.775rem] leading-relaxed text-primary text-center tracking-widest uppercase">
+          {title}
+        </span>
+      </Badge>
+    );
+  }
 
   return (
-    <div className={styles.container}>
+    <div className="flex flex-col items-center justify-center">
       {children}
-      <h4 className={skillClasses}>{title}</h4>
+      <h4
+        className={cn(
+          "font-body font-bold text-base leading-relaxed text-primary text-center tracking-widest uppercase"
+        )}
+      >
+        {title}
+      </h4>
     </div>
   );
 };

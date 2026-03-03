@@ -1,16 +1,15 @@
 import Button from "../Button/Button";
-import styles from "./Hero.module.css";
 import Social from "../Social/Social";
 import { HeaderProps } from "@/types";
 
 const Hero = ({ title, subTitle, profileImage }: HeaderProps) => {
   return (
-    <div className={styles.container}>
-      <div className={styles.heading}>
+    <div className="max-w-container mx-auto mt-section px-6 md:px-10 xl:px-0 grid gap-6 md:grid-cols-2 md:gap-16">
+      <div className="flex flex-col gap-6 mb-6 md:mb-0 md:justify-end">
         <h1>{title}</h1>
         <h2>{subTitle}</h2>
-        <div className={styles.cta}>
-          <div className={styles.btnWrapper}>
+        <div className="max-w-[19rem] md:max-w-[22rem]">
+          <div className="flex items-center gap-4">
             <Button
               usedAs="link"
               text="contact me"
@@ -27,7 +26,11 @@ const Hero = ({ title, subTitle, profileImage }: HeaderProps) => {
           <Social />
         </div>
       </div>
-      <img className={styles.imgContainer} src={profileImage} alt="profile" />
+      <img
+        className="self-center w-full"
+        src={profileImage}
+        alt="Robert Shterjov profile"
+      />
     </div>
   );
 };
