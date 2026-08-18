@@ -1,5 +1,4 @@
 import {
-  faGitAlt,
   faHtml5,
   faJsSquare,
   faReact,
@@ -10,6 +9,19 @@ import {
   faWhatsappSquare,
   faTelegramPlane,
 } from "@fortawesome/free-brands-svg-icons";
+import {
+  siHtml5,
+  siJavascript,
+  siSass,
+  siReact,
+  siGit,
+  siNextdotjs,
+  siNodedotjs,
+  siExpress,
+  siMongodb,
+  siGooglecloud,
+  siFirebase,
+} from "simple-icons";
 
 
 export const data = {
@@ -17,13 +29,18 @@ export const data = {
   subtitle:
     "I design and develop modern websites, landing pages, and custom web applications for businesses and startups.",
   profileImg: "./images/profile.png",
-  skills: [
-    { skillIcon: faHtml5, skillName: "html" },
-    { skillIcon: faJsSquare, skillName: "java script" },
-    { skillIcon: faSass, skillName: "sass" },
-    { skillIcon: faReact, skillName: "react" },
-    { skillIcon: faGitAlt, skillName: "git" },
-    { skillIcon: faHtml5, skillName: "next" },
+  techStack: [
+    { name: "HTML", iconPath: siHtml5.path },
+    { name: "JavaScript", iconPath: siJavascript.path },
+    { name: "Sass", iconPath: siSass.path },
+    { name: "React", iconPath: siReact.path },
+    { name: "Git", iconPath: siGit.path },
+    { name: "Next.js", iconPath: siNextdotjs.path },
+    { name: "Node.js", iconPath: siNodedotjs.path },
+    { name: "Express", iconPath: siExpress.path },
+    { name: "MongoDB", iconPath: siMongodb.path },
+    { name: "Google Cloud", iconPath: siGooglecloud.path },
+    { name: "Firebase", iconPath: siFirebase.path },
   ],
   socialLinks: [
     { socialIcon: faGithub, socialLink: 'https://github.com/RopeJuve' },

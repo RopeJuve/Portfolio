@@ -27,6 +27,16 @@ export interface SkillProps {
     skills: Skill[];
 }
 
+export interface TechStackItem {
+    name: string;
+    iconPath: string;
+}
+
+export interface TechMarqueeProps {
+    title: string;
+    techStack: TechStackItem[];
+}
+
 export interface AboutProps {
     title: string;
     aboutMe: string[];

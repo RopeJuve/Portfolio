@@ -17,4 +17,31 @@ describe("data", () => {
       "I design and develop modern websites, landing pages, and custom web applications for businesses and startups."
     );
   });
+
+  it("expands the Tech Marquee stack to the full-stack toolset without losing the frontend entries", () => {
+    const names = data.techStack.map((tech) => tech.name);
+
+    for (const entry of [
+      "HTML",
+      "JavaScript",
+      "Sass",
+      "React",
+      "Git",
+      "Next.js",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Google Cloud",
+      "Firebase",
+    ]) {
+      expect(names).toContain(entry);
+    }
+    expect(data.techStack).toHaveLength(11);
+  });
+
+  it("gives every Tech Marquee entry a non-empty icon path", () => {
+    for (const tech of data.techStack) {
+      expect(tech.iconPath.length).toBeGreaterThan(0);
+    }
+  });
 });

@@ -22,7 +22,7 @@ const ProjectCard = ({
   return (
     <div
       className={cn(
-        "max-w-container mx-auto bg-frame bg-texture border border-primary shadow-[3px_3px_0px_hsl(197_37%_24%)] rounded-[2.5rem] p-6 md:px-10 xl:px-0 grid gap-4 md:grid-cols-2"
+        "max-w-container mx-auto bg-frame bg-texture border border-primary shadow-[3px_3px_0px_hsl(73_5%_22%)] rounded-[2.5rem] p-6 md:px-10 xl:px-0 grid gap-4 md:grid-cols-2"
       )}
     >
       <img
@@ -61,11 +61,7 @@ const ProjectCard = ({
           {project.techNames.map((tech, index) => {
             if (tech.skillName === "Tailwind") {
               return (
-                <Skill
-                  key={`${index}-${tech.skillName}`}
-                  variant="madeWith"
-                  title="Tailwind CSS"
-                >
+                <Skill key={`${index}-${tech.skillName}`} title="Tailwind CSS">
                   <TailwindCSS className={iconClass} />
                 </Skill>
               );
@@ -73,11 +69,7 @@ const ProjectCard = ({
 
             if (tech.skillName === "API") {
               return (
-                <Skill
-                  key={`${index}-${tech.skillName}`}
-                  variant="madeWith"
-                  title="API"
-                >
+                <Skill key={`${index}-${tech.skillName}`} title="API">
                   <ApiIcon className={iconClass} />
                 </Skill>
               );
@@ -85,22 +77,14 @@ const ProjectCard = ({
 
             if (tech.skillName === "Redux") {
               return (
-                <Skill
-                  key={`${index}-${tech.skillName}`}
-                  variant="madeWith"
-                  title="Redux"
-                >
+                <Skill key={`${index}-${tech.skillName}`} title="Redux">
                   <ReduxIcon className={iconClass} />
                 </Skill>
               );
             }
 
             return (
-              <Skill
-                key={`${index}-${tech.skillName}`}
-                variant="madeWith"
-                title={tech.skillName}
-              >
+              <Skill key={`${index}-${tech.skillName}`} title={tech.skillName}>
                 <FontAwesomeIcon className={iconClass} icon={tech.skillIcon} />
               </Skill>
             );

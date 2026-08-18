@@ -89,6 +89,17 @@ module.exports = {
         flat: "0px",
         pill: "9999px",
       },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        // Drives the Tech Marquee: the track renders its content twice and
+        // scrolls exactly one copy's width, looping seamlessly.
+        marquee: "marquee 30s linear infinite",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
