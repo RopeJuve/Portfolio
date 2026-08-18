@@ -4,31 +4,34 @@ import { TechMarqueeProps } from "@/types";
 const iconClass =
   "transition-all text-primary w-9 h-9 hover:scale-110 hover:text-accent";
 
-const TechMarquee = ({ title, techStack }: TechMarqueeProps) => {
-  const loopedStack = [...techStack, ...techStack];
-
-  return (
-    <div
-      className="mt-section py-6 bg-frame overflow-hidden"
-      role="group"
-      aria-label={title}
-    >
-      <div className="flex w-max gap-12 animate-marquee hover:[animation-play-state:paused] motion-reduce:animate-none">
-        {loopedStack.map((tech, index) => (
-          <div
-            key={`${index}-${tech.name}`}
-            className="flex shrink-0 flex-col items-center gap-2"
-            aria-hidden={index >= techStack.length}
-          >
-            <SimpleIcon path={tech.iconPath} className={iconClass} />
-            <span className="font-body text-caption text-primary uppercase">
-              {tech.name}
-            </span>
-          </div>
-        ))}
-      </div>
+const TechMarquee = ({ title, techStack }: TechMarqueeProps) => (
+  <div
+    className="mt-section py-6 bg-frame overflow-hidden"
+    role="group"
+    aria-label={title}
+  >
+    <div className="flex w-max animate-marquee hover:[animation-play-state:paused] motion-reduce:animate-none">
+      {[0, 1].map((copy) => (
+        // Each copy is self-contained (items + internal gaps + one trailing
+        // spacer of the same width), so its rendered width is exactly one
+        // repeat period. That's what makes the keyframes' -50% shift land
+        // pixel-exact on the next copy — no approximation, no loop skip.
+        <div key={copy} className="flex shrink-0 gap-12 pr-12" aria-hidden={copy === 1}>
+          {techStack.map((tech) => (
+            <div
+              key={tech.name}
+              className="flex shrink-0 flex-col items-center gap-2"
+            >
+              <SimpleIcon path={tech.iconPath} className={iconClass} />
+              <span className="font-body text-caption text-primary uppercase">
+                {tech.name}
+              </span>
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
-  );
-};
+  </div>
+);
 
 export default TechMarquee;
