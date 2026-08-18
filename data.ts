@@ -13,9 +13,10 @@ import {
 
 
 export const data = {
-  header: "Hallo, I'm Robert Shterjov Frontend Web Developer",
-  subtitle: "Transforming Ideas into Beautifully Responsive Websites",
-  profileImg: "./images/profile1.png",
+  header: "Hallo, I'm Robert Shterjov — Full-Stack Web Developer",
+  subtitle:
+    "I design and develop modern websites, landing pages, and custom web applications for businesses and startups.",
+  profileImg: "./images/profile.png",
   skills: [
     { skillIcon: faHtml5, skillName: "html" },
     { skillIcon: faJsSquare, skillName: "java script" },

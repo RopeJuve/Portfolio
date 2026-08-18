@@ -26,11 +26,13 @@ const Hero = ({ title, subTitle, profileImage }: HeaderProps) => {
           <Social />
         </div>
       </div>
-      <img
-        className="self-center w-full"
-        src={profileImage}
-        alt="Robert Shterjov profile"
-      />
+      <div className="self-center border border-border rounded-flat bg-frame p-4 md:p-6">
+        <img
+          className="w-full aspect-[4/5] object-cover object-top"
+          src={profileImage}
+          alt="Robert Shterjov profile"
+        />
+      </div>
     </div>
   );
 };
