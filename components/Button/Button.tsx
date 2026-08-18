@@ -33,6 +33,7 @@ const Button = ({
   text,
   variant,
   href,
+  className,
   ...props
 }: ButtonCustomProps) => {
   const mappedVariant = variantMap[variant];
@@ -42,7 +43,7 @@ const Button = ({
       <ShadcnButton
         variant={mappedVariant}
         asChild
-        className={cn("px-4 py-2")}
+        className={cn("h-auto px-6 py-3", className)}
       >
         <a
           {...(props as ComponentPropsWithoutRef<"a">)}
@@ -69,7 +70,7 @@ const Button = ({
   return (
     <ShadcnButton
       variant={mappedVariant}
-      className={cn("px-4 py-2")}
+      className={cn("h-auto px-6 py-3", className)}
       {...(props as ComponentPropsWithoutRef<"button">)}
       aria-label={text}
     >

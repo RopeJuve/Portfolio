@@ -12,15 +12,15 @@ const Hero = ({ title, subTitle, profileImage }: HeaderProps) => {
           <div className="flex items-center gap-4">
             <Button
               usedAs="link"
-              text="contact me"
+              text="start a project"
               variant="primary"
               href="contact"
             />
             <Button
               usedAs="link"
-              text="download cv"
-              variant="secondaryLink"
-              href="./assets/RobertShterjovCV09_24.pdf"
+              text="view work"
+              variant="secondary"
+              href="projects"
             />
           </div>
           <Social />
