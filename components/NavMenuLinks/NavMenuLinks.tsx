@@ -15,7 +15,7 @@ const NavMenuLinks = ({ variant }: { variant: NavMenuVariant }) => {
 
   return (
     <nav className={wrapperClass} aria-label="Main navigation">
-      {["home", "about me", "projects", "contact"].map((menuItem, i) => (
+      {["home", "services", "about me", "projects", "contact"].map((menuItem, i) => (
         <a
           key={`${i}-${menuItem}`}
           href={`#${menuItem}`}

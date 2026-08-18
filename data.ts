@@ -42,6 +42,61 @@ export const data = {
     { name: "Google Cloud", iconPath: siGooglecloud.path },
     { name: "Firebase", iconPath: siFirebase.path },
   ],
+  services: [
+    {
+      title: "Website Design & Development",
+      description:
+        "A modern, fast website that turns visitors into customers — designed and built around your business, not a template.",
+      capabilities: [
+        "Modern business websites",
+        "Landing pages",
+        "Portfolio websites",
+        "Responsive and mobile-friendly design",
+        "Fast and optimized websites",
+      ],
+      tier: "primary" as const,
+    },
+    {
+      title: "Website Redesign",
+      description:
+        "Give your outdated website a modern, professional look that works better for you and your visitors on every device.",
+      capabilities: [
+        "Redesign outdated websites",
+        "Improve UI/UX",
+        "Improve mobile experience",
+        "Create modern and professional designs",
+      ],
+      tier: "primary" as const,
+    },
+    {
+      title: "Custom Web Applications",
+      description:
+        "For businesses ready to go beyond a website — a custom-built application tailored to how you actually work.",
+      capabilities: [
+        "SaaS applications",
+        "MVP development",
+        "Dashboards",
+        "Client portals",
+        "Authentication",
+        "API integrations",
+        "AI integrations",
+      ],
+      tier: "advanced" as const,
+    },
+    {
+      title: "Website Maintenance & Support",
+      description:
+        "Keep your website running smoothly with ongoing fixes, updates, and improvements, so you don't have to think about it.",
+      capabilities: [
+        "Bug fixes",
+        "Content updates",
+        "New features",
+        "Performance improvements",
+        "Ongoing technical support",
+      ],
+      tier: "primary" as const,
+    },
+  ],
   socialLinks: [
     { socialIcon: faGithub, socialLink: 'https://github.com/RopeJuve' },
     { socialIcon: faLinkedin, socialLink: 'https://www.linkedin.com/in/robert-shterjov/' },

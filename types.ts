@@ -37,6 +37,21 @@ export interface TechMarqueeProps {
     techStack: TechStackItem[];
 }
 
+export type ServiceTier = "primary" | "advanced";
+
+export interface Service {
+    title: string;
+    description: string;
+    capabilities: string[];
+    tier: ServiceTier;
+}
+
+export interface ServicesProps {
+    title: string;
+    positioningStatement: string;
+    services: Service[];
+}
+
 export interface AboutProps {
     title: string;
     aboutMe: string[];

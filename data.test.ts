@@ -44,4 +44,27 @@ describe("data", () => {
       expect(tech.iconPath.length).toBeGreaterThan(0);
     }
   });
+
+  it("lists the 4 services in priority order, tiered correctly", () => {
+    expect(data.services.map((service) => service.title)).toEqual([
+      "Website Design & Development",
+      "Website Redesign",
+      "Custom Web Applications",
+      "Website Maintenance & Support",
+    ]);
+
+    expect(data.services.map((service) => service.tier)).toEqual([
+      "primary",
+      "primary",
+      "advanced",
+      "primary",
+    ]);
+  });
+
+  it("gives every service a description and at least one capability", () => {
+    for (const service of data.services) {
+      expect(service.description.length).toBeGreaterThan(0);
+      expect(service.capabilities.length).toBeGreaterThan(0);
+    }
+  });
 });
