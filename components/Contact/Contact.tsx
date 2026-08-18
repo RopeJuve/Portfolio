@@ -9,6 +9,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import emailjs from "@emailjs/browser";
 import { contactSchema, type ContactFormValues } from "./contactSchema";
+import { cn } from "@/lib/utils";
+
+const fieldClassName =
+  "bg-linen border border-border rounded-flat p-4 h-auto";
+const labelClassName =
+  "font-header text-caption font-normal text-primary uppercase";
 
 const Contact = ({ title, contactMe }: ContactProps) => {
   const [isSending, setIsSending] = useState(false);
@@ -66,12 +72,14 @@ const Contact = ({ title, contactMe }: ContactProps) => {
       >
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex flex-col gap-1.5 flex-1">
-            <Label htmlFor="user_name">First Name</Label>
+            <Label htmlFor="user_name" className={labelClassName}>
+              First Name
+            </Label>
             <Input
               id="user_name"
               type="text"
               placeholder="Your first name"
-              className="bg-frame border-primary rounded-3xl shadow-[3px_3px_0px_hsl(197_37%_24%)] p-4 h-auto"
+              className={fieldClassName}
               {...register("user_name")}
               aria-invalid={!!errors.user_name}
             />
@@ -82,12 +90,14 @@ const Contact = ({ title, contactMe }: ContactProps) => {
             )}
           </div>
           <div className="flex flex-col gap-1.5 flex-1">
-            <Label htmlFor="user_last_name">Last Name</Label>
+            <Label htmlFor="user_last_name" className={labelClassName}>
+              Last Name
+            </Label>
             <Input
               id="user_last_name"
               type="text"
               placeholder="Your last name"
-              className="bg-frame border-primary rounded-3xl shadow-[3px_3px_0px_hsl(197_37%_24%)] p-4 h-auto"
+              className={fieldClassName}
               {...register("user_last_name")}
               aria-invalid={!!errors.user_last_name}
             />
@@ -99,12 +109,14 @@ const Contact = ({ title, contactMe }: ContactProps) => {
           </div>
         </div>
         <div className="flex flex-col gap-1.5">
-          <Label htmlFor="user_email">Email</Label>
+          <Label htmlFor="user_email" className={labelClassName}>
+            Email
+          </Label>
           <Input
             id="user_email"
             type="email"
             placeholder="your@email.com"
-            className="bg-frame border-primary rounded-3xl shadow-[3px_3px_0px_hsl(197_37%_24%)] p-4 h-auto"
+            className={fieldClassName}
             {...register("user_email")}
             aria-invalid={!!errors.user_email}
           />
@@ -115,12 +127,14 @@ const Contact = ({ title, contactMe }: ContactProps) => {
           )}
         </div>
         <div className="flex flex-col gap-1.5">
-          <Label htmlFor="message">Message</Label>
+          <Label htmlFor="message" className={labelClassName}>
+            Message
+          </Label>
           <Textarea
             id="message"
             rows={6}
             placeholder="Write your message..."
-            className="bg-frame border-primary rounded-3xl shadow-[3px_3px_0px_hsl(197_37%_24%)] p-4 resize-none"
+            className={cn(fieldClassName, "resize-none")}
             {...register("message")}
             aria-invalid={!!errors.message}
           />
