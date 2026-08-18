@@ -4,26 +4,39 @@
 
 @layer base {
   :root {
-    --background: 52 50% 91%;
-    --foreground: 0 0% 20%;
-    --card: 50 24% 80%;
-    --card-foreground: 0 0% 20%;
-    --popover: 52 50% 91%;
-    --popover-foreground: 0 0% 20%;
-    --primary: 197 37% 24%;
-    --primary-foreground: 52 50% 91%;
-    --secondary: 173 58% 39%;
-    --secondary-foreground: 52 50% 91%;
-    --muted: 50 24% 80%;
-    --muted-foreground: 0 0% 40%;
-    --accent: 43 74% 66%;
-    --accent-foreground: 197 37% 24%;
+    /* Reference design-system palette (ADR-0001) — single source of truth,
+       referenced by both the semantic roles below and tailwind.config.js's
+       named color tokens (carbon, bone, ink, linen, ash, parchment, stone,
+       clay). */
+    --color-carbon: #2a2a2a;
+    --color-bone: #f0f0f0;
+    --color-ink: #000000;
+    --color-linen: #fafafa;
+    --color-ash: #d6d6d6;
+    --color-parchment: #f0edea;
+    --color-stone: #bcbcb4;
+    --color-clay: #ccc4b9;
+
+    --background: 0 0% 94%;
+    --foreground: 0 0% 16%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 16%;
+    --popover: 0 0% 98%;
+    --popover-foreground: 0 0% 16%;
+    --primary: 0 0% 16%;
+    --primary-foreground: 0 0% 94%;
+    --secondary: 35 16% 76%;
+    --secondary-foreground: 0 0% 16%;
+    --muted: 0 0% 84%;
+    --muted-foreground: 60 6% 72%;
+    --accent: 60 6% 72%;
+    --accent-foreground: 0 0% 16%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 197 37% 24%;
-    --input: 50 24% 80%;
-    --ring: 197 37% 24%;
-    --radius: 0.5rem;
+    --border: 0 0% 84%;
+    --input: 0 0% 84%;
+    --ring: 0 0% 16%;
+    --radius: 0px;
   }
 
   * {
@@ -39,32 +52,32 @@
   }
 
   body {
-    @apply bg-bg bg-texture text-content;
+    @apply bg-bg text-content;
   }
 
   h1 {
-    @apply font-header font-bold text-fs1 text-primary leading-tight tracking-widest;
+    @apply font-header font-light text-display-xl text-primary uppercase;
   }
 
   h2 {
-    @apply font-header font-normal text-fs2 text-content leading-tight tracking-widest;
+    @apply font-header font-normal text-subheading text-content;
   }
 
   h3 {
-    @apply text-primary font-header text-fs4 font-bold leading-relaxed text-center tracking-widest uppercase;
+    @apply text-primary font-header text-display font-light text-center uppercase;
   }
 
   h5 {
-    @apply text-primary font-header text-fs5 font-bold leading-relaxed tracking-widest uppercase;
+    @apply text-primary font-header text-body-lg font-normal uppercase;
   }
 
   p {
-    @apply font-body text-fs3 text-content text-center;
+    @apply font-body text-body-lg text-content text-center;
   }
 
   a,
   button {
-    @apply relative font-header text-fs3 text-primary font-bold tracking-widest uppercase no-underline cursor-pointer;
+    @apply relative font-header text-caption text-primary font-normal uppercase no-underline cursor-pointer;
   }
 
   input,
@@ -79,7 +92,7 @@
   textarea:-webkit-autofill:hover,
   textarea:-webkit-autofill:focus {
     border-radius: 0.5rem;
-    -webkit-text-fill-color: hsl(197 37% 24%);
+    -webkit-text-fill-color: hsl(0 0% 16%);
     -webkit-box-shadow: 0 0 0px 40rem transparent inset;
     transition: background-color 5000s ease-in-out 0s;
   }
@@ -97,7 +110,7 @@
     right: 50%;
     width: 0;
     height: 3px;
-    background-color: hsl(197 37% 24%);
+    background-color: hsl(0 0% 16%);
     transition: all 0.3s ease-in-out;
   }
 
@@ -108,7 +121,7 @@
     left: 50%;
     width: 0;
     height: 3px;
-    background-color: hsl(197 37% 24%);
+    background-color: hsl(0 0% 16%);
     transition: all 0.3s ease-in-out;
   }
 

@@ -12,7 +12,7 @@ const Footer = () => {
           <Social />
         </div>
         <div>
-          <h5 className="text-center mt-6 text-fs3">
+          <h5 className="text-center mt-6 text-caption">
             &copy; 2023 Robert shterjov
           </h5>
         </div>

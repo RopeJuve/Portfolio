@@ -1,24 +1,20 @@
 import NavBar from "@/components/NavBar/NavBar";
-import Head from "next/head";
 import "./globals.css";
 import Footer from "@/components/Footer/Footer";
-import { Roboto_Condensed, Noto_Sans } from "next/font/google";
+import { Archivo } from "next/font/google";
 
 export const metadata = {
   title: "Robert Shterjov Frontend Developer",
   description: "Portfolio Web Site for my web dev journey",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
-const robotoCondensed = Roboto_Condensed({
-  weight: ["400", "700"],
+const archivo = Archivo({
+  weight: ["300", "400"],
   subsets: ["latin"],
-  variable: "--font-header",
-});
-
-const notoSans = Noto_Sans({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-text",
+  variable: "--font-archivo",
 });
 
 export default function RootLayout({
@@ -28,10 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <body className={`${robotoCondensed.variable} ${notoSans.variable}`}>
+      <body className={archivo.variable}>
         <NavBar />
         {children}
         <Footer />
