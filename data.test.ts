@@ -67,4 +67,17 @@ describe("data", () => {
       expect(service.capabilities.length).toBeGreaterThan(0);
     }
   });
+
+  it("frames About as full-stack, not frontend-only", () => {
+    const aboutText = data.aboutMe.join(" ");
+    expect(aboutText).toMatch(/full-stack/i);
+    expect(aboutText).not.toMatch(/frontend developer/i);
+  });
+
+  it("gives About at least one non-empty paragraph", () => {
+    expect(data.aboutMe.length).toBeGreaterThan(0);
+    for (const paragraph of data.aboutMe) {
+      expect(paragraph.length).toBeGreaterThan(0);
+    }
+  });
 });

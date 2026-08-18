@@ -104,9 +104,9 @@ export const data = {
     { socialIcon: faTelegramPlane, socialLink: 'https://t.me/RopeShterjov' }
   ],
   aboutMe: [
-    "Hello, I'm Robert Shterjov, a frontend developer based in Germany. I specialize in creating captivating user experiences through beautifully responsive websites using React. With expertise in React, CSS, and JavaScript, I stay up-to-date with the latest trends and technologies.",
-    "Collaboration is key to my process. I work closely with clients and creative teams to bring their vision to life. Communication, attention to detail, and delivering high-quality results are my priorities.",
-    "Let's work together to create a web experience that engages and inspires. Whether you need a stunning website or an interactive web application built with React, I'm here to turn your ideas into reality. Get in touch, and let's make something exceptional!",
+    "Hello, I'm Robert Shterjov, a full-stack web developer based in Germany. I design and develop modern websites, landing pages, and custom web applications for businesses and startups — from the first pixel to the server handling their traffic.",
+    "I work closely with clients to understand what their business actually needs, then build for it end to end: a fast, polished experience on the front end backed by a reliable application on the back end. Communication, attention to detail, and delivering results my clients can measure are my priorities.",
+    "Whether you need a website that converts visitors into customers or a custom application built around how you work, I'm here to turn that into reality. Get in touch, and let's make something exceptional!",
   ],
   projects: [
     {
