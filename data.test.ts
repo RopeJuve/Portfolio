@@ -7,6 +7,10 @@ describe("data", () => {
     expect(data.subtitle.length).toBeGreaterThan(0);
   });
 
+  it("exposes a non-empty Hero eyebrow line", () => {
+    expect(data.eyebrow.length).toBeGreaterThan(0);
+  });
+
   it("frames the Hero as full-stack, not frontend-only", () => {
     expect(data.header).toMatch(/full-stack/i);
     expect(data.header).not.toMatch(/frontend/i);

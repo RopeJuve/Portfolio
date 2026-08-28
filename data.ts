@@ -25,10 +25,11 @@ import {
 
 
 export const data = {
+  eyebrow: "Full-stack web development · React & Node · Based in Germany",
   header: "Hallo, I'm Robert Shterjov — Full-Stack Web Developer",
   subtitle:
     "I design and develop modern websites, landing pages, and custom web applications for businesses and startups.",
-  profileImg: "./images/profile.png",
+  profileImg: "/images/hero.png",
   techStack: [
     { name: "HTML", iconPath: siHtml5.path },
     { name: "JavaScript", iconPath: siJavascript.path },

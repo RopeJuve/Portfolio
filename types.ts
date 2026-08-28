@@ -17,6 +17,7 @@ export interface Project {
 }
 
 export interface HeaderProps {
+    eyebrow: string;
     title: string;
     subTitle: string;
     profileImage: string;

@@ -8,6 +8,7 @@ import { data } from "@/data";
 
 export default function Home() {
   const {
+    eyebrow,
     header,
     subtitle,
     profileImg,
@@ -19,14 +20,19 @@ export default function Home() {
   } = data;
   return (
     <>
-      <Hero title={header} subTitle={subtitle} profileImage={profileImg} />
+      <Hero
+        eyebrow={eyebrow}
+        title={header}
+        subTitle={subtitle}
+        profileImage={profileImg}
+      />
       <TechMarquee title="Built with" techStack={techStack} />
       <Services
         title="services"
         positioningStatement={subtitle}
         services={services}
       />
-      <ProjectsCards title="projects" projects={projects} />
+      <ProjectsCards title="Selected Work" projects={projects} />
       <About title="about me" aboutMe={aboutMe} />
       <Contact title="contact me" contactMe={contactMe} />
     </>
