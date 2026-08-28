@@ -11,10 +11,12 @@ import emailjs from "@emailjs/browser";
 import { contactSchema, type ContactFormValues } from "./contactSchema";
 import { cn } from "@/lib/utils";
 
+// Deliberate exception to the site's flat (0px) radius system, matching the
+// reference design's outlined form fields.
 const fieldClassName =
-  "bg-linen border border-border rounded-flat p-4 h-auto";
+  "bg-transparent ring-1 ring-carbon rounded-[4px] p-4 h-auto";
 const labelClassName =
-  "font-header text-caption font-normal text-primary uppercase";
+  "font-header text-caption font-normal text-carbon uppercase";
 
 const Contact = ({ title, contactMe }: ContactProps) => {
   const [isSending, setIsSending] = useState(false);
@@ -57,13 +59,12 @@ const Contact = ({ title, contactMe }: ContactProps) => {
   };
 
   return (
-    <div
-      id="contact"
-      className="max-w-container mx-auto px-6 md:px-10 xl:px-0 mt-section grid gap-6 md:grid-cols-2 md:gap-8"
-    >
-      <h3 className="md:col-span-2">{title}</h3>
-      <div>
-        <p className="md:text-left">{contactMe}</p>
+    <div id="contact" className="w-[90%] mx-auto px-6 md:px-10 xl:px-0 mt-section">
+    <div className="border-t border-border pt-10 grid gap-8 md:grid-cols-2">
+      <div className="flex flex-col gap-5 w-[40%]">
+        <h3 className="text-left">{title}</h3>
+        <p className="text-left">{contactMe}</p>
+        <p className="text-left text-caption text-carbon uppercase tracking-widest">Germany · CET · Remote friendly</p>
       </div>
       <form
         className="flex flex-col gap-4"
@@ -78,7 +79,6 @@ const Contact = ({ title, contactMe }: ContactProps) => {
             <Input
               id="user_name"
               type="text"
-              placeholder="Your first name"
               className={fieldClassName}
               {...register("user_name")}
               aria-invalid={!!errors.user_name}
@@ -96,7 +96,6 @@ const Contact = ({ title, contactMe }: ContactProps) => {
             <Input
               id="user_last_name"
               type="text"
-              placeholder="Your last name"
               className={fieldClassName}
               {...register("user_last_name")}
               aria-invalid={!!errors.user_last_name}
@@ -115,7 +114,6 @@ const Contact = ({ title, contactMe }: ContactProps) => {
           <Input
             id="user_email"
             type="email"
-            placeholder="your@email.com"
             className={fieldClassName}
             {...register("user_email")}
             aria-invalid={!!errors.user_email}
@@ -133,7 +131,6 @@ const Contact = ({ title, contactMe }: ContactProps) => {
           <Textarea
             id="message"
             rows={6}
-            placeholder="Write your message..."
             className={cn(fieldClassName, "resize-none")}
             {...register("message")}
             aria-invalid={!!errors.message}
@@ -163,6 +160,7 @@ const Contact = ({ title, contactMe }: ContactProps) => {
           </p>
         )}
       </form>
+      </div>
     </div>
   );
 };

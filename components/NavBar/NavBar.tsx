@@ -2,6 +2,7 @@
 import { Menu } from "lucide-react";
 import NavMenuLinks from "../NavMenuLinks/NavMenuLinks";
 import Button from "../Button/Button";
+import Wordmark from "../Logo/Wordmark";
 import {
   Sheet,
   SheetContent,
@@ -11,14 +12,10 @@ import {
 
 const NavBar = () => {
   return (
-    <div className="relative px-6 md:px-10 bg-bg border-b border-border w-full z-[1000]">
-      <div className="max-w-container mx-auto flex justify-between items-center py-5">
-        <a href="/" aria-label="Home">
-          <img
-            src="/Logo.png"
-            alt="Shterjov"
-            className="h-6 md:h-7 w-auto"
-          />
+    <div className="relative px-6 md:px-10 bg-bg  w-full z-[1000]">
+      <div className="max-w-[90%] mx-auto flex justify-between items-center py-5 border-b border-border">
+        <a href="#home" aria-label="Home">
+          <Wordmark className="text-body-sm" />
         </a>
         <div className="flex items-center gap-6 md:gap-10">
           <NavMenuLinks variant="nav-links" />

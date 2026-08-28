@@ -1,7 +1,7 @@
 import NavBar from "@/components/NavBar/NavBar";
 import "./globals.css";
 import Footer from "@/components/Footer/Footer";
-import { Archivo } from "next/font/google";
+import { Archivo, Source_Serif_4 } from "next/font/google";
 
 export const metadata = {
   title: "Robert Shterjov Frontend Developer",
@@ -17,6 +17,12 @@ const archivo = Archivo({
   variable: "--font-archivo",
 });
 
+const sourceSerif4 = Source_Serif_4({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-source-serif",
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -24,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={archivo.variable}>
+      <body className={`${archivo.variable} ${sourceSerif4.variable}`}>
         <NavBar />
         {children}
         <Footer />

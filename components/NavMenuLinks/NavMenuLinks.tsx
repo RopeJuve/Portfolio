@@ -1,21 +1,21 @@
 import { cn } from "@/lib/utils";
 
-type NavMenuVariant = "nav-links" | "nav-footer" | "nav-menu";
+type NavMenuVariant = "nav-links" | "nav-menu";
+
+const links = ["work", "services", "stack", "about", "contact"];
 
 const NavMenuLinks = ({ variant }: { variant: NavMenuVariant }) => {
   const wrapperClass = cn({
     "hidden md:flex max-w-[31.25rem] justify-between items-center gap-10":
       variant === "nav-links",
-    "max-w-[31.25rem] flex justify-between items-center flex-1":
-      variant === "nav-footer",
     "flex flex-col gap-6 mx-auto": variant === "nav-menu",
   });
 
-  const showUnderline = variant === "nav-links" || variant === "nav-footer";
+  const showUnderline = variant === "nav-links";
 
   return (
     <nav className={wrapperClass} aria-label="Main navigation">
-      {["home", "services", "about me", "projects", "contact"].map((menuItem, i) => (
+      {links.map((menuItem, i) => (
         <a
           key={`${i}-${menuItem}`}
           href={`#${menuItem}`}

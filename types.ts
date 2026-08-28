@@ -16,13 +16,6 @@ export interface Project {
     siteLink: string;
 }
 
-export interface HeaderProps {
-    eyebrow: string;
-    title: string;
-    subTitle: string;
-    profileImage: string;
-}
-
 export interface SkillProps {
     title: string;
     skills: Skill[];
@@ -33,41 +26,53 @@ export interface TechStackItem {
     iconPath: string;
 }
 
-export interface TechMarqueeProps {
-    title: string;
-    techStack: TechStackItem[];
-}
-
-export type ServiceTier = "primary" | "advanced";
-
 export interface Service {
     title: string;
     description: string;
-    capabilities: string[];
-    tier: ServiceTier;
+    techChips: string[];
 }
 
-export interface ServicesProps {
+export interface SocialLink {
+    socialIcon: IconProp;
+    socialLink: string;
+}
+
+export interface HomeData {
+    eyebrow: string;
     title: string;
-    positioningStatement: string;
+    subTitle: string;
+    profileImage: string;
+    techStack: TechStackItem[];
+    availability: string;
     services: Service[];
-}
-
-export interface AboutProps {
-    title: string;
+    socialLinks: SocialLink[];
     aboutMe: string[];
-}
-
-export interface ProjectsProps {
-    title: string;
     projects: Project[];
-}
-
-export interface ContactProps {
-    title: string;
     contactMe: string;
+    footerName: string;
 }
 
-export interface FooterProps {
-    nameTitle: string;
-}
+export type HeaderProps = Pick<
+    HomeData,
+    "eyebrow" | "title" | "subTitle" | "profileImage"
+>;
+
+export type TechMarqueeProps = Pick<HomeData, "techStack"> & {
+    title: string;
+};
+
+export type ServicesProps = Pick<HomeData, "services"> & {
+    title: string;
+};
+
+export type AboutProps = Pick<HomeData, "aboutMe"> & {
+    title: string;
+};
+
+export type ProjectsProps = Pick<HomeData, "projects"> & {
+    title: string;
+};
+
+export type ContactProps = Pick<HomeData, "contactMe"> & {
+    title: string;
+};

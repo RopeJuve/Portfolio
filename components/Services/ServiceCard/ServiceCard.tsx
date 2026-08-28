@@ -1,22 +1,28 @@
-import Pill from "@/components/ui/pill";
 import { Service } from "@/types";
+import { cn } from "@/lib/utils";
 
-const ServiceCard = ({ service }: { service: Service }) => (
-  <div className="flex flex-col gap-4 border border-border rounded-flat bg-linen p-6 md:p-8">
-    <div className="flex items-start justify-between gap-4">
-      <h5 className="text-left">{service.title}</h5>
-      {service.tier === "advanced" && (
-        <Pill className="shrink-0 border border-primary">Advanced</Pill>
-      )}
-    </div>
+const ServiceCard = ({
+  service,
+  index,
+}: {
+  service: Service;
+  index: number;
+}) => (
+  <div
+    className={cn(
+      "flex flex-col gap-4 p-8 bg-bg border-r border-b border-border last:border-r-0 last:border-b-0",
+      index === 1 && "md:border-r-0",
+      index === 2 && "md:border-b-0",
+    )}
+  >
+    <p className="text-caption text-left text-smoke">
+      {String(index + 1).padStart(2, "0")}
+    </p>
+    <h5 className="text-left text-2xl">{service.title}</h5>
     <p className="text-left">{service.description}</p>
-    <ul className="flex flex-wrap gap-2">
-      {service.capabilities.map((capability) => (
-        <li key={capability}>
-          <Pill className="bg-frame">{capability}</Pill>
-        </li>
-      ))}
-    </ul>
+    <p className=" text-caption uppercase tracking-widest text-carbon text-left">
+      {service.techChips.join(" · ")}
+    </p>
   </div>
 );
 

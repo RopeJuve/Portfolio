@@ -31,6 +31,8 @@ module.exports = {
         parchment: "var(--color-parchment)",
         stone: "var(--color-stone)",
         clay: "var(--color-clay)",
+        mist: "var(--color-mist)",
+        smoke: "var(--color-smoke)",
         bg: "var(--color-bone)",
         frame: "var(--color-parchment)",
         content: "var(--color-carbon)",
@@ -61,6 +63,8 @@ module.exports = {
         // share the same font, differentiated by weight (300 / 400).
         header: ["var(--font-archivo)"],
         body: ["var(--font-archivo)"],
+        // Accent serif (ADR-0001 amendment) — used sparingly for tagline-style copy.
+        accent: ["var(--font-source-serif)"],
       },
       maxWidth: {
         container: "77.5rem",

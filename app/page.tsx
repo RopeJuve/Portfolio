@@ -9,10 +9,11 @@ import { data } from "@/data";
 export default function Home() {
   const {
     eyebrow,
-    header,
-    subtitle,
-    profileImg,
+    title,
+    subTitle,
+    profileImage,
     techStack,
+    availability,
     services,
     aboutMe,
     projects,
@@ -22,19 +23,15 @@ export default function Home() {
     <>
       <Hero
         eyebrow={eyebrow}
-        title={header}
-        subTitle={subtitle}
-        profileImage={profileImg}
+        title={title}
+        subTitle={subTitle}
+        profileImage={profileImage}
       />
       <TechMarquee title="Built with" techStack={techStack} />
-      <Services
-        title="services"
-        positioningStatement={subtitle}
-        services={services}
-      />
       <ProjectsCards title="Selected Work" projects={projects} />
-      <About title="about me" aboutMe={aboutMe} />
-      <Contact title="contact me" contactMe={contactMe} />
+      <Services title="Services" services={services} />
+      <About title="About Me" aboutMe={aboutMe} />
+      <Contact title="Let's work" contactMe={contactMe} />
     </>
   );
 }

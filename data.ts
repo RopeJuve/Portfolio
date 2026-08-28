@@ -24,12 +24,14 @@ import {
 } from "simple-icons";
 
 
-export const data = {
+import { HomeData } from "./types";
+
+export const data: HomeData = {
   eyebrow: "Full-stack web development · React & Node · Based in Germany",
-  header: "Hallo, I'm Robert Shterjov — Full-Stack Web Developer",
-  subtitle:
+  title: "Hallo, I'm Robert Shterjov — Full-Stack Web Developer",
+  subTitle:
     "I design and develop modern websites, landing pages, and custom web applications for businesses and startups.",
-  profileImg: "/images/hero.png",
+  profileImage: "/images/hero.png",
   techStack: [
     { name: "HTML", iconPath: siHtml5.path },
     { name: "JavaScript", iconPath: siJavascript.path },
@@ -43,59 +45,31 @@ export const data = {
     { name: "Google Cloud", iconPath: siGooglecloud.path },
     { name: "Firebase", iconPath: siFirebase.path },
   ],
+  availability: "Available — two slots, Q4 2026",
   services: [
     {
-      title: "Website Design & Development",
+      title: "Full-stack build",
       description:
-        "A modern, fast website that turns visitors into customers — designed and built around your business, not a template.",
-      capabilities: [
-        "Modern business websites",
-        "Landing pages",
-        "Portfolio websites",
-        "Responsive and mobile-friendly design",
-        "Fast and optimized websites",
-      ],
-      tier: "primary" as const,
+        "A complete web application built end to end — from the first pixel to the server handling your traffic — so you launch with something that actually works for your business.",
+      techChips: ["React", "Next.js", "Node.js", "MongoDB"],
     },
     {
-      title: "Website Redesign",
+      title: "API & backend",
       description:
-        "Give your outdated website a modern, professional look that works better for you and your visitors on every device.",
-      capabilities: [
-        "Redesign outdated websites",
-        "Improve UI/UX",
-        "Improve mobile experience",
-        "Create modern and professional designs",
-      ],
-      tier: "primary" as const,
+        "A reliable backend and API layer that powers your product, handles your data securely, and scales as your traffic grows.",
+      techChips: ["Node.js", "Express", "MongoDB", "REST APIs"],
     },
     {
-      title: "Custom Web Applications",
+      title: "Interface build",
       description:
-        "For businesses ready to go beyond a website — a custom-built application tailored to how you actually work.",
-      capabilities: [
-        "SaaS applications",
-        "MVP development",
-        "Dashboards",
-        "Client portals",
-        "Authentication",
-        "API integrations",
-        "AI integrations",
-      ],
-      tier: "advanced" as const,
+        "A fast, polished front end that turns visitors into customers — built to match your brand and work on every device.",
+      techChips: ["React", "Next.js", "Tailwind CSS"],
     },
     {
-      title: "Website Maintenance & Support",
+      title: "Fix & refactor",
       description:
-        "Keep your website running smoothly with ongoing fixes, updates, and improvements, so you don't have to think about it.",
-      capabilities: [
-        "Bug fixes",
-        "Content updates",
-        "New features",
-        "Performance improvements",
-        "Ongoing technical support",
-      ],
-      tier: "primary" as const,
+        "Inherited a codebase that's slowing you down? I diagnose the problems and ship fixes and improvements without disrupting what already works.",
+      techChips: ["Debugging", "Refactoring", "Performance"],
     },
   ],
   socialLinks: [
@@ -202,6 +176,6 @@ export const data = {
   ],
 
   contactMe:
-    "Get in touch with me to discuss your project, ask any questions, or simply say hello.I'm here and eager to connect! Whether you have a web development project in mind, need assistance with frontend design, or have inquiries about my services, feel free to reach out using the contact information provided below. I value open communication and prompt responses, so rest assured that I'll get back to you as soon as possible.Let's collaborate and bring your ideas to life. I look forward to hearing from you and being a part of your web development journey!",
-  footerName: "© 2023 ROBERT SHTERJOV",
+    "Tell me about the project — scope, timeline, and what already exists. I reply within a working day.",
+  footerName: `© ${new Date().getFullYear()} ROBERT SHTERJOV`,
 };

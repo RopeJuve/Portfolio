@@ -5,16 +5,16 @@ Personal portfolio website for Robert Shterjov, a freelance full-stack web devel
 ## Language
 
 **Service**:
-One of the offerings shown in the Services section, each with a title, a business-outcome-focused description, and a short list of Capabilities. The Services section leads with business results, not technology names.
-_Avoid_: Skill, tech stack, technology
+One of four numbered offerings (01–04) shown in the Services section — Full-stack build, API & backend, Interface build, Fix & refactor. Each has a title, a business-outcome-focused description, and a Tech Chip line. The description leads with business results; the chips are supporting technical detail, not the headline framing.
+_Avoid_: Skill, tech stack, technology (for the description — chips are the one place tech names belong)
 
-**Capability**:
-A specific thing included under a Service (e.g. "Landing pages", "Authentication"). Shown as a short sub-list per Service.
-_Avoid_: Feature (ambiguous with product features), sub-service
+**Tech Chip**:
+The short line of technology names under a Service's description (e.g. "React · Node · Postgres · Deploy"). Supporting proof of scope, not a pitch — same role as the [[Tech Marquee]] one level down.
+_Avoid_: Tag, badge (reserved for [[Availability Badge]])
 
-**Service Tier**:
-Whether a Service is a Primary offering (used to attract freelance clients — Website Design & Development, Website Redesign, Website Maintenance & Support) or an Advanced offering (a bigger-scope engagement — Custom Web Applications, the only Advanced-tier Service).
-_Avoid_: Featured/unfeatured
+**Availability Badge**:
+The pill next to the Services heading showing current open capacity (e.g. "Available — two slots, Q4 2026"). A status flag, not a quoted price or contractual commitment — pricing is deliberately not shown per Service.
+_Avoid_: Price, rate, quote
 
 **Positioning Statement**:
 The single sentence summarizing what Robert offers: "I design and develop modern websites, landing pages, and custom web applications for businesses and startups." Replaces the Hero title/subtitle's current "Frontend Web Developer" framing — Hero and About are rewritten to match.
