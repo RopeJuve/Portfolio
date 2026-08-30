@@ -41,9 +41,10 @@ export interface HomeData {
     footerName: string;
     footerRole: string;
     tickerWords: string[];
+    navLinks: string[];
 }
 
-export type HeaderProps = Pick<
+export type HeroProps = Pick<
     HomeData,
     "eyebrow" | "title" | "subTitle" | "heroImage"
 >;
@@ -58,7 +59,6 @@ export type ServicesProps = Pick<HomeData, "services" | "availability"> & {
 
 export type AboutProps = Pick<HomeData, "aboutMe" | "socialLinks" | "profileImage"> & {
     title: string;
-    profileImage: string;
 };
 
 export type ProjectsProps = Pick<HomeData, "projects" | "workMeta"> & {
@@ -68,3 +68,14 @@ export type ProjectsProps = Pick<HomeData, "projects" | "workMeta"> & {
 export type ContactProps = Pick<HomeData, "contactMe" | "contactLocale"> & {
     title: string;
 };
+
+export type FooterProps = Pick<HomeData, "footerName" | "footerRole">;
+
+export type LoaderProps = Pick<HomeData, "footerRole" | "contactLocale">;
+
+export type NavBarProps = Pick<HomeData, "navLinks">;
+
+export type ChromeProps = Pick<
+    HomeData,
+    "footerName" | "footerRole" | "contactLocale" | "navLinks"
+>;

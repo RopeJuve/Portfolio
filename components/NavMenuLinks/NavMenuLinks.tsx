@@ -5,9 +5,13 @@ import RollOver from "../RollOver/RollOver";
 
 type NavMenuVariant = "nav-links" | "nav-menu";
 
-const links = ["work", "services", "stack", "about", "contact"];
-
-const NavMenuLinks = ({ variant }: { variant: NavMenuVariant }) => {
+const NavMenuLinks = ({
+  variant,
+  links,
+}: {
+  variant: NavMenuVariant;
+  links: string[];
+}) => {
   const wrapperClass = cn({
     "hidden items-center gap-[1.8125rem] md:flex": variant === "nav-links",
     "mt-14 flex flex-col gap-6": variant === "nav-menu",

@@ -4,50 +4,29 @@ import { useRef } from "react";
 import Container from "../Container/Container";
 import { StackProps } from "@/types";
 import { cn } from "@/lib/utils";
-import {
-  drawHairline,
-  maskReveal,
-  staggerRise,
-  useMotionBuild,
-} from "@/lib/motion";
+import { useSectionReveal } from "@/lib/useSectionReveal";
 
 const Stack = ({ title, techStack }: StackProps) => {
   const sectionRef = useRef<HTMLElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const hairlineRef = useRef<HTMLDivElement>(null);
-  const listRef = useRef<HTMLDivElement>(null);
-
-  useMotionBuild(sectionRef, (ctx) => {
-    const heading = headingRef.current;
-    const hairline = hairlineRef.current;
-    const list = listRef.current;
-    if (!heading || !hairline || !list) return;
-
-    maskReveal(heading, ctx);
-    drawHairline(hairline, ctx);
-
-    const rows = list.querySelectorAll("[data-stack-row]");
-    staggerRise(rows, ctx, 12, {
-      scrollTrigger: { trigger: list, start: "top 92%" },
-    });
-  });
+  useSectionReveal(sectionRef);
 
   return (
     <section ref={sectionRef} id="stack" className="pt-[7.1875rem]">
       <Container>
         <div
-          ref={hairlineRef}
           data-hairline="bottom"
           className="relative border-b border-ink pb-4"
         >
-          <h2
-            ref={headingRef}
-            className="split-text text-section font-light uppercase text-ink"
-          >
+          <h2 className="split-text text-section font-light uppercase text-ink">
             {title}
           </h2>
         </div>
-        <div ref={listRef}>
+        <div
+          data-rise-group
+          data-rise-selector="[data-stack-row]"
+          data-rise-distance="12"
+          data-rise-start="top 92%"
+        >
           {techStack.map((row, index) => (
             <div
               key={row.label}

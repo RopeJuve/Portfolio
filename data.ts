@@ -2,7 +2,7 @@ import { HomeData } from "./types";
 
 export const data: HomeData = {
   eyebrow: "Full-stack web development · React & Node · Based in Germany",
-  title: "Robert Shterjov builds\nweb products end to end",
+  title: "Robert\nShterjov builds\nfull-stack\nweb products\nend to end",
   subTitle:
     "I design and develop modern websites, landing pages, and custom web applications for businesses and startups.",
   heroImage: "/images/hero.png",
@@ -130,6 +130,7 @@ export const data: HomeData = {
   contactLocale: "Germany · CET · Remote friendly",
   footerName: `© ${new Date().getFullYear()} ROBERT SHTERJOV`,
   footerRole: "FULL-STACK DEVELOPER",
+  navLinks: ["work", "services", "stack", "about", "contact"],
   tickerWords: [
     "Full-stack build",
     "API & backend",

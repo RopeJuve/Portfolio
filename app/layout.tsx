@@ -1,4 +1,5 @@
 import AppShell from "@/components/AppShell/AppShell";
+import { data } from "@/data";
 import "./globals.css";
 import { Archivo, Source_Serif_4 } from "next/font/google";
 
@@ -36,7 +37,14 @@ export default function RootLayout({
         <noscript>
           <style>{`.loader-overlay{display:none!important}`}</style>
         </noscript>
-        <AppShell>{children}</AppShell>
+        <AppShell
+          footerName={data.footerName}
+          footerRole={data.footerRole}
+          contactLocale={data.contactLocale}
+          navLinks={data.navLinks}
+        >
+          {children}
+        </AppShell>
       </body>
     </html>
   );

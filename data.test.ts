@@ -12,7 +12,7 @@ describe("data", () => {
   });
 
   it("frames the Hero as full-stack, not frontend-only", () => {
-    expect(data.title).toMatch(/web products end to end/i);
+    expect(data.title.replace(/\s+/g, " ")).toMatch(/web products end to end/i);
     expect(data.title).not.toMatch(/frontend/i);
   });
 
@@ -112,6 +112,16 @@ describe("data", () => {
     expect(data.workMeta).toBe("06 PROJECTS · 2023–2024");
     expect(data.footerRole).toBe("FULL-STACK DEVELOPER");
     expect(data.contactLocale.length).toBeGreaterThan(0);
+  });
+
+  it("lists the main nav section ids in order", () => {
+    expect(data.navLinks).toEqual([
+      "work",
+      "services",
+      "stack",
+      "about",
+      "contact",
+    ]);
   });
 
   it("exposes ticker capability words from the four services", () => {

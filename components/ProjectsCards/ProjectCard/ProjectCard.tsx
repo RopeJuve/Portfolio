@@ -3,14 +3,18 @@ import GradedPhoto from "@/components/GradedPhoto/GradedPhoto";
 import { Project } from "@/types";
 
 const ProjectCard = ({ project }: { project: Project }) => (
-  <article className="project-card flex flex-col gap-5">
+  <article data-card className="project-card flex flex-col gap-5">
     <p data-rise className="text-meta uppercase text-ink">
       {project.techNames.join(" · ")}
     </p>
     <h3 data-rise className="text-card font-normal uppercase text-ink">
       {project.projectName}
     </h3>
-    <div data-photo className="aspect-[4/3] w-full overflow-hidden bg-stone">
+    <div
+      data-photo
+      data-photo-hover
+      className="aspect-[4/3] w-full overflow-hidden bg-stone"
+    >
       <GradedPhoto
         src={project.projectImg}
         alt={`${project.projectName} screenshot`}

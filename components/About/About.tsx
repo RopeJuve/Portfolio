@@ -4,40 +4,21 @@ import { useRef } from "react";
 import Social from "../Social/Social";
 import Container from "../Container/Container";
 import { AboutProps } from "@/types";
-import {
-  imageUncover,
-  maskReveal,
-  staggerRise,
-  useMotionBuild,
-} from "@/lib/motion";
+import { useSectionReveal } from "@/lib/useSectionReveal";
 
 const About = ({ title, aboutMe, socialLinks, profileImage }: AboutProps) => {
   const [lead, ...body] = aboutMe;
   const sectionRef = useRef<HTMLElement>(null);
-  const photoWrapRef = useRef<HTMLDivElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const copyRef = useRef<HTMLDivElement>(null);
-
-  useMotionBuild(sectionRef, (ctx) => {
-    const wrap = photoWrapRef.current;
-    const heading = headingRef.current;
-    const copy = copyRef.current;
-    const img = wrap?.querySelector<HTMLElement>("img");
-    if (!wrap || !heading || !copy || !img) return;
-
-    imageUncover(wrap, img, ctx, { parallax: 4, restScale: 1.08 });
-    maskReveal(heading, ctx);
-    staggerRise(copy.querySelectorAll("[data-rise]"), ctx, 20, {
-      scrollTrigger: { trigger: copy, start: "top 88%" },
-    });
-  });
+  useSectionReveal(sectionRef);
 
   return (
     <section ref={sectionRef} id="about" className="pt-[7.1875rem]">
       <Container className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,22.5rem),1fr))] items-start gap-[1.8125rem]">
         <figure className="flex w-full flex-col max-w-[20rem]">
           <div
-            ref={photoWrapRef}
+            data-photo
+            data-parallax="4"
+            data-rest-scale="1.08"
             className="aspect-[3/4] w-full overflow-hidden border border-ink bg-ink"
           >
             <img
@@ -52,13 +33,10 @@ const About = ({ title, aboutMe, socialLinks, profileImage }: AboutProps) => {
           </figcaption>
         </figure>
         <div className="flex max-w-[52ch] flex-col gap-6 md:justify-self-end">
-          <h2
-            ref={headingRef}
-            className="split-text text-section font-light uppercase text-ink"
-          >
+          <h2 className="split-text text-section font-light uppercase text-ink">
             {title}
           </h2>
-          <div ref={copyRef} className="flex flex-col gap-6">
+          <div data-rise-group className="flex flex-col gap-6">
             {lead && (
               <p data-rise className="font-serif text-lead text-ink">
                 {lead}

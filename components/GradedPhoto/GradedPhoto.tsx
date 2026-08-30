@@ -24,7 +24,7 @@ const GradedPhoto = ({ src, alt, className }: GradedPhotoProps) => {
     <img
       src={src}
       alt={alt}
-      className={cn("", className)}
+      className={cn(className)}
       onError={handleError}
     />
   );

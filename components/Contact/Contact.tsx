@@ -1,104 +1,37 @@
 "use client";
-import { useRef, useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+
+import { useRef } from "react";
 import { ContactProps } from "@/types";
 import Button from "../Button/Button";
 import Container from "../Container/Container";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import emailjs from "@emailjs/browser";
-import { contactSchema, type ContactFormValues } from "./contactSchema";
-import {
-  drawHairline,
-  maskReveal,
-  staggerRise,
-  useMotionBuild,
-} from "@/lib/motion";
+import { useSectionReveal } from "@/lib/useSectionReveal";
+import { useContactForm } from "./useContactForm";
 
 const Contact = ({ title, contactMe, contactLocale }: ContactProps) => {
   const sectionRef = useRef<HTMLElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const hairlineRef = useRef<HTMLDivElement>(null);
-  const copyRef = useRef<HTMLDivElement>(null);
-  const formRef = useRef<HTMLFormElement>(null);
-  const [isSending, setIsSending] = useState(false);
-  const [sendStatus, setSendStatus] = useState<"idle" | "success" | "error">(
-    "idle"
-  );
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<ContactFormValues>({
-    resolver: zodResolver(contactSchema),
-  });
-
-  useMotionBuild(sectionRef, (ctx) => {
-    const heading = headingRef.current;
-    const hairline = hairlineRef.current;
-    const copy = copyRef.current;
-    const form = formRef.current;
-    if (!heading || !hairline || !copy || !form) return;
-
-    maskReveal(heading, ctx);
-    drawHairline(hairline, ctx);
-    staggerRise(copy.querySelectorAll("[data-rise]"), ctx, 20, {
-      scrollTrigger: { trigger: copy, start: "top 88%" },
-    });
-    staggerRise(form.querySelectorAll("[data-field]"), ctx, 18, {
-      scrollTrigger: { trigger: form, start: "top 88%" },
-    });
-  });
-
-  const handleSendEmail = async (formData: ContactFormValues) => {
-    setIsSending(true);
-    setSendStatus("idle");
-
-    try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_SERVICE_ID as string,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
-        {
-          user_name: formData.user_name,
-          user_last_name: formData.user_last_name,
-          user_email: formData.user_email,
-          message: formData.message,
-        },
-        process.env.NEXT_PUBLIC_USER_ID as string
-      );
-      setSendStatus("success");
-      reset();
-    } catch {
-      setSendStatus("error");
-    } finally {
-      setIsSending(false);
-    }
-  };
+  useSectionReveal(sectionRef);
+  const { register, handleSubmit, errors, isSending, sendStatus } =
+    useContactForm();
 
   return (
     <section ref={sectionRef} id="contact" className="pt-[7.1875rem]">
       <Container>
         <div
-          ref={hairlineRef}
           data-hairline="top"
           className="relative grid grid-cols-[repeat(auto-fit,minmax(min(100%,22.5rem),1fr))] gap-[1.8125rem] border-t border-ink pt-10"
         >
           <div className="flex flex-col gap-5">
-            <h2
-              ref={headingRef}
-              className="split-text text-section font-light uppercase text-ink"
-            >
+            <h2 className="split-text text-section font-light uppercase text-ink">
               {title.split(" ").map((word, index) => (
                 <span key={word} className="block">
                   {index === 0 ? `${word} /` : word}
                 </span>
               ))}
             </h2>
-            <div ref={copyRef} className="flex flex-col gap-5">
+            <div data-rise-group className="flex flex-col gap-5">
               <p data-rise className="max-w-[52ch] text-body text-ink">
                 {contactMe}
               </p>
@@ -108,9 +41,10 @@ const Contact = ({ title, contactMe, contactLocale }: ContactProps) => {
             </div>
           </div>
           <form
-            ref={formRef}
+            data-rise-group
+            data-rise-distance="18"
             className="flex flex-col gap-4"
-            onSubmit={handleSubmit(handleSendEmail)}
+            onSubmit={handleSubmit}
             noValidate
           >
             <div className="flex flex-col gap-4 md:flex-row">
@@ -158,7 +92,7 @@ const Contact = ({ title, contactMe, contactLocale }: ContactProps) => {
             <div data-field className="flex flex-col gap-2">
               <Label htmlFor="message">Message</Label>
               <Textarea
-              className="resize-none"
+                className="resize-none"
                 id="message"
                 rows={6}
                 {...register("message")}

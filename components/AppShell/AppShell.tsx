@@ -6,14 +6,21 @@ import Loader from "@/components/Loader/Loader";
 import NavBar from "@/components/NavBar/NavBar";
 import ScrollProgress from "@/components/ScrollProgress/ScrollProgress";
 import { MotionProvider } from "@/lib/motion";
+import { ChromeProps } from "@/types";
 
-const AppShell = ({ children }: { children: ReactNode }) => (
+const AppShell = ({
+  children,
+  footerName,
+  footerRole,
+  contactLocale,
+  navLinks,
+}: ChromeProps & { children: ReactNode }) => (
   <MotionProvider>
-    <Loader />
+    <Loader footerRole={footerRole} contactLocale={contactLocale} />
     <ScrollProgress />
-    <NavBar />
+    <NavBar navLinks={navLinks} />
     {children}
-    <Footer />
+    <Footer footerName={footerName} footerRole={footerRole} />
   </MotionProvider>
 );
 

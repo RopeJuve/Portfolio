@@ -10,10 +10,11 @@ import {
   SheetTrigger,
   SheetTitle,
 } from "@/components/ui/sheet";
+import { NavBarProps } from "@/types";
 
-const NavBar = () => {
+const NavBar = ({ navLinks }: NavBarProps) => {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-ink bg-bone py-5">
+    <header className="sticky top-0 z-50 max-w-[90rem] mx-auto border-b border-ink bg-bone py-5">
       <Container className="flex items-center justify-between">
         <a
           href="#home"
@@ -24,7 +25,7 @@ const NavBar = () => {
           <Wordmark className="text-[0.875rem]" />
         </a>
         <div className="flex items-center gap-[1.8125rem]">
-          <NavMenuLinks variant="nav-links" />
+          <NavMenuLinks variant="nav-links" links={navLinks} />
           <Button
             usedAs="link"
             text="CV"
@@ -40,7 +41,7 @@ const NavBar = () => {
             </SheetTrigger>
             <SheetContent side="right">
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-              <NavMenuLinks variant="nav-menu" />
+              <NavMenuLinks variant="nav-menu" links={navLinks} />
             </SheetContent>
           </Sheet>
         </div>
