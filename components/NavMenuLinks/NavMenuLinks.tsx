@@ -1,4 +1,7 @@
+"use client";
+
 import { cn } from "@/lib/utils";
+import RollOver from "../RollOver/RollOver";
 
 type NavMenuVariant = "nav-links" | "nav-menu";
 
@@ -6,24 +9,21 @@ const links = ["work", "services", "stack", "about", "contact"];
 
 const NavMenuLinks = ({ variant }: { variant: NavMenuVariant }) => {
   const wrapperClass = cn({
-    "hidden md:flex max-w-[31.25rem] justify-between items-center gap-10":
-      variant === "nav-links",
-    "flex flex-col gap-6 mx-auto": variant === "nav-menu",
+    "hidden items-center gap-[1.8125rem] md:flex": variant === "nav-links",
+    "mt-14 flex flex-col gap-6": variant === "nav-menu",
   });
-
-  const showUnderline = variant === "nav-links";
 
   return (
     <nav className={wrapperClass} aria-label="Main navigation">
-      {links.map((menuItem, i) => (
+      {links.map((menuItem) => (
         <a
-          key={`${i}-${menuItem}`}
+          key={menuItem}
           href={`#${menuItem}`}
-          className={cn(showUnderline && "nav-link")}
+          className="text-micro uppercase text-ink hover:text-black"
           tabIndex={0}
           aria-label={menuItem}
         >
-          {menuItem}
+          <RollOver>{menuItem}</RollOver>
         </a>
       ))}
     </nav>

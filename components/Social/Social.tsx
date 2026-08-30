@@ -1,24 +1,22 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { data } from "@/data";
+"use client";
 
-const Social = () => {
-  const { socialLinks } = data;
+import { SocialLink } from "@/types";
+import RollOver from "../RollOver/RollOver";
 
+const Social = ({ links }: { links: SocialLink[] }) => {
   return (
-    <div className="flex items-center gap-6 mt-4">
-      {socialLinks.map((link, index) => (
+    <div className="flex flex-wrap items-center gap-3">
+      {links.map((link) => (
         <a
-          key={`${link.socialIcon}-${index}`}
-          href={link.socialLink}
+          key={link.label}
+          href={link.href}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`Social link ${index + 1}`}
+          aria-label={link.label}
           tabIndex={0}
+          className="rounded-full border border-ink px-3.5 py-1 text-micro uppercase text-ink hover:bg-ink hover:text-paper"
         >
-          <FontAwesomeIcon
-            icon={link.socialIcon}
-            className="w-9 h-9 text-accent cursor-pointer transition-all hover:scale-110 hover:text-primary"
-          />
+          <RollOver>{link.label}</RollOver>
         </a>
       ))}
     </div>

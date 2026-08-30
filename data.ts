@@ -1,49 +1,33 @@
-import {
-  faHtml5,
-  faJsSquare,
-  faReact,
-  faSass,
-  faCss3Alt,
-  faLinkedin,
-  faGithub,
-  faWhatsappSquare,
-  faTelegramPlane,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  siHtml5,
-  siJavascript,
-  siSass,
-  siReact,
-  siGit,
-  siNextdotjs,
-  siNodedotjs,
-  siExpress,
-  siMongodb,
-  siGooglecloud,
-  siFirebase,
-} from "simple-icons";
-
-
 import { HomeData } from "./types";
 
 export const data: HomeData = {
   eyebrow: "Full-stack web development · React & Node · Based in Germany",
-  title: "Hallo, I'm Robert Shterjov — Full-Stack Web Developer",
+  title: "Robert Shterjov builds\nweb products end to end",
   subTitle:
     "I design and develop modern websites, landing pages, and custom web applications for businesses and startups.",
-  profileImage: "/images/hero.png",
+  heroImage: "/images/hero.png",
+  profileImage: "/images/profile.png",
   techStack: [
-    { name: "HTML", iconPath: siHtml5.path },
-    { name: "JavaScript", iconPath: siJavascript.path },
-    { name: "Sass", iconPath: siSass.path },
-    { name: "React", iconPath: siReact.path },
-    { name: "Git", iconPath: siGit.path },
-    { name: "Next.js", iconPath: siNextdotjs.path },
-    { name: "Node.js", iconPath: siNodedotjs.path },
-    { name: "Express", iconPath: siExpress.path },
-    { name: "MongoDB", iconPath: siMongodb.path },
-    { name: "Google Cloud", iconPath: siGooglecloud.path },
-    { name: "Firebase", iconPath: siFirebase.path },
+    {
+      label: "Frontend",
+      technologies: ["React", "Hooks", "Router", "Redux", "Vite"],
+    },
+    {
+      label: "Backend",
+      technologies: ["Node.js", "Express", "REST APIs", "Auth"],
+    },
+    {
+      label: "Data",
+      technologies: ["PostgreSQL", "MongoDB", "Mongoose", "SQL"],
+    },
+    {
+      label: "Styling",
+      technologies: ["Sass", "Tailwind CSS", "Semantics", "A11y"],
+    },
+    {
+      label: "Delivery",
+      technologies: ["Git", "Docker", "CI/CD", "Netlify & Render"],
+    },
   ],
   availability: "Available — two slots, Q4 2026",
   services: [
@@ -73,10 +57,10 @@ export const data: HomeData = {
     },
   ],
   socialLinks: [
-    { socialIcon: faGithub, socialLink: 'https://github.com/RopeJuve' },
-    { socialIcon: faLinkedin, socialLink: 'https://www.linkedin.com/in/robert-shterjov/' },
-    { socialIcon: faWhatsappSquare, socialLink: 'https://wa.me/4917621955050' },
-    { socialIcon: faTelegramPlane, socialLink: 'https://t.me/RopeShterjov' }
+    { label: "GitHub", href: "https://github.com/RopeJuve" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/robert-shterjov/" },
+    { label: "WhatsApp", href: "https://wa.me/4917621955050" },
+    { label: "Telegram", href: "https://t.me/RopeShterjov" },
   ],
   aboutMe: [
     "Hello, I'm Robert Shterjov, a full-stack web developer based in Germany. I design and develop modern websites, landing pages, and custom web applications for businesses and startups — from the first pixel to the server handling their traffic.",
@@ -86,46 +70,27 @@ export const data: HomeData = {
   projects: [
     {
       projectName: "hacker news",
-      description: "The Hacker News Project is a React-based web app that displays the latest Tech News, styled with Tailwind CSS and fetching data from the Hacker News API. Users can browse top stories in a clean, responsive interface.",
-      techTitle: "MADE WITH",
-      techNames: [
-        { skillIcon: faReact, skillName: "React" },
-        { skillIcon: faJsSquare, skillName: "Java Script" },
-        { skillIcon: faCss3Alt, skillName: "Tailwind" },
-        { skillIcon: faCss3Alt, skillName: "API" }
-      ],
+      description:
+        "The Hacker News Project is a React-based web app that displays the latest Tech News, styled with Tailwind CSS and fetching data from the Hacker News API. Users can browse top stories in a clean, responsive interface.",
+      techNames: ["React", "Java Script", "Tailwind", "API"],
       projectImg: "./images/hacker-news.png",
-      gitHubLink:
-        "https://github.com/RopeJuve/hacker-news.git",
+      gitHubLink: "https://github.com/RopeJuve/hacker-news.git",
       siteLink: "https://hacker-news-wbs.netlify.app/",
     },
     {
       projectName: "IP-TRACKER",
       description:
         "IP Tracker is a web application that offers comprehensive information about any IP address. Utilizing React, Tailwind CSS, and React-Leaflet, it retrieves IP and country data from APIs and presents the location on an interactive map",
-      techTitle: "MADE WITH",
-      techNames: [
-        { skillIcon: faReact, skillName: "React" },
-        { skillIcon: faJsSquare, skillName: "Java Script" },
-        { skillIcon: faCss3Alt, skillName: "Tailwind" },
-        { skillIcon: faCss3Alt, skillName: "API" }
-      ],
+      techNames: ["React", "Java Script", "Tailwind", "API"],
       projectImg: "./images/ip-tracker.png",
-      gitHubLink:
-        "https://github.com/RopeJuve/ip-location.git",
+      gitHubLink: "https://github.com/RopeJuve/ip-location.git",
       siteLink: "https://ip-tracker-wbs.netlify.app/",
     },
     {
       projectName: "AUDIOPHILE E-COMMERCE WEBSITE",
       description:
         "Multi-page Figma conversion made using a Frontend Mentor design files. Responsive across devices.",
-      techTitle: "MADE WITH",
-      techNames: [
-        { skillIcon: faReact, skillName: "React" },
-        { skillIcon: faJsSquare, skillName: "Java Script" },
-        { skillIcon: faSass, skillName: "Sass" },
-        { skillIcon: faHtml5, skillName: "Redux" },
-      ],
+      techNames: ["React", "Java Script", "Sass", "Redux"],
       projectImg: "./images/Laptop.png",
       gitHubLink:
         "https://github.com/RopeJuve/audiophile-e-commerce-website.git",
@@ -135,12 +100,7 @@ export const data: HomeData = {
       projectName: "Yoga E-COMMERCE WEBSITE",
       description:
         "Landing page for Yoga Course. Figma conversion made using UIHUT design files. Responsive across devices.",
-      techTitle: "MADE WITH",
-      techNames: [
-        { skillIcon: faReact, skillName: "React" },
-        { skillIcon: faJsSquare, skillName: "Java Script" },
-        { skillIcon: faCss3Alt, skillName: "css" },
-      ],
+      techNames: ["React", "Java Script", "css"],
       projectImg: "./images/yoga.png",
       gitHubLink: "https://github.com/RopeJuve/YogaCourse.git",
       siteLink: "https://yoga-course.netlify.app/",
@@ -149,12 +109,7 @@ export const data: HomeData = {
       projectName: "Space Tourism WEBSITE",
       description:
         "Figma conversion made using a Frontend Mentor design files. Responsive across devices.",
-      techTitle: "MADE WITH",
-      techNames: [
-        { skillIcon: faReact, skillName: "React" },
-        { skillIcon: faJsSquare, skillName: "Java Script" },
-        { skillIcon: faCss3Alt, skillName: "css" },
-      ],
+      techNames: ["React", "Java Script", "css"],
       projectImg: "./images/space.png",
       gitHubLink: "https://github.com/RopeJuve/space-tourism.git",
       siteLink: "https://space-tourism-vite-react.netlify.app/",
@@ -163,19 +118,22 @@ export const data: HomeData = {
       projectName: "Single product Page",
       description:
         "Product-page Figma conversion made using a Frontend Mentor design files. Responsive across devices.",
-      techTitle: "MADE WITH",
-      techNames: [
-        { skillIcon: faReact, skillName: "React" },
-        { skillIcon: faJsSquare, skillName: "Java Script" },
-        { skillIcon: faCss3Alt, skillName: "css" },
-      ],
+      techNames: ["React", "Java Script", "css"],
       projectImg: "./images/productPage.png",
       gitHubLink: "https://github.com/RopeJuve/product-page.git",
       siteLink: "https://e-commerce-product-page-challenge.netlify.app/",
     },
   ],
-
+  workMeta: "06 PROJECTS · 2023–2024",
   contactMe:
     "Tell me about the project — scope, timeline, and what already exists. I reply within a working day.",
+  contactLocale: "Germany · CET · Remote friendly",
   footerName: `© ${new Date().getFullYear()} ROBERT SHTERJOV`,
+  footerRole: "FULL-STACK DEVELOPER",
+  tickerWords: [
+    "Full-stack build",
+    "API & backend",
+    "Interface build",
+    "Fix & refactor",
+  ],
 };

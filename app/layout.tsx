@@ -1,13 +1,13 @@
-import NavBar from "@/components/NavBar/NavBar";
+import AppShell from "@/components/AppShell/AppShell";
 import "./globals.css";
-import Footer from "@/components/Footer/Footer";
 import { Archivo, Source_Serif_4 } from "next/font/google";
 
 export const metadata = {
-  title: "Robert Shterjov Frontend Developer",
-  description: "Portfolio Web Site for my web dev journey",
+  title: "Robert Shterjov — Full-Stack Web Developer",
+  description:
+    "I design and develop modern websites, landing pages, and custom web applications for businesses and startups.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.svg",
   },
 };
 
@@ -30,10 +30,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${archivo.variable} ${sourceSerif4.variable}`}>
-        <NavBar />
-        {children}
-        <Footer />
+      <body
+        className={`${archivo.variable} ${sourceSerif4.variable} bg-bone font-sans text-ink`}
+      >
+        <noscript>
+          <style>{`.loader-overlay{display:none!important}`}</style>
+        </noscript>
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

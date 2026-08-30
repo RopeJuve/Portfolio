@@ -1,29 +1,15 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-
-
-interface Skill {
-    skillIcon: IconProp;
-    skillName: string;
-}
-
 export interface Project {
     projectName: string;
     description: string;
-    techTitle: string;
-    techNames: Skill[];
+    techNames: string[];
     projectImg: string;
     gitHubLink: string;
     siteLink: string;
 }
 
-export interface SkillProps {
-    title: string;
-    skills: Skill[];
-}
-
-export interface TechStackItem {
-    name: string;
-    iconPath: string;
+export interface TechStackRow {
+    label: string;
+    technologies: string[];
 }
 
 export interface Service {
@@ -33,46 +19,52 @@ export interface Service {
 }
 
 export interface SocialLink {
-    socialIcon: IconProp;
-    socialLink: string;
+    label: string;
+    href: string;
 }
 
 export interface HomeData {
     eyebrow: string;
     title: string;
     subTitle: string;
+    heroImage: string;
     profileImage: string;
-    techStack: TechStackItem[];
+    techStack: TechStackRow[];
     availability: string;
     services: Service[];
     socialLinks: SocialLink[];
     aboutMe: string[];
     projects: Project[];
+    workMeta: string;
     contactMe: string;
+    contactLocale: string;
     footerName: string;
+    footerRole: string;
+    tickerWords: string[];
 }
 
 export type HeaderProps = Pick<
     HomeData,
-    "eyebrow" | "title" | "subTitle" | "profileImage"
+    "eyebrow" | "title" | "subTitle" | "heroImage"
 >;
 
-export type TechMarqueeProps = Pick<HomeData, "techStack"> & {
+export type StackProps = Pick<HomeData, "techStack"> & {
     title: string;
 };
 
-export type ServicesProps = Pick<HomeData, "services"> & {
+export type ServicesProps = Pick<HomeData, "services" | "availability"> & {
     title: string;
 };
 
-export type AboutProps = Pick<HomeData, "aboutMe"> & {
+export type AboutProps = Pick<HomeData, "aboutMe" | "socialLinks" | "profileImage"> & {
+    title: string;
+    profileImage: string;
+};
+
+export type ProjectsProps = Pick<HomeData, "projects" | "workMeta"> & {
     title: string;
 };
 
-export type ProjectsProps = Pick<HomeData, "projects"> & {
-    title: string;
-};
-
-export type ContactProps = Pick<HomeData, "contactMe"> & {
+export type ContactProps = Pick<HomeData, "contactMe" | "contactLocale"> & {
     title: string;
 };

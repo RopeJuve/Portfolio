@@ -9,7 +9,7 @@ One of four numbered offerings (01–04) shown in the Services section — Full-
 _Avoid_: Skill, tech stack, technology (for the description — chips are the one place tech names belong)
 
 **Tech Chip**:
-The short line of technology names under a Service's description (e.g. "React · Node · Postgres · Deploy"). Supporting proof of scope, not a pitch — same role as the [[Tech Marquee]] one level down.
+The short line of technology names under a Service's description (e.g. "React · Node · Postgres · Deploy"). Supporting proof of scope, not a pitch — same role as the [[Stack]] one level down.
 _Avoid_: Tag, badge (reserved for [[Availability Badge]])
 
 **Availability Badge**:
@@ -20,6 +20,10 @@ _Avoid_: Price, rate, quote
 The single sentence summarizing what Robert offers: "I design and develop modern websites, landing pages, and custom web applications for businesses and startups." Replaces the Hero title/subtitle's current "Frontend Web Developer" framing — Hero and About are rewritten to match.
 _Avoid_: Tagline, main message
 
-**Tech Marquee**:
-The secondary, auto-scrolling horizontal strip of technology icons (React, Next.js, Sass, Git, etc.) — the redesigned form of the old Skills section. Supporting proof of capability, not a headline section; does not lead with technology.
-_Avoid_: Skills section, skills grid
+**Stack**:
+Hairline table of technology rows after Services — label left (Frontend / Backend / Data / Styling / Delivery), technologies right in micro type. Supporting proof of capability, not a headline section; does not lead with technology. No icons.
+_Avoid_: Skills section, skills grid, Tech Marquee
+
+**Social Pill**:
+Outline text pill linking to a profile (GitHub, LinkedIn, WhatsApp, Telegram). Used in About. No brand icons.
+_Avoid_: Icon, social icon

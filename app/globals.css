@@ -4,42 +4,18 @@
 
 @layer base {
   :root {
-    /* Reference design-system palette (ADR-0001) — single source of truth,
-       referenced by both the semantic roles below and tailwind.config.js's
-       named color tokens (carbon, bone, ink, linen, ash, parchment, stone,
-       clay). */
-    --color-carbon: #2a2a2a;
-    --color-bone: #f0f0f0;
-    --color-ink: #000000;
-    --color-linen: #fafafa;
-    --color-ash: #d6d6d6;
-    --color-parchment: #f0edea;
-    --color-stone: #bcbcb4;
-    --color-clay: #ccc4b9;
-    /* Added with the hero/footer full-bleed treatment (ADR-0001 amendment) */
-    --color-mist: #e6e4e0;
-    --color-smoke: #8f8f88;
-
-    --background: 0 0% 94%;
-    --foreground: 0 0% 16%;
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 16%;
-    --popover: 0 0% 98%;
-    --popover-foreground: 0 0% 16%;
-    --primary: 0 0% 16%;
-    --primary-foreground: 0 0% 94%;
-    --secondary: 35 16% 76%;
-    --secondary-foreground: 0 0% 16%;
-    --muted: 0 0% 84%;
-    --muted-foreground: 60 6% 72%;
-    --accent: 60 6% 72%;
-    --accent-foreground: 0 0% 16%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: #2a2a2a;
-    --input: #2a2a2a;
-    --ring: 0 0% 16%;
-    --radius: 0px;
+    --background: 0 0% 94.1%;
+    --foreground: 0 0% 16.5%;
+    --card: 0 0% 94.1%;
+    --card-foreground: 0 0% 16.5%;
+    --primary: 0 0% 16.5%;
+    --primary-foreground: 0 0% 98%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 56%;
+    --border: 0 0% 16.5%;
+    --input: 0 0% 16.5%;
+    --ring: 0 0% 16.5%;
+    --radius: 0.25rem;
   }
 
   * {
@@ -48,44 +24,28 @@
     margin: 0;
   }
 
-  html,
+  html {
+    scroll-padding-top: 4.5rem;
+  }
+
   body {
     overflow-x: hidden;
-    scroll-behavior: smooth !important;
   }
 
   body {
-    @apply bg-bg text-content;
+    @apply bg-bone font-sans font-normal text-ink;
   }
 
-  h1 {
-    @apply font-header font-light text-display-xl text-primary uppercase;
-  }
-
-  h2 {
-    @apply font-header font-normal text-subheading text-content;
-  }
-
-  h3 {
-    @apply text-primary font-header text-display font-light text-center uppercase;
-  }
-
-  h5 {
-    @apply text-primary font-header text-body-lg font-normal uppercase;
+  h1:not(.split-text) {
+    text-wrap: balance;
   }
 
   p {
-    @apply font-body text-body-lg text-content text-center;
+    text-wrap: pretty;
   }
 
-  a,
-  button {
-    @apply relative font-header text-caption text-primary font-normal uppercase no-underline cursor-pointer;
-  }
-
-  input,
-  textarea {
-    @apply font-body text-primary text-[0.785rem] font-bold tracking-widest bg-transparent border-none outline-none;
+  a {
+    @apply text-ink no-underline;
   }
 
   input:-webkit-autofill,
@@ -94,42 +54,29 @@
   textarea:-webkit-autofill,
   textarea:-webkit-autofill:hover,
   textarea:-webkit-autofill:focus {
-    border-radius: 0.5rem;
-    -webkit-text-fill-color: hsl(0 0% 16%);
-    -webkit-box-shadow: 0 0 0px 40rem transparent inset;
+    -webkit-text-fill-color: #2a2a2a;
+    -webkit-box-shadow: 0 0 0rem 40rem #f0f0f0 inset;
     transition: background-color 5000s ease-in-out 0s;
   }
 }
 
 @layer components {
-  .nav-link {
-    @apply relative;
+  .split-text {
+    text-wrap: unset;
   }
 
-  .nav-link::after {
-    position: absolute;
-    content: "";
-    top: 100%;
-    right: 50%;
-    width: 0;
-    height: 3px;
-    background-color: hsl(0 0% 16%);
-    transition: all 0.3s ease-in-out;
+  .hero-scrim {
+    background: linear-gradient(
+      100deg,
+      #f0f0f0 0%,
+      #f0f0f0 26%,
+      rgba(240, 240, 240, 0.86) 44%,
+      rgba(240, 240, 240, 0.22) 66%,
+      rgba(240, 240, 240, 0) 82%
+    );
   }
 
-  .nav-link::before {
-    position: absolute;
-    content: "";
-    top: 100%;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background-color: hsl(0 0% 16%);
-    transition: all 0.3s ease-in-out;
-  }
-
-  .nav-link:hover::after,
-  .nav-link:hover::before {
-    width: 50%;
+  .photo-grade {
+    filter: grayscale(1) contrast(1.08) brightness(1.04);
   }
 }
