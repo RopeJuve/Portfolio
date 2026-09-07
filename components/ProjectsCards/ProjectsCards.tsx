@@ -11,8 +11,8 @@ const ProjectsCards = ({ title, projects, workMeta }: ProjectsProps) => {
   useSectionReveal(sectionRef);
 
   return (
-    <section ref={sectionRef} id="work" className="relative bg-bone pt-[7.1875rem] w-[90%] mx-auto">
-      <Container className="w-full">
+    <section ref={sectionRef} id="work" className="pt-[7.1875rem]">
+      <Container>
         <div
           data-hairline="bottom"
           className="relative flex flex-col gap-4 border-b border-ink pb-4 md:flex-row md:items-end md:justify-between"
