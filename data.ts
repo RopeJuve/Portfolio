@@ -73,7 +73,7 @@ export const data: HomeData = {
       description:
         "The Hacker News Project is a React-based web app that displays the latest Tech News, styled with Tailwind CSS and fetching data from the Hacker News API. Users can browse top stories in a clean, responsive interface.",
       techNames: ["React", "Java Script", "Tailwind", "API"],
-      projectImg: "./images/hacker-news.png",
+      projectImg: "/images/hacker-news.png",
       gitHubLink: "https://github.com/RopeJuve/hacker-news.git",
       siteLink: "https://hacker-news-wbs.netlify.app/",
     },
@@ -82,7 +82,7 @@ export const data: HomeData = {
       description:
         "IP Tracker is a web application that offers comprehensive information about any IP address. Utilizing React, Tailwind CSS, and React-Leaflet, it retrieves IP and country data from APIs and presents the location on an interactive map",
       techNames: ["React", "Java Script", "Tailwind", "API"],
-      projectImg: "./images/ip-tracker.png",
+      projectImg: "/images/ip-tracker.png",
       gitHubLink: "https://github.com/RopeJuve/ip-location.git",
       siteLink: "https://ip-tracker-wbs.netlify.app/",
     },
@@ -91,7 +91,7 @@ export const data: HomeData = {
       description:
         "Multi-page Figma conversion made using a Frontend Mentor design files. Responsive across devices.",
       techNames: ["React", "Java Script", "Sass", "Redux"],
-      projectImg: "./images/Laptop.png",
+      projectImg: "/images/Laptop.png",
       gitHubLink:
         "https://github.com/RopeJuve/audiophile-e-commerce-website.git",
       siteLink: "https://audiophile-rope.netlify.app/",
@@ -101,7 +101,7 @@ export const data: HomeData = {
       description:
         "Landing page for Yoga Course. Figma conversion made using UIHUT design files. Responsive across devices.",
       techNames: ["React", "Java Script", "css"],
-      projectImg: "./images/yoga.png",
+      projectImg: "/images/yoga.png",
       gitHubLink: "https://github.com/RopeJuve/YogaCourse.git",
       siteLink: "https://yoga-course.netlify.app/",
     },
@@ -110,7 +110,7 @@ export const data: HomeData = {
       description:
         "Figma conversion made using a Frontend Mentor design files. Responsive across devices.",
       techNames: ["React", "Java Script", "css"],
-      projectImg: "./images/space.png",
+      projectImg: "/images/space.png",
       gitHubLink: "https://github.com/RopeJuve/space-tourism.git",
       siteLink: "https://space-tourism-vite-react.netlify.app/",
     },
@@ -119,7 +119,7 @@ export const data: HomeData = {
       description:
         "Product-page Figma conversion made using a Frontend Mentor design files. Responsive across devices.",
       techNames: ["React", "Java Script", "css"],
-      projectImg: "./images/productPage.png",
+      projectImg: "/images/productPage.png",
       gitHubLink: "https://github.com/RopeJuve/product-page.git",
       siteLink: "https://e-commerce-product-page-challenge.netlify.app/",
     },
@@ -136,5 +136,42 @@ export const data: HomeData = {
     "API & backend",
     "Interface build",
     "Fix & refactor",
+  ],
+
+  // SEO / GEO fields
+  siteOrigin: "https://robert-shterjov.dev",
+  documentTitle:
+    "Freelance Full-Stack Web Developer in Germany — Robert Shterjov",
+  documentDescription:
+    "I design and develop modern websites, landing pages, and custom web applications for businesses and startups. Germany · two slots, Q4 2026 · working-day reply.",
+  socialCardImage: "/images/social-card.png",
+  faq: [
+    {
+      question:
+        "What does a freelance full-stack web developer in Germany build?",
+      answer:
+        "I design and develop modern websites, landing pages, and custom web applications for businesses and startups — from the first pixel to the server handling your traffic.",
+    },
+    {
+      question: "How quickly do you reply, and do you have open slots?",
+      answer:
+        "Available — two slots, Q4 2026. I reply within a working day.",
+    },
+    {
+      question:
+        "What is the difference between a Full-stack build and an Interface build?",
+      answer:
+        "A Full-stack build delivers the complete application end to end — front end, back end, database, and deployment. An Interface build focuses on the front end: a fast, polished experience that turns visitors into customers. API & backend is the server and data layer on its own. Fix & refactor targets an existing codebase that needs debugging or improvements.",
+    },
+    {
+      question: "Do you work with clients outside Germany?",
+      answer:
+        "Yes — Germany · CET · Remote friendly. I work with clients worldwide and am comfortable async across time zones.",
+    },
+    {
+      question: "What technologies do you use to build a custom web application?",
+      answer:
+        "For a full-stack application I typically use React and Next.js on the front end, Node.js and Express on the back end, MongoDB or PostgreSQL for data, and Tailwind CSS for styling. Delivery runs on Git, Docker, and CI/CD pipelines.",
+    },
   ],
 };

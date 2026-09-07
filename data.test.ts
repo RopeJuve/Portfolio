@@ -145,4 +145,79 @@ describe("data", () => {
       expect(link).not.toHaveProperty("socialIcon");
     }
   });
+
+  // SEO / GEO invariants -------------------------------------------------------
+
+  it("has hero, profile, and all project image paths that are root-absolute", () => {
+    expect(data.heroImage).toMatch(/^\//);
+    expect(data.profileImage).toMatch(/^\//);
+    for (const project of data.projects) {
+      expect(project.projectImg).toMatch(/^\//);
+    }
+  });
+
+  it("exposes a production siteOrigin that is the canonical HTTPS origin", () => {
+    expect(data.siteOrigin).toBe("https://robert-shterjov.dev");
+  });
+
+  it("has a documentTitle containing freelance, full-stack, Germany, and Robert Shterjov", () => {
+    const title = data.documentTitle.toLowerCase();
+    expect(title).toContain("freelance");
+    expect(title).toContain("full-stack");
+    expect(title).toContain("germany");
+    expect(data.documentTitle).toContain("Robert Shterjov");
+  });
+
+  it("has a documentTitle that contains no price or rate", () => {
+    expect(data.documentTitle).not.toMatch(/€|\$|£|\/h|per hour|rate|price/i);
+  });
+
+  it("has a documentDescription that starts with the Positioning Statement", () => {
+    expect(data.documentDescription).toMatch(
+      /^I design and develop modern websites/
+    );
+  });
+
+  it("has a documentDescription in the 150–160 character range", () => {
+    expect(data.documentDescription.length).toBeGreaterThanOrEqual(150);
+    expect(data.documentDescription.length).toBeLessThanOrEqual(160);
+  });
+
+  it("has a documentDescription containing Germany, availability, and reply time", () => {
+    const desc = data.documentDescription.toLowerCase();
+    expect(desc).toContain("germany");
+    expect(desc).toContain("q4 2026");
+    expect(desc).toContain("working-day");
+  });
+
+  it("has a documentDescription that contains no price or rate", () => {
+    expect(data.documentDescription).not.toMatch(
+      /€|\$|£|\/h|per hour|rate|price/i
+    );
+  });
+
+  it("has a socialCardImage that is root-absolute and is not the heroImage", () => {
+    expect(data.socialCardImage).toMatch(/^\//);
+    expect(data.socialCardImage).not.toBe(data.heroImage);
+  });
+
+  it("exposes at least 5 FAQ items, each with a non-empty question and answer", () => {
+    expect(data.faq.length).toBeGreaterThanOrEqual(5);
+    for (const item of data.faq) {
+      expect(item.question.length).toBeGreaterThan(0);
+      expect(item.answer.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("has FAQ answers that mention availability or reply time", () => {
+    const combinedAnswers = data.faq.map((i) => i.answer).join(" ");
+    expect(combinedAnswers).toMatch(/slot|available/i);
+    expect(combinedAnswers).toMatch(/working day/i);
+  });
+
+  it("has FAQ answers that contain no price or rate", () => {
+    for (const item of data.faq) {
+      expect(item.answer).not.toMatch(/€|\$|£|\/h|per hour|\brate\b|\bprice\b/i);
+    }
+  });
 });

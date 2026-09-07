@@ -1,3 +1,8 @@
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
 export interface Project {
     projectName: string;
     description: string;
@@ -42,6 +47,16 @@ export interface HomeData {
     footerRole: string;
     tickerWords: string[];
     navLinks: string[];
+    /** Production origin, e.g. "https://robert-shterjov.dev" */
+    siteOrigin: string;
+    /** <title> tag — must include freelance, full-stack, Germany, and the author name */
+    documentTitle: string;
+    /** Meta description — 150–160 chars; starts with Positioning Statement; no price/rate */
+    documentDescription: string;
+    /** Root-absolute path to the dedicated 1200×630 social-card image */
+    socialCardImage: string;
+    /** Visible FAQ list; also powers FAQPage JSON-LD */
+    faq: FaqItem[];
 }
 
 export type HeroProps = Pick<

@@ -91,6 +91,12 @@
       "skillPath": "skills/engineering/resolving-merge-conflicts/SKILL.md",
       "computedHash": "6a005119c18c477c2122321a380a43d40242bae3cc7027125f13497d90875be2"
     },
+    "seo-geo": {
+      "source": "whyashthakker/agent-skills-marketing",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/seo-geo/SKILL.md",
+      "computedHash": "acec117ae17800675e847bd849e7a33ab23827844acbe91f2d91c992fc663f44"
+    },
     "setup-matt-pocock-skills": {
       "source": "mattpocock/skills",
       "sourceType": "github",

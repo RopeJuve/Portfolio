@@ -1,12 +1,32 @@
 import AppShell from "@/components/AppShell/AppShell";
 import { data } from "@/data";
+import { discoverSite } from "@/lib/siteDiscovery";
+import type { Metadata } from "next";
 import "./globals.css";
 import { Archivo, Source_Serif_4 } from "next/font/google";
 
-export const metadata = {
-  title: "Robert Shterjov — Full-Stack Web Developer",
-  description:
-    "I design and develop modern websites, landing pages, and custom web applications for businesses and startups.",
+const { documentMetadata } = discoverSite(data, data.siteOrigin);
+
+export const metadata: Metadata = {
+  metadataBase: new URL(documentMetadata.metadataBase),
+  title: documentMetadata.title,
+  description: documentMetadata.description,
+  alternates: {
+    canonical: documentMetadata.canonical,
+  },
+  openGraph: {
+    type: documentMetadata.openGraph.type,
+    title: documentMetadata.openGraph.title,
+    description: documentMetadata.openGraph.description,
+    url: documentMetadata.openGraph.url,
+    images: documentMetadata.openGraph.images,
+  },
+  twitter: {
+    card: documentMetadata.twitter.card,
+    title: documentMetadata.twitter.title,
+    description: documentMetadata.twitter.description,
+    images: documentMetadata.twitter.images,
+  },
   icons: {
     icon: "/favicon.svg",
   },
