@@ -120,6 +120,7 @@ describe("data", () => {
       "services",
       "stack",
       "about",
+      "faq",
       "contact",
     ]);
   });

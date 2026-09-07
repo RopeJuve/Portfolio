@@ -130,7 +130,7 @@ export const data: HomeData = {
   contactLocale: "Germany · CET · Remote friendly",
   footerName: `© ${new Date().getFullYear()} ROBERT SHTERJOV`,
   footerRole: "FULL-STACK DEVELOPER",
-  navLinks: ["work", "services", "stack", "about", "contact"],
+  navLinks: ["work", "services", "stack", "about", "faq", "contact"],
   tickerWords: [
     "Full-stack build",
     "API & backend",
@@ -147,31 +147,34 @@ export const data: HomeData = {
   socialCardImage: "/images/social-card.png",
   faq: [
     {
-      question:
-        "What does a freelance full-stack web developer in Germany build?",
+      question: "What does full-stack actually mean on your projects?",
       answer:
-        "I design and develop modern websites, landing pages, and custom web applications for businesses and startups — from the first pixel to the server handling your traffic.",
+        "I own the feature end to end: the data model, the API layer, the UI, and the deployment. You deal with one person for the whole build, so decisions are faster and nothing falls between layers. If a problem starts in the database and surfaces in the browser, I find and fix it.",
     },
     {
-      question: "How quickly do you reply, and do you have open slots?",
+      question: "How do you scope and quote a project?",
       answer:
-        "Available — two slots, Q4 2026. I reply within a working day.",
+        "For well-defined work I quote a fixed amount after a short discovery call — usually one conversation is enough. For open-ended or maintenance work I bill by the day. I won't lock you into a rolling commitment; most projects quote to a feature list and a clear timeline.",
     },
     {
-      question:
-        "What is the difference between a Full-stack build and an Interface build?",
+      question: "Can you take over an existing codebase?",
       answer:
-        "A Full-stack build delivers the complete application end to end — front end, back end, database, and deployment. An Interface build focuses on the front end: a fast, polished experience that turns visitors into customers. API & backend is the server and data layer on its own. Fix & refactor targets an existing codebase that needs debugging or improvements.",
+        "Yes — this is the most common real engagement. I start with a short audit to understand what is there, what is fragile, and what actually needs changing. Rewrites are a last resort; most problems are better solved by adding tests, tightening the build, and fixing the specific parts blocking progress.",
     },
     {
-      question: "Do you work with clients outside Germany?",
+      question: "Do you work with designers, or do you handle design yourself?",
       answer:
-        "Yes — Germany · CET · Remote friendly. I work with clients worldwide and am comfortable async across time zones.",
+        "Both. With a designer I work from Figma files and build pixel-faithful to the spec. Without one, I design in the browser — component-first, using real content and your brand constraints. I do not produce polished mockups as standalone deliverables; the running application is the design.",
     },
     {
-      question: "What technologies do you use to build a custom web application?",
+      question: "What happens after the project launches?",
       answer:
-        "For a full-stack application I typically use React and Next.js on the front end, Node.js and Express on the back end, MongoDB or PostgreSQL for data, and Tailwind CSS for styling. Delivery runs on Git, Docker, and CI/CD pipelines.",
+        "Two weeks of fixes included — anything that breaks in the immediate post-launch window is my problem to resolve. After that I am available for a capped weekly retainer if you need ongoing changes, or you take the repo to your own team. Handover documentation ships with every delivery.",
+    },
+    {
+      question: "Where are you based and how do you work remotely?",
+      answer:
+        "Germany — CET. I default to async: end-of-day updates, decisions in writing, work visible in a shared repo. Available — two slots, Q4 2026 — and I reply within a working day. For clients in a significantly different timezone we agree a short daily overlap at the start.",
     },
   ],
 };
