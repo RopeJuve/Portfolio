@@ -150,7 +150,9 @@ describe("data", () => {
   // SEO / GEO invariants -------------------------------------------------------
 
   it("has hero, profile, and all project image paths that are root-absolute", () => {
-    expect(data.heroImage).toMatch(/^\//);
+    expect(data.heroImage.mobile).toMatch(/^\//);
+    expect(data.heroImage.tablet).toMatch(/^\//);
+    expect(data.heroImage.desktop).toMatch(/^\//);
     expect(data.profileImage).toMatch(/^\//);
     for (const project of data.projects) {
       expect(project.projectImg).toMatch(/^\//);
