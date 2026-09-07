@@ -81,7 +81,9 @@ Add these as Tailwind utilities and use them by name — do not hand-tune sizes 
 | `text-display` | `clamp(56px,7vw,101px)` | 300 | 0.8 | `-0.06em` | UPPER | h1 only |
 | `text-section` | `clamp(40px,5vw,70px)` | 300 | 0.88 | `-0.03em` | UPPER | h2, footer wordmark |
 | `text-card` | 22px | 400 | 1.17 | `-0.02em` | UPPER | h3 |
+| `text-question` | `clamp(18px,2vw,24px)` | 300 | 1.1 | `-0.024em` | UPPER | FAQ `<summary>` question |
 | `text-lead` | 17px | 400 serif | 1.2 | `-0.018em` | sentence | Lead paragraph |
+| `text-lead-sm` | 16px | 400 serif | 1.35 | `-0.012em` | sentence | FAQ answer body |
 | `text-body` | 14px | 400 | 1.2 | `-0.018em` | sentence | Body copy |
 | `text-micro` | 12px | 400 | 1.2 | `0.06em` | UPPER | Nav, buttons, chips |
 | `text-meta` | 12px | 400 | 1.2 | `0.08em` | UPPER | Eyebrows, labels, captions |

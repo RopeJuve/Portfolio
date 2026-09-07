@@ -70,8 +70,9 @@ const FAQ = ({ faq }: FaqProps) => {
             ScrollTrigger.refresh();
           });
         } else {
-          // Close is instant (browser hides content); clear inline styles and refresh.
-          gsap.set(answerDiv, { clearProps: "all" });
+          // Close is instant (browser hides content); clear only the animated props and refresh.
+          // design.md §8: never clearProps:"all" — it would wipe any authored inline styles.
+          gsap.set(answerDiv, { clearProps: "autoAlpha,y" });
           ScrollTrigger.refresh();
         }
       };
