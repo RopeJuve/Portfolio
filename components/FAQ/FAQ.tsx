@@ -115,10 +115,11 @@ const FAQ = ({ faq }: FaqProps) => {
                 <span className="min-w-[3ch] text-meta uppercase text-mute">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                {/* text-question: clamp(18px,2vw,24px), uppercase Archivo 300 */}
-                <span className="flex-1 text-question font-light uppercase text-ink">
+                {/* h3 preserves the h1→h2→h3 heading hierarchy for screen readers.
+                    <h3> inside <summary> is valid HTML and renders block in all modern browsers. */}
+                <h3 className="flex-1 text-question font-light uppercase text-ink">
                   {item.question}
-                </span>
+                </h3>
                 {/* + closed, − open (U+2212 minus — same optical weight as +).
                     Content swap via ::before, no rotation, no animation. */}
                 <span
