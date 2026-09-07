@@ -1,11 +1,16 @@
+"use client";
+
 import { ComponentPropsWithoutRef } from "react";
-import styles from "./Button.module.css";
-import classNames from "classnames";
+import { Button as ShadcnButton } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import RollOver from "../RollOver/RollOver";
+
+type ButtonVariant = "primary" | "primaryLink" | "secondary" | "secondaryLink";
 
 interface ButtonCommonProps {
   usedAs: "link" | "button";
   text: string;
-  variant: string;
+  variant: ButtonVariant;
   href?: string;
 }
 
@@ -19,44 +24,60 @@ interface ButtonButtonProps
 
 type ButtonCustomProps = ButtonLinkProps | ButtonButtonProps;
 
+const variantMap: Record<ButtonVariant, "primary" | "outline"> = {
+  primary: "primary",
+  primaryLink: "primary",
+  secondary: "outline",
+  secondaryLink: "outline",
+};
+
 const Button = ({
   usedAs,
   text,
   variant,
   href,
+  className,
   ...props
 }: ButtonCustomProps) => {
-  const btnClasses = classNames(styles.btn, {
-    [styles.primary]: variant === "primary" || variant === "primaryLink",
-    [styles.secondary]: variant === "secondary" || variant === "secondaryLink",
-  });
+  const mappedVariant = variantMap[variant];
 
-  return (
-    <>
-      {usedAs === "link" ? (
+  if (usedAs === "link") {
+    const isExternal =
+      variant === "primaryLink" || variant === "secondaryLink";
+
+    return (
+      <ShadcnButton
+        variant={mappedVariant}
+        asChild
+        className={cn(className)}
+      >
         <a
-          className={btnClasses}
-          {...(props as ButtonLinkProps)}
+          {...(props as ComponentPropsWithoutRef<"a">)}
           href={
             variant === "primary" || variant === "secondary"
               ? `#${href}`
               : `${href}`
           }
-          target={
-            variant === "primaryLink" || variant === "secondaryLink"
-              ? "_blank"
-              : "_self"
-          }
-          download={variant === "secondaryLink"}
+          target={isExternal ? "_blank" : "_self"}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+          aria-label={text}
+          tabIndex={0}
         >
-          {text}
+          <RollOver>{text}</RollOver>
         </a>
-      ) : (
-        <button className={btnClasses} {...(props as ButtonButtonProps)}>
-          {text}
-        </button>
-      )}
-    </>
+      </ShadcnButton>
+    );
+  }
+
+  return (
+    <ShadcnButton
+      variant={mappedVariant}
+      className={cn(className)}
+      {...(props as ComponentPropsWithoutRef<"button">)}
+      aria-label={text}
+    >
+      <RollOver>{text}</RollOver>
+    </ShadcnButton>
   );
 };
 

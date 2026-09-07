@@ -1,33 +1,52 @@
 "use client";
-import styles from "./NavBar.module.css";
-import { Logo } from "../Logo/index";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import NavMenuLinks from "../NavMenuLinks/NavMenuLinks";
-import { useState } from "react";
-import Menu from "../Menu/Menu";
+import Button from "../Button/Button";
+import Wordmark from "../Logo/Wordmark";
+import Container from "../Container/Container";
+import RollOver from "../RollOver/RollOver";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
+import { NavBarProps } from "@/types";
 
-const NavBar = () => {
-  const [openMenu, setOpenMenu] = useState(false);
-  const handelOpen = () => setOpenMenu(!openMenu);
+const NavBar = ({ navLinks }: NavBarProps) => {
   return (
-    <>
-      <div className={styles.container}>
-        <div className={styles.wrapper}>
-          <a href={"/"}>
-            <Logo className={styles.logo} />
-          </a>
-          <NavMenuLinks className="nav-links" />
-          <FontAwesomeIcon
-            className={styles.hamburger}
-            icon={faBars}
-            style={{ width: "25px", height: "25px", color: "#264653" }}
-            onClick={handelOpen}
+    <header className="sticky top-0 z-50 max-w-[90rem] mx-auto border-b border-ink bg-bone py-5">
+      <Container className="flex items-center justify-between">
+        <a
+          href="#home"
+          aria-label="Home"
+          tabIndex={0}
+          className="text-[0.875rem] text-ink hover:text-black"
+        >
+          <Wordmark className="text-[0.875rem]" />
+        </a>
+        <div className="flex items-center gap-[1.8125rem]">
+          <NavMenuLinks variant="nav-links" links={navLinks} />
+          <Button
+            usedAs="link"
+            text="CV"
+            variant="primaryLink"
+            href="./assets/RobertShterjovCV09_24.pdf"
           />
+          <Sheet>
+            <SheetTrigger
+              className="text-micro uppercase text-ink hover:text-black md:hidden"
+              aria-label="Open navigation menu"
+            >
+              <RollOver>Menu</RollOver>
+            </SheetTrigger>
+            <SheetContent side="right" aria-describedby={undefined}>
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+              <NavMenuLinks variant="nav-menu" links={navLinks} />
+            </SheetContent>
+          </Sheet>
         </div>
-      </div>
-      <Menu isOpen={openMenu} handelOpen={handelOpen} />
-    </>
+      </Container>
+    </header>
   );
 };
 

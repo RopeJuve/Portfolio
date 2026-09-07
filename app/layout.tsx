@@ -1,24 +1,47 @@
-import NavBar from "@/components/NavBar/NavBar";
-import Head from "next/head";
+import AppShell from "@/components/AppShell/AppShell";
+import { data } from "@/data";
+import { discoverSite } from "@/lib/siteDiscovery";
+import type { Metadata } from "next";
 import "./globals.css";
-import Footer from "@/components/Footer/Footer";
-import { Roboto_Condensed, Noto_Sans } from "next/font/google";
+import { Archivo, Source_Serif_4 } from "next/font/google";
 
-export const metadata = {
-  title: "Robert Shterjov Frontend Developer",
-  description: "Portfolio Web Site for my web dev journey",
+const { documentMetadata } = discoverSite(data, data.siteOrigin);
+
+export const metadata: Metadata = {
+  metadataBase: new URL(documentMetadata.metadataBase),
+  title: documentMetadata.title,
+  description: documentMetadata.description,
+  alternates: {
+    canonical: documentMetadata.canonical,
+  },
+  openGraph: {
+    type: documentMetadata.openGraph.type,
+    title: documentMetadata.openGraph.title,
+    description: documentMetadata.openGraph.description,
+    url: documentMetadata.openGraph.url,
+    images: documentMetadata.openGraph.images,
+  },
+  twitter: {
+    card: documentMetadata.twitter.card,
+    title: documentMetadata.twitter.title,
+    description: documentMetadata.twitter.description,
+    images: documentMetadata.twitter.images,
+  },
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
-const robotoCondensed = Roboto_Condensed({
-  weight: ["400", "700"],
+const archivo = Archivo({
+  weight: ["300", "400"],
   subsets: ["latin"],
-  variable: "--font-header",
+  variable: "--font-archivo",
 });
 
-const notoSans = Noto_Sans({
-  weight: "400",
+const sourceSerif4 = Source_Serif_4({
+  weight: ["400"],
   subsets: ["latin"],
-  variable: "--font-text",
+  variable: "--font-source-serif",
 });
 
 export default function RootLayout({
@@ -28,13 +51,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <body className={`${robotoCondensed.variable} ${notoSans.variable}`}>
-        <NavBar />
-        {children}
-        <Footer />
+      <body
+        className={`${archivo.variable} ${sourceSerif4.variable} bg-bone font-sans text-ink`}
+      >
+        <noscript>
+          <style>{`.loader-overlay{display:none!important}`}</style>
+        </noscript>
+        <AppShell
+          footerName={data.footerName}
+          footerRole={data.footerRole}
+          contactLocale={data.contactLocale}
+          navLinks={data.navLinks}
+        >
+          {children}
+        </AppShell>
       </body>
     </html>
   );
