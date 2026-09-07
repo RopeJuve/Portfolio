@@ -36,7 +36,7 @@ module.exports = {
       },
       fontSize: {
         display: [
-          "clamp(3.5rem,7vw,6.3125rem)",
+          "clamp(2rem,8.5vw,6.3125rem)",
           { lineHeight: "0.8", letterSpacing: "-0.06em" },
         ],
         section: [

@@ -39,7 +39,7 @@ const NavBar = ({ navLinks }: NavBarProps) => {
             >
               <RollOver>Menu</RollOver>
             </SheetTrigger>
-            <SheetContent side="right">
+            <SheetContent side="right" aria-describedby={undefined}>
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <NavMenuLinks variant="nav-menu" links={navLinks} />
             </SheetContent>
