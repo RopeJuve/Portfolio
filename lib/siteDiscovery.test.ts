@@ -151,6 +151,12 @@ describe("siteDiscovery — sitemap", () => {
     expect(result.sitemapEntries[0].changeFrequency).toBe("monthly");
     expect(result.sitemapEntries[0].priority).toBe(1);
   });
+
+  it("lastModified is a stable build-time date, not request time", () => {
+    expect(result.sitemapEntries[0].lastModified.toISOString()).toBe(
+      "2026-09-07T00:00:00.000Z"
+    );
+  });
 });
 
 describe("siteDiscovery — JSON-LD graph", () => {

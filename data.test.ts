@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { data } from "./data";
 
@@ -202,6 +204,11 @@ describe("data", () => {
   it("has a socialCardImage that is root-absolute and is not the heroImage", () => {
     expect(data.socialCardImage).toMatch(/^\//);
     expect(data.socialCardImage).not.toBe(data.heroImage);
+  });
+
+  it("has a social-card file on disk at the socialCardImage path", () => {
+    const relativePath = data.socialCardImage.replace(/^\//, "");
+    expect(existsSync(join(process.cwd(), "public", relativePath))).toBe(true);
   });
 
   it("exposes at least 5 FAQ items, each with a non-empty question and answer", () => {

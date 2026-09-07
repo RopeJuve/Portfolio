@@ -30,7 +30,7 @@ const NavBar = ({ navLinks }: NavBarProps) => {
             usedAs="link"
             text="CV"
             variant="primaryLink"
-            href="./assets/RobertShterjovCV09_24.pdf"
+            href="/assets/RobertShterjovCV09_24.pdf"
           />
           <Sheet>
             <SheetTrigger

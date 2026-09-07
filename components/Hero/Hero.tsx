@@ -30,15 +30,21 @@ const Hero = ({ eyebrow, title, subTitle, heroImage }: HeroProps) => {
       <div className="relative z-20 mx-auto flex min-h-[calc(100svh-4.75rem)] max-w-[90rem] flex-col justify-start px-[1.8125rem] py-8">
         <div className="w-full max-w-[60rem]">
           <div className="flex flex-col gap-6">
-            <p data-hero-eyebrow className="max-w-[42ch] text-meta uppercase text-ink">
+            <p data-hero-eyebrow className="max-w-[70ch] text-meta uppercase text-ink">
               {eyebrow}
             </p>
             <h1
               data-hero-title
               className="split-text max-w-full text-display font-light uppercase text-ink"
             >
-              {title.split("\n").map((line) => (
-                <span key={line} className="block whitespace-nowrap">
+              {title.split("\n").map((line, index) => (
+                <span key={line} className="whitespace-nowrap">
+                  {index > 0 ? (
+                    <>
+                      {" "}
+                      <br />
+                    </>
+                  ) : null}
                   {line}
                 </span>
               ))}

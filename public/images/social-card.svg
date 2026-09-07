@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Freelance Full-Stack Web Developer in Germany  Robert Shterjov">
+  <rect width="1200" height="630" fill="#f0f0f0"/>
+  <rect x="48" y="48" width="1104" height="534" fill="none" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="88" y="120" fill="#2a2a2a" font-family="Archivo, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="400" letter-spacing="2.4">SHTERJOV</text>
+  <line x1="88" y1="168" x2="1112" y2="168" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="88" y="280" fill="#2a2a2a" font-family="Archivo, Helvetica Neue, Arial, sans-serif" font-size="56" font-weight="300" letter-spacing="-1.2">Freelance full-stack</text>
+  <text x="88" y="348" fill="#2a2a2a" font-family="Archivo, Helvetica Neue, Arial, sans-serif" font-size="56" font-weight="300" letter-spacing="-1.2">web developer in Germany</text>
+  <text x="88" y="430" fill="#2a2a2a" font-family="Georgia, 'Source Serif 4', serif" font-size="24" font-weight="400">I design and develop modern websites, landing pages,</text>
+  <text x="88" y="466" fill="#2a2a2a" font-family="Georgia, 'Source Serif 4', serif" font-size="24" font-weight="400">and custom web applications for businesses and startups.</text>
+  <text x="88" y="536" fill="#8f8f88" font-family="Archivo, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="400" letter-spacing="1.6">ROBERT SHTERJOV  ·  GERMANY  ·  TWO SLOTS, Q4 2026</text>
+</svg>
