@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Container from "../Container/Container";
 import { useSectionReveal } from "@/lib/useSectionReveal";
+import { cn } from "@/lib/utils";
 import type { FaqItem } from "@/types";
 
 type FaqProps = {
@@ -24,20 +25,34 @@ const FAQ = ({ faq }: FaqProps) => {
             FAQ
           </h2>
         </div>
+
+        {/* Each row rises as a unit; distance matches body-text stagger (20px) */}
         <dl
           data-rise-group
           data-rise-selector="div"
-          data-rise-distance="34"
-          className="mt-14 divide-y divide-ink"
+          data-rise-distance="20"
+          className="mt-14"
         >
           {faq.map((item, index) => (
-            <div key={index} className="py-8">
+            <div
+              key={index}
+              className={cn(
+                // Two-column editorial split: question anchors left, answer flows right.
+                // On mobile the columns collapse; gap-y bridges the stack.
+                "grid grid-cols-1 gap-x-[29px] gap-y-5 py-10",
+                "md:grid-cols-[2fr_3fr] md:py-14",
+                index > 0 && "border-t border-ink",
+                index === faq.length - 1 && "border-b border-ink",
+              )}
+            >
               <dt>
-                <h3 className="text-body font-light uppercase text-ink">
+                {/* text-card is the h3 scale in the design system (22px, wt 400, uppercase) */}
+                <h3 className="text-card font-normal uppercase text-ink">
                   {item.question}
                 </h3>
               </dt>
-              <dd className="mt-3 max-w-[60ch] font-serif text-lead text-ink">
+              {/* max-w-[46ch] — lead paragraph cap from design spec */}
+              <dd className="max-w-[46ch] font-serif text-lead text-ink">
                 {item.answer}
               </dd>
             </div>
