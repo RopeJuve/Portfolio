@@ -128,6 +128,14 @@ describe("siteDiscovery — robots", () => {
   it("sitemap field points to {origin}/sitemap.xml", () => {
     expect(result.robots.sitemap).toBe(`${ORIGIN}/sitemap.xml`);
   });
+
+  it("has no disallow rules on any agent", () => {
+    const hasDisallow = result.robots.rules.some(
+      (r: { userAgent: string | string[]; allow: string[]; disallow?: string[] }) =>
+        Array.isArray(r.disallow) && r.disallow.length > 0
+    );
+    expect(hasDisallow).toBe(false);
+  });
 });
 
 describe("siteDiscovery — sitemap", () => {
