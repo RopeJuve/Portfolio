@@ -33,7 +33,7 @@ export const data: HomeData = {
       technologies: ["Git", "Docker", "CI/CD", "Netlify & Render"],
     },
   ],
-  availability: "Available — two slots, Q4 2026",
+  availability: "Available — now",
   services: [
     {
       title: "Full-stack build",
@@ -128,7 +128,7 @@ export const data: HomeData = {
       siteLink: "https://e-commerce-product-page-challenge.netlify.app/",
     },
   ],
-  workMeta: "06 PROJECTS · 2023–2024",
+  workMeta: "06 PROJECTS",
   contactMe:
     "Tell me about the project — scope, timeline, and what already exists. I reply within a working day.",
   contactLocale: "Germany · CET · Remote friendly",

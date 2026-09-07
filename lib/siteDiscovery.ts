@@ -189,7 +189,7 @@ export const discoverSite = (
   const sitemapEntries: SitemapEntry[] = [
     {
       url: origin,
-      lastModified: new Date(),
+      lastModified: new Date("2026-09-07T00:00:00.000Z"),
       changeFrequency: "monthly",
       priority: 1,
     },

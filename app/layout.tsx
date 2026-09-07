@@ -27,9 +27,6 @@ export const metadata: Metadata = {
     description: documentMetadata.twitter.description,
     images: documentMetadata.twitter.images,
   },
-  icons: {
-    icon: "/favicon.svg",
-  },
 };
 
 const archivo = Archivo({
