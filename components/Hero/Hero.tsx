@@ -16,18 +16,21 @@ const Hero = ({ eyebrow, title, subTitle, heroImage }: HeroProps) => {
       className="relative z-0 min-h-[calc(100svh-4.75rem)] max-w-[90rem] mx-auto bg-stone"
     >
       <div data-hero-photo-wrap className="absolute inset-0 overflow-hidden">
-        <img
-          data-hero-photo
-          src={heroImage}
-          alt="Robert Shterjov"
-          className="h-full w-full object-cover object-[75%_12%] md:object-[85%_12%] lg:object-[90%_12%]"
-        />
+        <picture data-hero-photo className="h-full w-full">
+          <source media="(min-width: 1024px)" srcSet={heroImage.desktop} />
+          <source media="(min-width: 768px)" srcSet={heroImage.tablet} />
+          <img
+            src={heroImage.mobile}
+            alt="Robert Shterjov"
+            className="h-full w-full object-cover object-[75%_12%] md:object-[85%_12%] lg:object-[90%_12%]"
+          />
+        </picture>
         <div className="hero-scrim absolute inset-0 z-10" />
       </div>
       <div className="relative z-20 mx-auto flex min-h-[calc(100svh-4.75rem)] max-w-[90rem] flex-col justify-start px-[1.8125rem] py-8">
         <div className="w-full max-w-[60rem]">
           <div className="flex flex-col gap-6">
-            <p data-hero-eyebrow className="max-w-full text-meta uppercase text-ink">
+            <p data-hero-eyebrow className="max-w-[42ch] text-meta uppercase text-ink">
               {eyebrow}
             </p>
             <h1

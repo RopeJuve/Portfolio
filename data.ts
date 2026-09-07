@@ -5,7 +5,11 @@ export const data: HomeData = {
   title: "Robert\nShterjov builds\nfull-stack\nweb products\nend to end",
   subTitle:
     "I design and develop modern websites, landing pages, and custom web applications for businesses and startups.",
-  heroImage: "/images/hero.png",
+  heroImage: {
+    mobile: "/images/hero-mobile.webp",
+    tablet: "/images/hero-tablet.webp",
+    desktop: "/images/hero-desktop.webp",
+  },
   profileImage: "/images/profile.png",
   techStack: [
     {

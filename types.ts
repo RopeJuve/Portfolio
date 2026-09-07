@@ -32,7 +32,11 @@ export interface HomeData {
     eyebrow: string;
     title: string;
     subTitle: string;
-    heroImage: string;
+    heroImage: {
+        mobile: string;
+        tablet: string;
+        desktop: string;
+    };
     profileImage: string;
     techStack: TechStackRow[];
     availability: string;
