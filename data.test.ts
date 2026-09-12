@@ -111,7 +111,7 @@ describe("data", () => {
   });
 
   it("exposes work meta, footer role, and contact locale", () => {
-    expect(data.workMeta).toBe("06 PROJECTS · 2023–2024");
+    expect(data.workMeta).toBe("06 PROJECTS");
     expect(data.footerRole).toBe("FULL-STACK DEVELOPER");
     expect(data.contactLocale.length).toBeGreaterThan(0);
   });
