@@ -29,5 +29,17 @@ Outline text pill linking to a profile (GitHub, LinkedIn, WhatsApp, Telegram). U
 _Avoid_: Icon, social icon
 
 **Inquiry**:
-A visitor-submitted request to work together, collected by the Contact form — who they are, how to reply, and what they need built. Delivered privately to Robert. Distinct from the [[Social Pill]] Telegram profile.
+A visitor-submitted request to work together, collected by the Contact form — who they are, how to reply, and what they need built. Delivered privately to Robert. A valid submit that fails to reach Robert is still an Inquiry; a honeypot trip is not. Distinct from the [[Social Pill]] Telegram profile.
 _Avoid_: Message (the form field and button copy), lead, contact request, email
+
+**Consent**:
+The visitor's explicit yes or no to being counted. Until they accept, and after they refuse, nothing is sent. The choice persists and can be opened again from the Footer. The rest of the site, including the Contact form, stays usable either way.
+_Avoid_: Cookie banner, opt-in, analytics consent, GDPR
+
+**CV**:
+The résumé file linked from the NavBar. A click is the recorded action; it is not proof the file was saved, and it is not an [[Inquiry]].
+_Avoid_: Resume, download
+
+**Work Link**:
+A Live or GitHub destination on a Work card. One kind of action, two destinations.
+_Avoid_: Project button

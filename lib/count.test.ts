@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { createCounter, type Consent, type ConsentStore } from "./count";
+import { createCounter, type Consent, type ConsentStore } from "@/lib/count";
 
 const PRODUCTION_ORIGIN = "https://robert-shterjov.dev";
 
