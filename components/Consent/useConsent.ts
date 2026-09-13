@@ -8,6 +8,7 @@ export const useConsent = () => {
   const counterRef = useRef<ReturnType<typeof createCounter> | null>(null);
   const [ready, setReady] = useState(false);
   const [choice, setChoice] = useState<Consent | null>(null);
+  const [barOpen, setBarOpen] = useState(false);
 
   useEffect(() => {
     const store = createCookieStore();
@@ -17,12 +18,14 @@ export const useConsent = () => {
       createPosthogAdapter()
     );
     counterRef.current = counter;
-    setChoice(store.read());
+    const stored = store.read();
+    setChoice(stored);
+    setBarOpen(stored === null);
     setReady(true);
   }, []);
 
   useLayoutEffect(() => {
-    if (!ready || choice !== null) {
+    if (!ready || !barOpen) {
       document.documentElement.style.removeProperty("--consent-bar-offset");
       return;
     }
@@ -41,22 +44,36 @@ export const useConsent = () => {
       window.removeEventListener("resize", updateOffset);
       document.documentElement.style.removeProperty("--consent-bar-offset");
     };
-  }, [ready, choice]);
+  }, [ready, barOpen]);
+
+  useLayoutEffect(() => {
+    if (!barOpen || choice === null) return;
+    barRef.current?.focus();
+  }, [barOpen, choice]);
+
+  const handleChoose = (consent: Consent) => {
+    counterRef.current?.setConsent(consent);
+    setChoice(consent);
+    setBarOpen(false);
+  };
 
   const handleAccept = () => {
-    counterRef.current?.setConsent("accept");
-    setChoice("accept");
+    handleChoose("accept");
   };
 
   const handleReject = () => {
-    counterRef.current?.setConsent("reject");
-    setChoice("reject");
+    handleChoose("reject");
+  };
+
+  const handleReopen = () => {
+    setBarOpen(true);
   };
 
   return {
-    showBar: ready && choice === null,
+    showBar: ready && barOpen,
     handleAccept,
     handleReject,
+    handleReopen,
     barRef,
   };
 };

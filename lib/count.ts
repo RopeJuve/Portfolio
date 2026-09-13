@@ -8,6 +8,7 @@ export type ConsentStore = {
 export type CountAdapter = {
   init: () => void;
   capture: (event: string, properties?: Record<string, unknown>) => void;
+  shutdown: () => void;
 };
 
 export type CountEvent =
@@ -33,7 +34,7 @@ export const record: RecordFn = (event, properties) => {
 export const createCounter = (
   origin: string,
   store: ConsentStore,
-  adapter: CountAdapter = { init: () => {}, capture: () => {} }
+  adapter: CountAdapter = { init: () => {}, capture: () => {}, shutdown: () => {} }
 ) => {
   const mayCount = () =>
     store.read() === "accept" && origin === PRODUCTION_ORIGIN;
@@ -77,6 +78,10 @@ export const createCounter = (
 
   const setConsent = (consent: Consent) => {
     store.write(consent);
+    if (consent === "reject") {
+      adapter.shutdown();
+      return;
+    }
     startIfAllowed();
   };
 

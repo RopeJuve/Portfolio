@@ -16,6 +16,7 @@ const memoryStore = (initial: Consent | null = null): ConsentStore => {
 const fakeAdapter = () => ({
   init: vi.fn(),
   capture: vi.fn(),
+  shutdown: vi.fn(),
 });
 
 describe("createCounter", () => {
@@ -223,5 +224,34 @@ describe("createCounter", () => {
     counter.record("cv");
 
     expect(adapter.capture).not.toHaveBeenCalled();
+  });
+
+  it("does not record after Reject that follows Accept, persists Reject, and shuts the counter down", () => {
+    const store = memoryStore();
+    const adapter = fakeAdapter();
+    const counter = createCounter(PRODUCTION_ORIGIN, store, adapter);
+    counter.setConsent("accept");
+    adapter.capture.mockClear();
+
+    counter.setConsent("reject");
+    counter.record("cv");
+
+    expect(store.read()).toBe("reject");
+    expect(counter.mayCount()).toBe(false);
+    expect(adapter.shutdown).toHaveBeenCalledOnce();
+    expect(adapter.capture).not.toHaveBeenCalled();
+  });
+
+  it("inits and records $pageview after Accept that follows Reject on the production origin", () => {
+    const store = memoryStore("reject");
+    const adapter = fakeAdapter();
+    const counter = createCounter(PRODUCTION_ORIGIN, store, adapter);
+
+    counter.setConsent("accept");
+
+    expect(store.read()).toBe("accept");
+    expect(counter.mayCount()).toBe(true);
+    expect(adapter.init).toHaveBeenCalledOnce();
+    expect(adapter.capture).toHaveBeenCalledWith("$pageview");
   });
 });

@@ -2,10 +2,10 @@
 
 import Button from "@/components/Button/Button";
 import Container from "@/components/Container/Container";
-import { useConsent } from "./useConsent";
+import { useConsentContext } from "./ConsentContext";
 
 const ConsentBar = () => {
-  const { showBar, handleAccept, handleReject, barRef } = useConsent();
+  const { showBar, handleAccept, handleReject, barRef } = useConsentContext();
 
   if (!showBar) return null;
 
@@ -14,6 +14,7 @@ const ConsentBar = () => {
       ref={barRef}
       role="region"
       aria-label="Consent"
+      tabIndex={-1}
       className="fixed inset-x-0 bottom-0 z-[80] isolate border-t border-ink bg-bone pb-[max(1rem,env(safe-area-inset-bottom))] pt-4"
     >
       <Container className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
