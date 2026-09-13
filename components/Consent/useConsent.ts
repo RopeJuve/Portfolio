@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createCookieStore } from "@/lib/consentCookie";
 import { createCounter, type Consent } from "@/lib/count";
+import { createPosthogAdapter } from "@/lib/posthogAdapter";
 
 export const useConsent = () => {
   const barRef = useRef<HTMLDivElement>(null);
@@ -10,7 +11,11 @@ export const useConsent = () => {
 
   useEffect(() => {
     const store = createCookieStore();
-    const counter = createCounter(window.location.origin, store);
+    const counter = createCounter(
+      window.location.origin,
+      store,
+      createPosthogAdapter()
+    );
     counterRef.current = counter;
     setChoice(store.read());
     setReady(true);

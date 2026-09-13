@@ -10,9 +10,14 @@ import {
   SheetTrigger,
   SheetTitle,
 } from "@/components/ui/sheet";
+import { record } from "@/lib/count";
 import { NavBarProps } from "@/types";
 
 const NavBar = ({ navLinks }: NavBarProps) => {
+  const handleCvClick = () => {
+    record("cv");
+  };
+
   return (
     <header className="sticky top-0 z-50 max-w-[90rem] mx-auto border-b border-ink bg-bone py-5">
       <Container className="flex items-center justify-between">
@@ -31,6 +36,7 @@ const NavBar = ({ navLinks }: NavBarProps) => {
             text="CV"
             variant="primaryLink"
             href="/assets/RobertShterjovCV09_24.pdf"
+            onClick={handleCvClick}
           />
           <Sheet>
             <SheetTrigger
