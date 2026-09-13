@@ -26,10 +26,12 @@
 
   html {
     scroll-padding-top: 4.5rem;
+    scroll-padding-bottom: var(--consent-bar-offset, 0px);
   }
 
   body {
     overflow-x: hidden;
+    padding-bottom: var(--consent-bar-offset, 0px);
   }
 
   body {

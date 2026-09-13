@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { record } from "@/lib/count";
 import { contactSchema, type ContactFormValues } from "./contactSchema";
 
 export const useContactForm = () => {
@@ -33,6 +34,16 @@ export const useContactForm = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+
+      const result: unknown = await response.json().catch(() => null);
+      const status =
+        result && typeof result === "object" && "status" in result
+          ? (result as { status: unknown }).status
+          : undefined;
+
+      if (status === "delivered" || status === "failed") {
+        record("inquiry", { status });
+      }
 
       if (!response.ok) {
         throw new Error("Inquiry was not delivered");
