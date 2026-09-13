@@ -25,5 +25,9 @@ Hairline table of technology rows after Services — label left (Frontend / Back
 _Avoid_: Skills section, skills grid, Tech Marquee
 
 **Social Pill**:
-Outline text pill linking to a profile (GitHub, LinkedIn, WhatsApp, Telegram). Used in About. No brand icons.
+Outline text pill linking to a profile (GitHub, LinkedIn, WhatsApp, Telegram). Used in About. No brand icons. The Telegram pill is a public profile, not the inbox for an [[Inquiry]].
 _Avoid_: Icon, social icon
+
+**Inquiry**:
+A visitor-submitted request to work together, collected by the Contact form — who they are, how to reply, and what they need built. Delivered privately to Robert. Distinct from the [[Social Pill]] Telegram profile.
+_Avoid_: Message (the form field and button copy), lead, contact request, email

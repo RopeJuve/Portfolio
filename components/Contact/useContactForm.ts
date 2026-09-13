@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import emailjs from "@emailjs/browser";
 import { contactSchema, type ContactFormValues } from "./contactSchema";
 
 export const useContactForm = () => {
@@ -19,24 +18,26 @@ export const useContactForm = () => {
     formState: { errors },
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
+    defaultValues: {
+      company: "",
+    },
   });
 
-  const handleSendEmail = async (formData: ContactFormValues) => {
+  const handleSubmitInquiry = async (formData: ContactFormValues) => {
     setIsSending(true);
     setSendStatus("idle");
 
     try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_SERVICE_ID as string,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
-        {
-          user_name: formData.user_name,
-          user_last_name: formData.user_last_name,
-          user_email: formData.user_email,
-          message: formData.message,
-        },
-        process.env.NEXT_PUBLIC_USER_ID as string
-      );
+      const response = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Inquiry was not delivered");
+      }
+
       setSendStatus("success");
       reset();
     } catch {
@@ -48,7 +49,7 @@ export const useContactForm = () => {
 
   return {
     register,
-    handleSubmit: handleSubmit(handleSendEmail),
+    handleSubmit: handleSubmit(handleSubmitInquiry),
     errors,
     isSending,
     sendStatus,
