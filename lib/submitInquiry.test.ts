@@ -47,6 +47,32 @@ describe("submitInquiry", () => {
     expect(delivered[0]).toContain("Arrived: 15 July 2026, 13:00 CEST");
   });
 
+  it("delivers a valid Inquiry when the honeypot is empty", async () => {
+    const delivered: string[] = [];
+    const result = await submitInquiry(
+      { ...validInquiry, company: "" },
+      async (text) => {
+        delivered.push(text);
+      }
+    );
+
+    expect(result).toEqual({ status: "delivered" });
+    expect(delivered).toHaveLength(1);
+  });
+
+  it("ignores a honeypot trip and does not deliver", async () => {
+    const delivered: string[] = [];
+    const result = await submitInquiry(
+      { ...validInquiry, company: "Acme Corp" },
+      async (text) => {
+        delivered.push(text);
+      }
+    );
+
+    expect(result).toEqual({ status: "ignored" });
+    expect(delivered).toEqual([]);
+  });
+
   it("rejects an Inquiry with invalid fields and does not deliver", async () => {
     const delivered: string[] = [];
     const result = await submitInquiry(

@@ -18,6 +18,9 @@ export const useContactForm = () => {
     formState: { errors },
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
+    defaultValues: {
+      company: "",
+    },
   });
 
   const handleSubmitInquiry = async (formData: ContactFormValues) => {

@@ -7,8 +7,18 @@ export type DeliverInquiry = (text: string) => Promise<void>;
 
 export type SubmitInquiryResult =
   | { status: "delivered" }
+  | { status: "ignored" }
   | { status: "invalid" }
   | { status: "failed" };
+
+const isHoneypotTripped = (payload: unknown): boolean => {
+  if (!payload || typeof payload !== "object") {
+    return false;
+  }
+
+  const honeypot = (payload as Record<string, unknown>).company;
+  return typeof honeypot === "string" && honeypot !== "";
+};
 
 const formatArrival = (date: Date) => {
   const parts = new Intl.DateTimeFormat("en-GB", {
@@ -42,6 +52,10 @@ export const submitInquiry = async (
   payload: unknown,
   deliver: DeliverInquiry
 ): Promise<SubmitInquiryResult> => {
+  if (isHoneypotTripped(payload)) {
+    return { status: "ignored" };
+  }
+
   const parsed = contactSchema.safeParse(payload);
   if (!parsed.success) {
     return { status: "invalid" };

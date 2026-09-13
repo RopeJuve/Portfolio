@@ -43,10 +43,23 @@ const Contact = ({ title, contactMe, contactLocale }: ContactProps) => {
           <form
             data-rise-group
             data-rise-distance="18"
-            className="flex flex-col gap-4"
+            className="relative flex flex-col gap-4"
             onSubmit={handleSubmit}
             noValidate
           >
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -left-[9999px] h-0 w-0 overflow-hidden"
+            >
+              <label htmlFor="company">Company</label>
+              <input
+                id="company"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                {...register("company")}
+              />
+            </div>
             <div className="flex flex-col gap-4 md:flex-row">
               <div data-field className="flex flex-1 flex-col gap-2">
                 <Label htmlFor="user_name">First Name</Label>

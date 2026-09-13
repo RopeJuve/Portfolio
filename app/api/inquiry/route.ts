@@ -12,7 +12,7 @@ export const POST = async (request: Request) => {
 
   const result = await submitInquiry(payload, deliverToTelegram);
 
-  if (result.status === "delivered") {
+  if (result.status === "delivered" || result.status === "ignored") {
     return NextResponse.json(result);
   }
 
